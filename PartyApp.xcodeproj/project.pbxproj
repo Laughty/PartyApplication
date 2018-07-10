@@ -23,7 +23,7 @@
 		AFD6C0FE20F3C91D006856EA /* FriendVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C0FD20F3C91D006856EA /* FriendVM.swift */; };
 		AFD6C10020F3C92A006856EA /* FriendsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C0FF20F3C92A006856EA /* FriendsVM.swift */; };
 		AFD6C10220F3C93E006856EA /* PartyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C10120F3C93E006856EA /* PartyVM.swift */; };
-		AFD6C10420F3C94E006856EA /* PartiesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C10320F3C94E006856EA /* PartiesVM.swift */; };
+		AFD6C10420F3C94E006856EA /* PartiesListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C10320F3C94E006856EA /* PartiesListVM.swift */; };
 		AFD6C10620F3C97A006856EA /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C10520F3C97A006856EA /* UserInfoVC.swift */; };
 		AFD6C10820F3C985006856EA /* UserVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C10720F3C985006856EA /* UserVM.swift */; };
 		AFD6C10F20F3CC10006856EA /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C10E20F3CC10006856EA /* Friend.swift */; };
@@ -79,7 +79,7 @@
 		AFD6C0FD20F3C91D006856EA /* FriendVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendVM.swift; sourceTree = "<group>"; };
 		AFD6C0FF20F3C92A006856EA /* FriendsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsVM.swift; sourceTree = "<group>"; };
 		AFD6C10120F3C93E006856EA /* PartyVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyVM.swift; sourceTree = "<group>"; };
-		AFD6C10320F3C94E006856EA /* PartiesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartiesVM.swift; sourceTree = "<group>"; };
+		AFD6C10320F3C94E006856EA /* PartiesListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartiesListVM.swift; sourceTree = "<group>"; };
 		AFD6C10520F3C97A006856EA /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		AFD6C10720F3C985006856EA /* UserVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVM.swift; sourceTree = "<group>"; };
 		AFD6C10E20F3CC10006856EA /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 				AFD6C0FD20F3C91D006856EA /* FriendVM.swift */,
 				AFD6C0FF20F3C92A006856EA /* FriendsVM.swift */,
 				AFD6C10120F3C93E006856EA /* PartyVM.swift */,
-				AFD6C10320F3C94E006856EA /* PartiesVM.swift */,
+				AFD6C10320F3C94E006856EA /* PartiesListVM.swift */,
 				AFD6C10720F3C985006856EA /* UserVM.swift */,
 			);
 			path = ViewModels;
@@ -407,7 +407,7 @@
 				AFD6C0BC20F3C7A3006856EA /* AppDelegate.swift in Sources */,
 				AFD6C10620F3C97A006856EA /* UserInfoVC.swift in Sources */,
 				AFD6C12020F42099006856EA /* RootVC.swift in Sources */,
-				AFD6C10420F3C94E006856EA /* PartiesVM.swift in Sources */,
+				AFD6C10420F3C94E006856EA /* PartiesListVM.swift in Sources */,
 				AFD6C10220F3C93E006856EA /* PartyVM.swift in Sources */,
 				AFD6C10F20F3CC10006856EA /* Friend.swift in Sources */,
 			);

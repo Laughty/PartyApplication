@@ -27,7 +27,8 @@ class FriendVM: FriendVMProtocol {
     var surname: String
     
     init(friend: Friend) {
-        
+        self.name = friend.name
+        self.surname = friend.surname
     }
     
 }

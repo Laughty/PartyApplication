@@ -44,7 +44,7 @@ class RootVC: UIViewController {
         showSplashViewControllerNoPing()
         
         
-        _ = Timer.scheduledTimer(withTimeInterval: 6.0, repeats: false) { (timer) in
+        _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false) { (timer) in
             self.showMenuNavigationViewController()
         }
         

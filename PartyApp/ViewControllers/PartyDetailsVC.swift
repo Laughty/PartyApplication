@@ -7,9 +7,32 @@
 //
 
 import Foundation
+import UIKit
 
 /*
  TODO:
  implementation
  - View controller for party details
  */
+
+class PartyDetailsVC: UIViewController {
+    
+    var party: PartyVMProtocol?
+    
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var partyTitle: UILabel!
+    
+    override func viewDidLoad() {
+         super.viewDidLoad()
+        
+        if let party = party {
+            image.image = party.image
+            partyTitle.text = party.title
+        }
+    }
+    
+    
+}
+    
+    
+

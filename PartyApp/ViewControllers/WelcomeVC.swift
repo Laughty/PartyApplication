@@ -9,13 +9,14 @@
 import Foundation
 import UIKit
 
-class WelcomeVC: UIViewController {
+class WelcomeVC: UIViewController, UITextFieldDelegate {
+
     
-    /*
-     TODO:
-     implementation
-     - Initial view controller for user
-     */
+    override func viewDidLoad() {
+
+    }
+    
+
     
     
 }
