@@ -8,6 +8,20 @@
 
 import Foundation
 
+struct Friend {
+    
+    let id: String
+    let name: String
+    let surname: String
+    
+    init(id: String, name: String, surname: String) {
+        self.id = id
+        self.name = name
+        self.surname = surname
+    }
+    
+}
+
 /*
  TODO:
  implementation

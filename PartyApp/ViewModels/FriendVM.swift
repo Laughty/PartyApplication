@@ -13,3 +13,21 @@ import Foundation
  implementation
  - View model for friend details
  */
+
+protocol FriendVMProtocol {
+    
+    var name: String { set get }
+    var surname: String { set get }
+    
+}
+
+class FriendVM: FriendVMProtocol {
+    
+    var name: String
+    var surname: String
+    
+    init(friend: Friend) {
+        
+    }
+    
+}

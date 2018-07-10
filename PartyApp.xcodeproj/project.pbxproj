@@ -141,6 +141,7 @@
 		AFD6C0BA20F3C7A3006856EA /* PartyApp */ = {
 			isa = PBXGroup;
 			children = (
+				AFD6C12120F48CAA006856EA /* Storyboards */,
 				AFD6C10B20F3CB7E006856EA /* Assets */,
 				AFD6C10A20F3CB62006856EA /* Model */,
 				AFD6C10920F3CB56006856EA /* SupportingFiles */,
@@ -149,7 +150,6 @@
 				AFD6C0ED20F3C7C0006856EA /* ViewModels */,
 				AFD6C0EC20F3C7B1006856EA /* ViewControllers */,
 				AFD6C0BB20F3C7A3006856EA /* AppDelegate.swift */,
-				AFD6C0BF20F3C7A3006856EA /* Main.storyboard */,
 				AFD6C0C720F3C7A5006856EA /* LaunchScreen.storyboard */,
 				AFD6C0CA20F3C7A5006856EA /* Info.plist */,
 				AFD6C0C220F3C7A3006856EA /* PartyApp.xcdatamodeld */,
@@ -245,6 +245,14 @@
 				AFD6C0C520F3C7A5006856EA /* Assets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		AFD6C12120F48CAA006856EA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AFD6C0BF20F3C7A3006856EA /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
