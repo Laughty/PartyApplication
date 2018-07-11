@@ -27,7 +27,6 @@ class FriendsListVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: FriendCellItem.CellReusableIdentifier, bundle: nil), forCellReuseIdentifier: FriendCellItem.CellReusableIdentifier)
-//        tableView.register(FriendCellItem.self, forCellReuseIdentifier: FriendCellItem.CellReusableIdentifier)
     }
     
     
@@ -42,7 +41,6 @@ class FriendsListVC: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FriendCellItem.CellReusableIdentifier) as! FriendCellItem
         cell.friendVM = friends[indexPath.row]
-        cell.setupCell()
         return cell
     }
     
