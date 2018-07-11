@@ -36,6 +36,7 @@
 		AFD6C11D20F3CCCC006856EA /* FriendCellItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFD6C11C20F3CCCC006856EA /* FriendCellItem.xib */; };
 		AFD6C11E20F3D0DC006856EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFD6C0C520F3C7A5006856EA /* Assets.xcassets */; };
 		AFD6C12020F42099006856EA /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C11F20F42099006856EA /* RootVC.swift */; };
+		AFFA158D20F5EB6E000C954F /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFA158C20F5EB6E000C954F /* Constans.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		AFD6C11A20F3CCB9006856EA /* FriendCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCellItem.swift; sourceTree = "<group>"; };
 		AFD6C11C20F3CCCC006856EA /* FriendCellItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendCellItem.xib; sourceTree = "<group>"; };
 		AFD6C11F20F42099006856EA /* RootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootVC.swift; sourceTree = "<group>"; };
+		AFFA158C20F5EB6E000C954F /* Constans.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constans.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 		AFD6C0BA20F3C7A3006856EA /* PartyApp */ = {
 			isa = PBXGroup;
 			children = (
+				AFFA158E20F5EB77000C954F /* Utils */,
 				AFD6C12120F48CAA006856EA /* Storyboards */,
 				AFD6C10B20F3CB7E006856EA /* Assets */,
 				AFD6C10A20F3CB62006856EA /* Model */,
@@ -253,6 +256,14 @@
 				AFD6C0BF20F3C7A3006856EA /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		AFFA158E20F5EB77000C954F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AFFA158C20F5EB6E000C954F /* Constans.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -406,6 +417,7 @@
 				AFD6C0FA20F3C8F7006856EA /* PartyDetailsVC.swift in Sources */,
 				AFD6C0BC20F3C7A3006856EA /* AppDelegate.swift in Sources */,
 				AFD6C10620F3C97A006856EA /* UserInfoVC.swift in Sources */,
+				AFFA158D20F5EB6E000C954F /* Constans.swift in Sources */,
 				AFD6C12020F42099006856EA /* RootVC.swift in Sources */,
 				AFD6C10420F3C94E006856EA /* PartiesListVM.swift in Sources */,
 				AFD6C10220F3C93E006856EA /* PartyVM.swift in Sources */,

@@ -62,17 +62,16 @@
                                         <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Party List"/>
                                         <connections>
-                                            <segue destination="O2d-jL-aKr" kind="show" id="f1i-6l-3gs"/>
+                                            <segue destination="O2d-jL-aKr" kind="show" identifier="toPartyListVC" id="f1i-6l-3gs"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7e-ce-frn">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7e-ce-frn">
                                         <rect key="frame" x="0.0" y="110" width="343" height="110"/>
                                         <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Friends List"/>
                                         <connections>
-                                            <segue destination="4ql-nY-vUn" kind="show" id="gN2-Ah-QdJ"/>
+                                            <segue destination="4ql-nY-vUn" kind="show" identifier="toFriendsListVC" id="gN2-Ah-QdJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8L-Hf-gQr">
@@ -82,7 +81,7 @@
                                         <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="MyProfile"/>
                                         <connections>
-                                            <segue destination="paY-JI-hZZ" kind="show" id="2DN-DB-ejL"/>
+                                            <segue destination="paY-JI-hZZ" kind="show" identifier="toProfileVC" id="2DN-DB-ejL"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -97,6 +96,13 @@
                                     <constraint firstItem="p7e-ce-frn" firstAttribute="height" secondItem="Q8L-Hf-gQr" secondAttribute="height" id="vdN-Cu-xtu"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOk-e6-GSW">
+                                <rect key="frame" x="26" y="331" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -120,7 +126,7 @@
         <!--Parties ListVC-->
         <scene sceneID="cJ3-yq-m0u">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="O2d-jL-aKr" customClass="PartiesListVC" customModule="PartyApp" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="PartiesListVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="O2d-jL-aKr" customClass="PartiesListVC" customModule="PartyApp" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DSc-Tb-VcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1625" y="849"/>
@@ -138,35 +144,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jmw-hE-ycS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="553" y="1773"/>
+            <point key="canvasLocation" x="572" y="1629"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Friends ListVC-->
         <scene sceneID="bjx-OO-eYT">
             <objects>
-                <tableViewController id="4ql-nY-vUn" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CSK-Vf-IN0">
+                <tableViewController id="4ql-nY-vUn" customClass="FriendsListVC" customModule="PartyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CSK-Vf-IN0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="BoU-k3-NGz">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BoU-k3-NGz" id="ycq-4P-SvY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="4ql-nY-vUn" id="yAG-Be-PzY"/>
                             <outlet property="delegate" destination="4ql-nY-vUn" id="SZz-9I-WOq"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="6Zw-po-Ay3" kind="show" identifier="toFriendDetailsVC" id="WW2-v9-T2m"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CjH-Uu-ib1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2087" y="1567"/>
+            <point key="canvasLocation" x="1624.8" y="1628.6356821589206"/>
+        </scene>
+        <!--Friend DetailsVC-->
+        <scene sceneID="dsX-za-Z6L">
+            <objects>
+                <viewController storyboardIdentifier="FriendDetailsVC" id="6Zw-po-Ay3" customClass="FriendDetailsVC" customModule="PartyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lCO-Qm-xzG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nku-kh-tNE">
+                                <rect key="frame" x="67" y="119" width="230" height="178"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ura-hR-MxS">
+                                <rect key="frame" x="94" y="348" width="187" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="sUz-07-YP1"/>
+                    </view>
+                    <connections>
+                        <outlet property="friendImage" destination="Nku-kh-tNE" id="oLe-GO-Ld8"/>
+                        <outlet property="friendName" destination="ura-hR-MxS" id="ogP-XD-VN7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GcQ-lf-MdQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2464.8000000000002" y="1628.6356821589206"/>
         </scene>
         <!--Party DetailsVC-->
         <scene sceneID="Tas-vz-QUk">
@@ -209,6 +241,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67x-Yr-3X7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2464.8000000000002" y="848.72563718140941"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aJs-po-6lR">
+            <objects>
+                <viewController storyboardIdentifier="NoPartiesVC" id="Tre-Hz-Ea6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S9J-7K-CDt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OH NO THERE IS NO PARTIES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wtD-uY-h1O">
+                                <rect key="frame" x="-16" y="286" width="407" height="95.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="wtD-uY-h1O" firstAttribute="trailing" secondItem="e4p-eS-ehh" secondAttribute="trailing" constant="16" id="UOg-2S-9rG"/>
+                            <constraint firstItem="wtD-uY-h1O" firstAttribute="centerX" secondItem="S9J-7K-CDt" secondAttribute="centerX" id="uMu-QI-7Nf"/>
+                            <constraint firstItem="e4p-eS-ehh" firstAttribute="leading" secondItem="wtD-uY-h1O" secondAttribute="leading" constant="16" id="wXT-PZ-eKO"/>
+                            <constraint firstItem="wtD-uY-h1O" firstAttribute="centerY" secondItem="S9J-7K-CDt" secondAttribute="centerY" id="yw9-Ac-wZh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="e4p-eS-ehh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oT5-Em-1ac" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3164" y="848.72563718140941"/>
         </scene>
     </scenes>
     <resources>
