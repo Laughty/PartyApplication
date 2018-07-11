@@ -54,7 +54,7 @@ class WelcomeVC: UIViewController, UITextFieldDelegate {
     private func mockDataFriends() -> [FriendVMProtocol]{
         var friends: [FriendVMProtocol] = []
         for index in 1...3 {
-            let friend = Friend(id: String(index), name: "Bob", surname: "Bobsky", likes: index, description: "funny", photo: UIImage(named: "catParty\(index)")!, phone: "1111", email: "abc@abc.pl")
+            let friend = Friend(id: String(index), name: "Bob\(index)", surname: "Bobsky", likes: index, description: "funny", photo: UIImage(named: "catParty\(index)")!, phone: "1111", email: "abc@abc.pl")
             let friendVM = FriendVM(friend: friend)
             friends.append(friendVM)
             
