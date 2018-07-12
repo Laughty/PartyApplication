@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 enum Result<T> {
     case success(T)
@@ -14,14 +15,25 @@ enum Result<T> {
 }
 
 protocol AbstractServiceProtocol {
-    static func executeRequest(abstractRequest: AbstractRequest) -> Result<Any>
+    func executeRequest(abstractRequest: AbstractRequest, requestResponse: @escaping (Result<Any>) -> ())
 }
 
 class AbstractService: AbstractServiceProtocol {
     
-    static func executeRequest(abstractRequest: AbstractRequest) -> Result<Any> {
+    func executeRequest(abstractRequest: AbstractRequest, requestResponse: @escaping (Result<Any>) -> ()) {
+        let url = BASE_URL + abstractRequest.path
         
-        return Result.success("")
+        Alamofire.request("https://httpbin.org/get", method: .get).responseJSON { response in
+            print("Request: \(String(describing: response.request))")   // original url request
+            print("Response: \(String(describing: response.response))") // http url response
+            print("Result: \(response.result)")                         // response serialization result
+            
+            if let json = response.result.value {
+                return requestResponse(Result.success(json))
+            }
+            
+        }
+        
     }
     
 }
