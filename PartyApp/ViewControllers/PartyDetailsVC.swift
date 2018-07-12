@@ -32,7 +32,11 @@ class PartyDetailsVC: UIViewController {
     }
     
     
-}
+        
+    }
+    
+    
+
     
     
 

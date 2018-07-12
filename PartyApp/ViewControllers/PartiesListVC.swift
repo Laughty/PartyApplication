@@ -15,23 +15,26 @@ import UIKit
  TODO:
  implementation
  - View Controller showing list of parties
- 
- 
+
  */
 
+
 class PartiesListVC: UIPageViewController {
+    
+    let DEFAULT_CELL_HEIGHT = 100
+    
     
     var parties: [PartyVMProtocol] = []
     var orderedViewControllers: [UIViewController] = []
     
     override func viewDidLoad() {
-        
-        
         super.viewDidLoad()
-        
-        
-        mockData()
-        
+        configurePageViewController()
+    }
+    
+    private func configurePageViewController(){
+        prepareViewControllers()
+        if let initialVC = orderedViewControllers.first {
 //        let initialVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PartyDetailsVC") as! PartyDetailsVC
 //        initialVC.party = parties[0]
 //
@@ -43,38 +46,62 @@ class PartiesListVC: UIPageViewController {
         
         for index in parties {
             let initialVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PartyDetailsVC") as! PartyDetailsVC
-            initialVC.party = index
+        initialVC.party = parties[0]
             orderedViewControllers.append(initialVC)
         }
-        
+    
 //        orderedViewControllers = [initialVC, secondVC, thirdVC]
         
-        private func configurePageViewController(){
-            
-        }
+        let secondVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PartyDetailsVC") as! PartyDetailsVC
+        secondVC.party = parties[1]
         
-        private func prepareViewControllers(){
-            
+        let thirdVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PartyDetailsVC") as! PartyDetailsVC
+        thirdVC.party = parties[2]
+        
+        orderedViewControllers = [initialVC, secondVC, thirdVC]
+        
         }
         
       
-        setViewControllers([orderedViewControllers[0]],
+        setViewControllers([initialVC],
                                direction: .forward,
                                animated: true,
                                completion: nil)
-    
-    }
-    
-    
-    private func mockData(){
-        
-        for index in 1...3 {
-            let party = Party(id: String(index), location: "here", time: Date(), title: "Party" + String(index), description: "Super Party", image: UIImage(named: "catParty\(index)")!)
-            let partyVM = PartyVM(party: party)
-            parties.append(partyVM)
+            if parties.isEmpty {
+                view.isUserInteractionEnabled = false
+            }
+        } else {
+            
+            // Empty state behavior
             
         }
+    }
+    
+    private func prepareViewControllers(){
+        if parties.isEmpty {
+            let noPartiesVC = UIStoryboard(name: StoryboardIds.main.rawValue, bundle: nil).instantiateViewController(withIdentifier: PartiesVCIds.noParties.rawValue)
+            orderedViewControllers.append(noPartiesVC)
+    } else {
+        for party in parties {
+            orderedViewControllers.append(initPartyVC(withParty: party))
+        }
+    }
+    }
+    
+    private func initPartyVC(withParty party: PartyVMProtocol) -> PartyDetailsVC{
         
+        if let vc = UIStoryboard(name: StoryboardIds.main.rawValue, bundle: nil).instantiateViewController(withIdentifier: PartiesVCIds.partyDetails.rawValue) as? PartyDetailsVC {
+            vc.party = party
+            return vc
+        } else {
+
+            fatalError("Not able to find PartyDetailVC in Main storyboard")
+        }
+        
+    }
+    
+    private func loadViewControllers() {
+    
     }
     
     
@@ -86,7 +113,8 @@ class PartiesListVC: UIPageViewController {
 extension PartiesListVC: UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         
-        guard let viewControllerIndex = orderedViewControllers.index(where: {$0 === viewController}) else {
+        
+        guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
             return nil
         }
         
@@ -106,7 +134,7 @@ extension PartiesListVC: UIPageViewControllerDataSource {
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = orderedViewControllers.index(where: {$0 === viewController}) else {
+        guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
             return nil
         }
         
