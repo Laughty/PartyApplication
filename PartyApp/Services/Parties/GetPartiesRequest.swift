@@ -11,8 +11,6 @@ import Foundation
 
 class GetPartiesRequest: AbstractRequest {
     
-    
-    
     override init() {
         super.init()
         self.path = "getPartiesPath"
