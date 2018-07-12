@@ -20,9 +20,7 @@ class FriendDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        GetFriendReq
-        
+                
         friendImage.image = friend?.image
         friendName.text = friend?.name
     }
