@@ -7,6 +7,11 @@
 //
 
 import Foundation
+import UIKit
+
+class FriendCellItem: UITableViewCell {
+    
+}
 
 /*
  TODO:

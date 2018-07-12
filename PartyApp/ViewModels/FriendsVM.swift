@@ -13,3 +13,16 @@ import Foundation
  implementation
  - View model for friends list
  */
+
+protocol FriendsProtocol {
+    var friend:[FriendVM] {get set}
+}
+
+class FriendsVM: FriendsProtocol {
+    
+    var friend: [FriendVM]
+    
+    init(friends:[FriendVM]){
+        self.friend = friends
+    }
+}

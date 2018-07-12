@@ -27,28 +27,38 @@ class PartiesListVC: UIPageViewController {
     override func viewDidLoad() {
         
         
-        
         super.viewDidLoad()
         
         
         mockData()
-        dataSource = self
         
-        let initialVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PartyDetailsVC") as! PartyDetailsVC
-        initialVC.party = parties[0]
-    
+//        let initialVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PartyDetailsVC") as! PartyDetailsVC
+//        initialVC.party = parties[0]
+//
+//        let secondVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PartyDetailsVC") as! PartyDetailsVC
+//        secondVC.party = parties[1]
+//
+//        let thirdVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PartyDetailsVC") as! PartyDetailsVC
+//        thirdVC.party = parties[2]
         
-        let secondVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PartyDetailsVC") as! PartyDetailsVC
-        secondVC.party = parties[1]
+        for index in parties {
+            let initialVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PartyDetailsVC") as! PartyDetailsVC
+            initialVC.party = index
+            orderedViewControllers.append(initialVC)
+        }
         
-        let thirdVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PartyDetailsVC") as! PartyDetailsVC
-        thirdVC.party = parties[2]
+//        orderedViewControllers = [initialVC, secondVC, thirdVC]
         
-        orderedViewControllers = [initialVC, secondVC, thirdVC]
+        private func configurePageViewController(){
+            
+        }
         
+        private func prepareViewControllers(){
+            
+        }
         
       
-        setViewControllers([initialVC],
+        setViewControllers([orderedViewControllers[0]],
                                direction: .forward,
                                animated: true,
                                completion: nil)
