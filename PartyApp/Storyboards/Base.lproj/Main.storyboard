@@ -119,7 +119,7 @@
         <!--Parties ListVC-->
         <scene sceneID="cJ3-yq-m0u">
             <objects>
-                <pageViewController storyboardIdentifier="PartiesListVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="O2d-jL-aKr" customClass="PartiesListVC" customModule="PartyApp" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="PartiesListVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="O2d-jL-aKr" customClass="PartiesListVC" customModule="PartyApp" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DSc-Tb-VcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1625" y="849"/>
