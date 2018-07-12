@@ -15,7 +15,7 @@ import UIKit
  TODO:
  implementation
  - View Controller showing list of parties
-
+ 
  */
 
 
@@ -34,36 +34,9 @@ class PartiesListVC: UIPageViewController {
     
     private func configurePageViewController(){
         prepareViewControllers()
+        dataSource = self
         if let initialVC = orderedViewControllers.first {
-//        let initialVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PartyDetailsVC") as! PartyDetailsVC
-//        initialVC.party = parties[0]
-//
-//        let secondVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PartyDetailsVC") as! PartyDetailsVC
-//        secondVC.party = parties[1]
-//
-//        let thirdVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PartyDetailsVC") as! PartyDetailsVC
-//        thirdVC.party = parties[2]
-        
-        for index in parties {
-            let initialVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PartyDetailsVC") as! PartyDetailsVC
-        initialVC.party = parties[0]
-            orderedViewControllers.append(initialVC)
-        }
-    
-//        orderedViewControllers = [initialVC, secondVC, thirdVC]
-        
-        let secondVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PartyDetailsVC") as! PartyDetailsVC
-        secondVC.party = parties[1]
-        
-        let thirdVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PartyDetailsVC") as! PartyDetailsVC
-        thirdVC.party = parties[2]
-        
-        orderedViewControllers = [initialVC, secondVC, thirdVC]
-        
-        }
-        
-      
-        setViewControllers([initialVC],
+            setViewControllers([initialVC],
                                direction: .forward,
                                animated: true,
                                completion: nil)
@@ -81,11 +54,11 @@ class PartiesListVC: UIPageViewController {
         if parties.isEmpty {
             let noPartiesVC = UIStoryboard(name: StoryboardIds.main.rawValue, bundle: nil).instantiateViewController(withIdentifier: PartiesVCIds.noParties.rawValue)
             orderedViewControllers.append(noPartiesVC)
-    } else {
-        for party in parties {
-            orderedViewControllers.append(initPartyVC(withParty: party))
+        } else {
+            for party in parties {
+                orderedViewControllers.append(initPartyVC(withParty: party))
+            }
         }
-    }
     }
     
     private func initPartyVC(withParty party: PartyVMProtocol) -> PartyDetailsVC{
@@ -94,14 +67,14 @@ class PartiesListVC: UIPageViewController {
             vc.party = party
             return vc
         } else {
-
+            
             fatalError("Not able to find PartyDetailVC in Main storyboard")
         }
         
     }
     
     private func loadViewControllers() {
-    
+        
     }
     
     
@@ -155,6 +128,6 @@ extension PartiesListVC: UIPageViewControllerDataSource {
     }
     
     
-
+    
     
 }
