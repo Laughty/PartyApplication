@@ -10,12 +10,12 @@ import Foundation
 
 
 protocol PartiesServiceProtocol {
-    func getPartiesList(_ request: GetPartiesRequest, success: @escaping ([Party]) -> (), failure: @escaping (Error?) -> ())
+    func getPartiesList(_ request: GetPartiesRequest, success: @escaping ([PartyVMProtocol]) -> (), failure: @escaping (Error?) -> ())
     func getParty(_ request: GetPartyRequest, success: @escaping (Party) -> (), failure: @escaping (Error?) -> ())
 }
 
 class PartiesService: AbstractService, PartiesServiceProtocol {
-    func getPartiesList(_ request: GetPartiesRequest, success: @escaping ([Party]) -> (), failure: @escaping (Error?) -> ()) {
+    func getPartiesList(_ request: GetPartiesRequest, success: @escaping ([PartyVMProtocol]) -> (), failure: @escaping (Error?) -> ()) {
         
     }
     
@@ -30,6 +30,7 @@ class PartiesService: AbstractService, PartiesServiceProtocol {
         })
     }
     
+
     
     class var shared: PartiesService {
         struct Static {

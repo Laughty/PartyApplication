@@ -23,7 +23,7 @@ class AbstractService: AbstractServiceProtocol {
     func executeRequest(abstractRequest: AbstractRequest, requestResponse: @escaping (Result<Any>) -> ()) {
         let url = BASE_URL + abstractRequest.path
         
-        Alamofire.request("https://httpbin.org/get", method: .get).responseJSON { response in
+        Alamofire.request("https://httpbin.org/get", method: abstractRequest.method).responseJSON { response in
             print("Request: \(String(describing: response.request))")   // original url request
             print("Response: \(String(describing: response.response))") // http url response
             print("Result: \(response.result)")                         // response serialization result
