@@ -8,20 +8,31 @@
 
 import UIKit
 
-class PartyMoreDetails: UIViewController {
+class PartyMoreDetailsVC: UIViewController {
 
     var party: PartyVMProtocol?
+    
+    @IBOutlet weak var partyImage: UIImageView!
+    @IBOutlet weak var partyTitle: UILabel!
+    @IBOutlet weak var partyTime: UILabel!
+    @IBOutlet weak var partyLocation: UILabel!
+    @IBOutlet weak var partyDescription: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if let party = party {
-            //image.image = party.image
-            //partyTitle.text = party.title
+            partyImage.image = party.image
+            partyTitle.text = party.title
+            partyLocation.text = party.location
+            partyDescription.text = party.description
+            //party.time
         }
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
