@@ -17,6 +17,7 @@ enum PartiesVCIds: String {
     case partyList = "PartiesListVC"
     case partyDetails = "PartyDetailsVC"
     case noParties = "NoPartiesVC"
+    case partyMoreDetails = "PartyMoreDetailsVC"
 }
 
 struct StoryboardSegues {
@@ -24,4 +25,5 @@ struct StoryboardSegues {
     static let ToFriendsList = "toFriendsListVC"
     static let ToProfile = "toProfileVC"
     static let ToFriendDetails = "toFriendDetailsVC"
+    static let ToPartyMoreDetailsVC = "toPartyMoreDetailsVC"
 }
