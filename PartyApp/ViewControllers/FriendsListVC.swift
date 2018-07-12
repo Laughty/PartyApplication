@@ -17,22 +17,16 @@ import UIKit
  - View controller showing, list of friends
  */
 
-class FriendsListVC: UITableViewController, UISearchResultsUpdating {
+class FriendsListVC: UITableViewController {
     
     let numberOfSections = 1
     
     var friends: [FriendVMProtocol] = []
     var selectedFriendIndex: Int?
-    var filteredFriends:[FriendVMProtocol] = []
-    let searchController = UISearchController(searchResultsController: nil)
-
+    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         tableView.register(UINib(nibName: FriendCellItem.CellReusableIdentifier, bundle: nil), forCellReuseIdentifier: FriendCellItem.CellReusableIdentifier)
-        filteredFriends = friends
-        searchControllerSetup()
-    
     }
     
     
@@ -41,12 +35,12 @@ class FriendsListVC: UITableViewController, UISearchResultsUpdating {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredFriends.count
+        return friends.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: FriendCellItem.CellReusableIdentifier) as! FriendCellItem
-        cell.friendVM = filteredFriends[indexPath.row]
+        cell.friendVM =  friends[indexPath.row]
         return cell
     }
     
@@ -57,31 +51,12 @@ class FriendsListVC: UITableViewController, UISearchResultsUpdating {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        searchController.isActive = false;
         if segue.identifier != nil && selectedFriendIndex != nil {
                 let destinationVC = segue.destination as! FriendDetailsVC
                 destinationVC.friend = friends[selectedFriendIndex!]
                 selectedFriendIndex = nil
             }
         
-    }
-    func searchControllerSetup() {
-        searchController.searchResultsUpdater = self
-        searchController.hidesNavigationBarDuringPresentation = true
-        searchController.dimsBackgroundDuringPresentation = false
-        tableView.tableHeaderView = searchController.searchBar
-        
-    }
-    func updateSearchResults(for searchController: UISearchController) {
-        if let searchText = searchController.searchBar.text, !searchText.isEmpty {
-            filteredFriends = friends.filter { friend in
-                return friend.name.lowercased().contains(searchText.lowercased())
-            }
-            
-        } else {
-            filteredFriends = friends
-        }
-        tableView.reloadData()
     }
     
 }

@@ -20,6 +20,7 @@ protocol FriendVMProtocol {
     var name: String { set get }
     var surname: String { set get }
     var image: UIImage { set get }
+    var description: String { set get }
     
 }
 
