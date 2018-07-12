@@ -25,7 +25,6 @@ class PartyDetailsVC: UIViewController {
     override func viewDidLoad() {
          super.viewDidLoad()
         
-        
         if let party = party {
             image.image = party.image
             partyTitle.text = party.title
