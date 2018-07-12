@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+
+class GetFriendsRequest: AbstractRequest{
+    
+    override init (){
+        
+        super.init()
+        self.method = .get
+        self.path = "getFriendsPath"
+        
+    }
+    
+}
