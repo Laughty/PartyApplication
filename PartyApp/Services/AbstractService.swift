@@ -14,12 +14,12 @@ enum Result<T> {
 }
 
 protocol AbstractServiceProtocol {
-    static func executeRequest(abstractRequest: AbstractRequest) -> Result<Any>
+    func executeRequest(abstractRequest: AbstractRequest) -> Result<Any>
 }
 
 class AbstractService: AbstractServiceProtocol {
     
-    static func executeRequest(abstractRequest: AbstractRequest) -> Result<Any> {
+    func executeRequest(abstractRequest: AbstractRequest) -> Result<Any> {
         
         return Result.success("")
     }

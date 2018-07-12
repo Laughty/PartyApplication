@@ -10,14 +10,21 @@ import Foundation
 
 
 protocol PartiesServiceProtocol {
-    static func getPartiesList(_ request: GetPartiesRequest, success: ([Party]) -> (), failure: (Error?) -> ())
-    static func getParty(_ request: GetPartiesRequest, success: (Party) -> (), failure: (Error?) -> ())
+    func getPartiesList(_ request: GetPartiesRequest, success: ([Party]) -> (), failure: (Error?) -> ())
+    func getParty(_ request: GetPartiesRequest, success: (Party) -> (), failure: (Error?) -> ())
 }
 
 class PartiesService: AbstractService, PartiesServiceProtocol {
+    
+    class var shared: PartiesService {
+        struct Static {
+            static let instance = PartiesService()
+        }
+        return Static.instance
+    }
 
     
-    static func getParty(_ request: GetPartiesRequest, success: (Party) -> (), failure: (Error?) -> ()) {
+    func getParty(_ request: GetPartiesRequest, success: (Party) -> (), failure: (Error?) -> ()) {
         switch executeRequest(abstractRequest: request) {
         case .success(let responseVal):
             success(responseVal as! Party)
@@ -27,7 +34,7 @@ class PartiesService: AbstractService, PartiesServiceProtocol {
     }
     
     
-    static func getPartiesList(_ request: GetPartiesRequest, success: ([Party]) -> (), failure: (Error?) -> ()) {
+    func getPartiesList(_ request: GetPartiesRequest, success: ([Party]) -> (), failure: (Error?) -> ()) {
         
     }
     
