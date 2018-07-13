@@ -23,6 +23,7 @@ protocol FriendVMProtocol {
     var description: String { set get }
     var likes: Int { get set }
     var phone: String { get set }
+    var email: String { get set }
     
 }
 
@@ -35,6 +36,7 @@ class FriendVM: FriendVMProtocol {
     var description: String
     var image: UIImage
     var phone: String
+    var email: String
     
     init(friend: Friend) {
         self.id = friend.id
@@ -44,6 +46,7 @@ class FriendVM: FriendVMProtocol {
         self.likes = friend.likes
         self.image = UIImage(named: friend.image)!
         self.phone = friend.phone
+        self.email = friend.email
     }
     
 }

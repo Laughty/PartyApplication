@@ -31,6 +31,7 @@ class FriendDetailsVC: UIViewController {
         guard let likesText = friend?.likes else { return }
         friendLikes.text = "Likes: " + "\(likesText)"
         friendTelephone.text = friend?.phone
+        friendEmail.text = friend?.email
     }
 }
 /*
