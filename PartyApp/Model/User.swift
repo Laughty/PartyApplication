@@ -21,7 +21,7 @@ struct User: Mappable {
     var phone: String = ""
     var friendsIds: [String] = []
     var favoritePartiesIds: [String] = []
-
+ 
     init(id: Int, name: String, surname: String, likes: Int, description: String, photo: String, email: String, phone: String, friendsIds: [String], favoritePartiesIds: [String]) {
         self.id = id
         self.name = name
