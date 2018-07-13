@@ -7,7 +7,8 @@
 //
 
 import Foundation
-
+import AlamofireObjectMapper
+import Alamofire
 
 class GetPartiesRequest: AbstractRequest {
     
@@ -17,4 +18,17 @@ class GetPartiesRequest: AbstractRequest {
         self.method = .get
     }
     
+    func getPartiesList(completion: @escaping (PartiesList?, Error?)->()) {
+        Alamofire.request(path).responseObject { (response: DataResponse<PartiesList>) in
+            let parties = response.result
+            print("Result of downloading PartiesList -> First party's title: \(String(describing: parties.value?.parties))")
+            
+            switch parties {
+            case .success(let value):
+                completion(value, nil)
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
 }
