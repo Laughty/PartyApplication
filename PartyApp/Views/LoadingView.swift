@@ -9,5 +9,13 @@
 import UIKit
 
 class LoadingView: UIView {
+    
+    func show(){
+        isHidden=false;
+    }
+    
+    func hide(){
+        isHidden=true;
+    }
 
 }
