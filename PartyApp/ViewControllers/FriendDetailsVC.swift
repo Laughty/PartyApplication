@@ -24,6 +24,7 @@ class FriendDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                
         friendImage.image = friend?.image
         friendName.text = (friend?.name)! + " " + (friend?.surname)!
         friendDescription.text = friend?.description

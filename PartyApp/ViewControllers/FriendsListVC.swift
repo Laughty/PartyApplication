@@ -25,14 +25,14 @@ class FriendsListVC: UITableViewController, UISearchResultsUpdating {
     var selectedFriendIndex: Int?
     var filteredFriends:[FriendVMProtocol] = []
     let searchController = UISearchController(searchResultsController: nil)
-
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         tableView.register(UINib(nibName: FriendCellItem.CellReusableIdentifier, bundle: nil), forCellReuseIdentifier: FriendCellItem.CellReusableIdentifier)
         filteredFriends = friends
         searchControllerSetup()
-    
+        
     }
     
     
@@ -59,10 +59,10 @@ class FriendsListVC: UITableViewController, UISearchResultsUpdating {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         searchController.isActive = false;
         if segue.identifier != nil && selectedFriendIndex != nil {
-                let destinationVC = segue.destination as! FriendDetailsVC
-                destinationVC.friend = friends[selectedFriendIndex!]
-                selectedFriendIndex = nil
-            }
+            let destinationVC = segue.destination as! FriendDetailsVC
+            destinationVC.friend = friends[selectedFriendIndex!]
+            selectedFriendIndex = nil
+        }
         
     }
     func searchControllerSetup() {

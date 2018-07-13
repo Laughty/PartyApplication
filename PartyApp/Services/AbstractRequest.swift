@@ -7,14 +7,11 @@
 //
 
 import Foundation
+import Alamofire
 
 
 let BASE_URL: String = "http://funny.com"
 
-enum HTTPMethod: String {
-    case get = "GET"
-    case post = "POST"
-}
 
 class AbstractRequest {
     var path: String!

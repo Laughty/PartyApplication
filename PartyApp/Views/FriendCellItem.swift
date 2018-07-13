@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UIKit
 
 class FriendCellItem: UITableViewCell {
     
@@ -14,15 +15,16 @@ class FriendCellItem: UITableViewCell {
     var friendVM: FriendVMProtocol? {
         didSet {
             imageViewContainer.image = friendVM?.image
-            title.text = friendVM?.name
-            friendDesc.text = friendVM?.surname
+            guard let nameText = friendVM?.name, let surnameText = friendVM?.surname else { return }
+            title.text = "\(nameText) \(surnameText)"
+            guard let descText = friendVM?.description else { return }
+            desc.text = descText
         }
     }
     
     @IBOutlet weak var imageViewContainer: UIImageView!
     @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var friendDesc: UILabel!
-    
+    @IBOutlet weak var desc: UILabel!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

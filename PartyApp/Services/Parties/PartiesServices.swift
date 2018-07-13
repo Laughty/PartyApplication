@@ -10,26 +10,37 @@ import Foundation
 
 
 protocol PartiesServiceProtocol {
-    static func getPartiesList(_ request: GetPartiesRequest, success: ([Party]) -> (), failure: (Error?) -> ())
-    static func getParty(_ request: GetPartiesRequest, success: (Party) -> (), failure: (Error?) -> ())
+    func getPartiesList(_ request: GetPartiesRequest, success: @escaping ([PartyVMProtocol]) -> (), failure: @escaping (Error?) -> ())
+    func getParty(_ request: GetPartyRequest, success: @escaping (Party) -> (), failure: @escaping (Error?) -> ())
 }
 
 class PartiesService: AbstractService, PartiesServiceProtocol {
-
-    
-    static func getParty(_ request: GetPartiesRequest, success: (Party) -> (), failure: (Error?) -> ()) {
-        switch executeRequest(abstractRequest: request) {
-        case .success(let responseVal):
-            success(responseVal as! Party)
-        case .error(let err):
-            failure(err)
-        }
-    }
-    
-    
-    static func getPartiesList(_ request: GetPartiesRequest, success: ([Party]) -> (), failure: (Error?) -> ()) {
+    func getPartiesList(_ request: GetPartiesRequest, success: @escaping ([PartyVMProtocol]) -> (), failure: @escaping (Error?) -> ()) {
         
     }
+    
+    func getParty(_ request: GetPartyRequest, success: @escaping (Party) -> (), failure: @escaping (Error?) -> ()) {
+        executeRequest(abstractRequest: request, requestResponse: { (response) in
+            switch response {
+            case .success(let responseVal):
+                success(responseVal as! Party)
+            case .error(let err):
+                failure(err)
+            }
+        })
+    }
+    
+
+    
+    class var shared: PartiesService {
+        struct Static {
+            static let instance = PartiesService()
+        }
+        return Static.instance
+    }
+
+    
+
     
 }
 

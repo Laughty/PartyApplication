@@ -12,34 +12,28 @@ import UIKit
  TODO:
  implementation
  - View model for describing party details
- let id: String
- let location: String
- let time: Date
- let title: String
- let description: String
- let image: UIImage
  */
 
 protocol PartyVMProtocol {
-    var title: String {get set}
-    var image: UIImage {get set}
-    var location: String {get set}
-    var time: Date {get set}
-    var description: String {get set}
+    var title: String { get set }
+    var image: UIImage { get set }
+    var description: String { get set }
+    var location: String { get set }
+    var time: Date { get set }
 }
 
 class PartyVM: PartyVMProtocol {
-    var location: String
-    var time: Date
-    var description: String
     var title: String
     var image: UIImage
+    var description: String
+    var location: String
+    var time: Date
     
     init(party: Party){
         self.image = party.image
         self.title = party.title
-        self.location = party.location
         self.description = party.description
+        self.location = party.location
         self.time = party.time
     }
     

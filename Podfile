@@ -6,7 +6,6 @@ target 'PartyApp' do
   use_frameworks!
 
   # Pods for PartyApp
-	pod 'Alamofire'
 	pod 'AlamofireObjectMapper'
 
   target 'PartyAppTests' do

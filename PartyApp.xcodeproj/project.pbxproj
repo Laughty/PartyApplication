@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		05BD803CB173D3A9EA50DC05 /* Pods_PartyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F37D5FFA016BD74A8B9E9353 /* Pods_PartyApp.framework */; };
 		73DE1793112D9526D35D9644 /* Pods_PartyAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF2F62DFA6419F4D809BD2 /* Pods_PartyAppUITests.framework */; };
+		7F0ADE3720F78A5600DC4EFC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0ADE3620F78A5500DC4EFC /* Alamofire.framework */; };
+		7FE3F5A920F7454000806FAC /* PartyMoreDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3F5A820F7454000806FAC /* PartyMoreDetailsVC.swift */; };
 		AF65DAB520F64F6500525D24 /* AbstractRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DAB420F64F6500525D24 /* AbstractRequest.swift */; };
 		AF65DAB920F64FC400525D24 /* FriendsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DAB820F64FC400525D24 /* FriendsServices.swift */; };
 		AF65DABB20F6509B00525D24 /* PartiesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DABA20F6509B00525D24 /* PartiesServices.swift */; };
@@ -71,6 +73,8 @@
 		2CC969693A67E854B7F9BCF1 /* Pods-PartyAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartyAppTests/Pods-PartyAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		3539B635EA872F67944ED200 /* Pods-PartyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartyApp/Pods-PartyApp.release.xcconfig"; sourceTree = "<group>"; };
 		48284D0F4D288F069C7C96AF /* Pods-PartyAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartyAppUITests/Pods-PartyAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7F0ADE3620F78A5500DC4EFC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		7FE3F5A820F7454000806FAC /* PartyMoreDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyMoreDetailsVC.swift; sourceTree = "<group>"; };
 		9E763A04FDAB739C90979869 /* Pods_PartyAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartyAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FE703F05F080B17F25E216 /* Pods-PartyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PartyApp/Pods-PartyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AF65DAB420F64F6500525D24 /* AbstractRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractRequest.swift; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05BD803CB173D3A9EA50DC05 /* Pods_PartyApp.framework in Frameworks */,
+				7F0ADE3720F78A5600DC4EFC /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +159,7 @@
 		1FCBCA453A9BF6A55EC0F413 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7F0ADE3620F78A5500DC4EFC /* Alamofire.framework */,
 				F37D5FFA016BD74A8B9E9353 /* Pods_PartyApp.framework */,
 				9E763A04FDAB739C90979869 /* Pods_PartyAppTests.framework */,
 				E4CF2F62DFA6419F4D809BD2 /* Pods_PartyAppUITests.framework */,
@@ -266,6 +272,7 @@
 				AFD6C0FB20F3C90D006856EA /* FriendDetailsVC.swift */,
 				AFD6C10520F3C97A006856EA /* UserInfoVC.swift */,
 				AFD6C11F20F42099006856EA /* RootVC.swift */,
+				7FE3F5A820F7454000806FAC /* PartyMoreDetailsVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -358,6 +365,7 @@
 				AFD6C0B520F3C7A3006856EA /* Frameworks */,
 				AFD6C0B620F3C7A3006856EA /* Resources */,
 				52FDBC7D4FB585B0856B3BC9 /* [CP] Embed Pods Frameworks */,
+				7F0ADE3820F78C2800DC4EFC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -501,6 +509,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PartyApp/Pods-PartyApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7F0ADE3820F78C2800DC4EFC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		88724AB86533EC6EEEE960CE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -588,6 +611,7 @@
 				AFD6C0FA20F3C8F7006856EA /* PartyDetailsVC.swift in Sources */,
 				AFD6C0BC20F3C7A3006856EA /* AppDelegate.swift in Sources */,
 				AFD6C10620F3C97A006856EA /* UserInfoVC.swift in Sources */,
+				7FE3F5A920F7454000806FAC /* PartyMoreDetailsVC.swift in Sources */,
 				AFFA158D20F5EB6E000C954F /* Constans.swift in Sources */,
 				AFD6C12020F42099006856EA /* RootVC.swift in Sources */,
 				AFD6C10420F3C94E006856EA /* PartiesListVM.swift in Sources */,
@@ -767,6 +791,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PartyApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -785,6 +813,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = PartyApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

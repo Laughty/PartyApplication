@@ -31,8 +31,18 @@ class PartyDetailsVC: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != nil{
+            let destinationVC = segue.destination as! PartyMoreDetailsVC
+            destinationVC.party = party
+        }
+    
+    
+        
+    }
     
 }
+
     
     
 

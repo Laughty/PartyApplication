@@ -11,9 +11,12 @@ import UIKit
 
 class WelcomeVC: UIViewController, UITextFieldDelegate {
 
+    let blaaa = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
     }
     
 
@@ -23,10 +26,12 @@ class WelcomeVC: UIViewController, UITextFieldDelegate {
         switch segueId {
         case StoryboardSegues.ToPartyList:
             let destinationVC = segue.destination as! PartiesListVC
-            let random = arc4random_uniform(2)
-            print(random)
-            if random == 0 {
-                destinationVC.parties = mockDataParties()
+            
+            let request = GetPartiesRequest()
+            PartiesService.shared.getPartiesList(request, success: {(parties) in
+            destinationVC.parties = parties
+                }){(error) in
+                    print(error ?? "Something went wrong")
             }
         case StoryboardSegues.ToFriendsList:
             let destinationVC = segue.destination as! FriendsListVC
