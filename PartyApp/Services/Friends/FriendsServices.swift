@@ -11,13 +11,13 @@ import Foundation
 
 
 protocol FriendsServiceProtocol {
-//    func getFriendsList(_ request: GetFriendsRequest, success: @escaping ([FriendsVMProtocol]) -> (), failure: @escaping (Error?) -> ())
+    func getFriendsList(_ request: GetFriendsRequest, success: @escaping ([FriendVMProtocol]) -> (), failure: @escaping (Error?) -> ())
     func getFriend(_ request: GetFriendRequest, success: @escaping (Friend) -> (), failure: @escaping (Error?) -> ())
 }
 
 class FriendsService: AbstractService, FriendsServiceProtocol {
-//    func getFriendsList(_ request: GetFriendsRequest, success: @escaping ([FriendVMProtocol]) -> (), failure: @escaping (Error?) -> ()) {
-//    }
+    func getFriendsList(_ request: GetFriendsRequest, success: @escaping ([FriendVMProtocol]) -> (), failure: @escaping (Error?) -> ()) {
+    }
     
     func getFriend(_ request: GetFriendRequest, success: @escaping (Friend) -> (), failure: @escaping (Error?) -> ()) {
         executeRequest(abstractRequest: request, requestResponse: { (response) in
