@@ -104,3 +104,13 @@ Pods/Target Support Files/Pods-PartyAppUITests/Pods-PartyAppUITests-umbrella.h
 Pods/Target Support Files/Pods-PartyAppUITests/Pods-PartyAppUITests.debug.xcconfig
 Pods/Target Support Files/Pods-PartyAppUITests/Pods-PartyAppUITests.modulemap
 Pods/Target Support Files/Pods-PartyAppUITests/Pods-PartyAppUITests.release.xcconfig
+Podfile.lock
+PartyApp.xcodeproj/xcuserdata/user1.xcuserdatad/xcschemes/xcschememanagement.plist
+Pods/Manifest.lock
+Pods/Pods.xcodeproj/xcuserdata/user1.xcuserdatad/xcschemes/Alamofire.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/user1.xcuserdatad/xcschemes/AlamofireObjectMapper.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/user1.xcuserdatad/xcschemes/ObjectMapper.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/user1.xcuserdatad/xcschemes/Pods-PartyApp.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/user1.xcuserdatad/xcschemes/Pods-PartyAppTests.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/user1.xcuserdatad/xcschemes/Pods-PartyAppUITests.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/user1.xcuserdatad/xcschemes/xcschememanagement.plist
