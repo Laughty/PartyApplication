@@ -28,7 +28,7 @@ class PartyMoreDetailsVC: UIViewController {
             partyTitle.text = party.title
             partyLocation.text = party.location
             partyDescription.text = party.description
-            //party.time
+            partyTime.text = party.time.toString()
         }
         
     }
