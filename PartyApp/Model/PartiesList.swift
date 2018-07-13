@@ -15,14 +15,14 @@ import ObjectMapper
  */
 
 struct PartiesList: Mappable {
-    var parties: [Party]
+    var parties: [Party] = []
     
     init(parties: [Party]) {
         self.parties = parties
     }
     
     init?(map: Map) {
-        fatalError()
+     //   self.mapping(map: map)
     }
     
     mutating func mapping(map: Map) {

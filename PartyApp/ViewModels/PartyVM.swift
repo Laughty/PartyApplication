@@ -30,7 +30,7 @@ class PartyVM: PartyVMProtocol {
     var time: Date
     
     init(party: Party){
-        self.image = party.image
+        self.image = UIImage(named: party.image)!
         self.title = party.title
         self.description = party.description
         self.location = party.location

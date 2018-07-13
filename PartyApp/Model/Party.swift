@@ -23,14 +23,14 @@ import ObjectMapper
 
 struct Party: Mappable {
     
-    var id: String
-    var location: String
-    var time: Date
-    var title: String
-    var description: String
-    var image: UIImage
+    var id: String = ""
+    var location: String  = ""
+    var time: Date  = Date()
+    var title: String  = ""
+    var description: String  = ""
+    var image: String = "person"
     
-    init(id: String, location: String, time: Date, title: String, description: String, image: UIImage) {
+    init(id: String, location: String, time: Date, title: String, description: String, image: String) {
         self.id = id
         self.location = location
         self.time = time
@@ -40,7 +40,9 @@ struct Party: Mappable {
     }
     
     init?(map: Map) {
-        fatalError()
+        if map.JSON["id"] == nil {
+            return nil
+        }
     }
     
     mutating func mapping(map: Map) {

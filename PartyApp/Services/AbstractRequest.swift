@@ -10,11 +10,12 @@ import Foundation
 import Alamofire
 
 
-let BASE_URL: String = "http://funny.com"
+let BASE_URL: String = "http://demo9453650.mockable.io/"
 
 
 class AbstractRequest {
     var path: String!
+    var responseType: AnyClass!
     var method: HTTPMethod!
     var params: [String:String]? = nil
     var body: Any? = nil

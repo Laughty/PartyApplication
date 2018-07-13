@@ -62,7 +62,7 @@
                                         <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Party List"/>
                                         <connections>
-                                            <segue destination="O2d-jL-aKr" kind="show" identifier="toPartyListVC" id="f1i-6l-3gs"/>
+                                            <action selector="toPartyListButtonTapped:" destination="Qb7-C7-0n5" eventType="touchUpInside" id="Qe2-sN-R84"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7e-ce-frn">
@@ -111,6 +111,10 @@
                         <viewLayoutGuide key="safeArea" id="ovT-os-iXU"/>
                     </view>
                     <navigationItem key="navigationItem" id="O25-et-aPO"/>
+                    <connections>
+                        <outlet property="welcomeImage" destination="UBt-M1-MSs" id="b3R-uj-HL2"/>
+                        <segue destination="O2d-jL-aKr" kind="show" identifier="toPartyListVC" id="GWc-cl-wmN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZc-6P-Qt6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

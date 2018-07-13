@@ -19,6 +19,9 @@
 		AF65DAC320F6640C00525D24 /* GetPartyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DAC220F6640C00525D24 /* GetPartyRequest.swift */; };
 		AF65DAC520F6641D00525D24 /* GetFriendsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DAC420F6641D00525D24 /* GetFriendsRequest.swift */; };
 		AF65DAC720F6643000525D24 /* GetFriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DAC620F6643000525D24 /* GetFriendRequest.swift */; };
+		AF65DB1820F8AAC800525D24 /* DefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DB1720F8AAC800525D24 /* DefaultViewController.swift */; };
+		AF65DB1A20F8AB2000525D24 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF65DB1920F8AB2000525D24 /* LoadingView.xib */; };
+		AF65DB1C20F8AE6A00525D24 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DB1B20F8AE6A00525D24 /* LoadingView.swift */; };
 		AFD6C0BC20F3C7A3006856EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C0BB20F3C7A3006856EA /* AppDelegate.swift */; };
 		AFD6C0BE20F3C7A3006856EA /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C0BD20F3C7A3006856EA /* SplashViewController.swift */; };
 		AFD6C0C120F3C7A3006856EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFD6C0BF20F3C7A3006856EA /* Main.storyboard */; };
@@ -85,6 +88,9 @@
 		AF65DAC220F6640C00525D24 /* GetPartyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPartyRequest.swift; sourceTree = "<group>"; };
 		AF65DAC420F6641D00525D24 /* GetFriendsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFriendsRequest.swift; sourceTree = "<group>"; };
 		AF65DAC620F6643000525D24 /* GetFriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFriendRequest.swift; sourceTree = "<group>"; };
+		AF65DB1720F8AAC800525D24 /* DefaultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultViewController.swift; sourceTree = "<group>"; };
+		AF65DB1920F8AB2000525D24 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		AF65DB1B20F8AE6A00525D24 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		AFD6C0B820F3C7A3006856EA /* PartyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PartyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFD6C0BB20F3C7A3006856EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFD6C0BD20F3C7A3006856EA /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -273,6 +279,7 @@
 				AFD6C10520F3C97A006856EA /* UserInfoVC.swift */,
 				AFD6C11F20F42099006856EA /* RootVC.swift */,
 				7FE3F5A820F7454000806FAC /* PartyMoreDetailsVC.swift */,
+				AF65DB1720F8AAC800525D24 /* DefaultViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -296,6 +303,8 @@
 				AFD6C11820F3CCAA006856EA /* PartyCellItem.xib */,
 				AFD6C11A20F3CCB9006856EA /* FriendCellItem.swift */,
 				AFD6C11C20F3CCCC006856EA /* FriendCellItem.xib */,
+				AF65DB1920F8AB2000525D24 /* LoadingView.xib */,
+				AF65DB1B20F8AE6A00525D24 /* LoadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -465,6 +474,7 @@
 				AFD6C0C920F3C7A5006856EA /* LaunchScreen.storyboard in Resources */,
 				AFD6C11920F3CCAA006856EA /* PartyCellItem.xib in Resources */,
 				AFD6C0C120F3C7A3006856EA /* Main.storyboard in Resources */,
+				AF65DB1A20F8AB2000525D24 /* LoadingView.xib in Resources */,
 				AFD6C11D20F3CCCC006856EA /* FriendCellItem.xib in Resources */,
 				AFD6C11E20F3D0DC006856EA /* Assets.xcassets in Resources */,
 			);
@@ -585,6 +595,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF65DB1820F8AAC800525D24 /* DefaultViewController.swift in Sources */,
 				AF65DABB20F6509B00525D24 /* PartiesServices.swift in Sources */,
 				AFD6C0F620F3C896006856EA /* FriendsListVC.swift in Sources */,
 				AFD6C10820F3C985006856EA /* UserVM.swift in Sources */,
@@ -605,6 +616,7 @@
 				AFD6C11320F3CC30006856EA /* Party.swift in Sources */,
 				AF65DAB520F64F6500525D24 /* AbstractRequest.swift in Sources */,
 				AFD6C10020F3C92A006856EA /* FriendsVM.swift in Sources */,
+				AF65DB1C20F8AE6A00525D24 /* LoadingView.swift in Sources */,
 				AFD6C11520F3CC3E006856EA /* PartiesList.swift in Sources */,
 				AF65DAC120F663F100525D24 /* GetPartiesRequest.swift in Sources */,
 				AF65DAC320F6640C00525D24 /* GetPartyRequest.swift in Sources */,
@@ -796,6 +808,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = PartyApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -818,6 +831,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = PartyApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

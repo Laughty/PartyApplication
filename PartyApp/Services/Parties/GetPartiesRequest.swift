@@ -14,12 +14,12 @@ class GetPartiesRequest: AbstractRequest {
     
     override init() {
         super.init()
-        self.path = "getPartiesPath"
+        self.path = "parties"
         self.method = .get
     }
     
     func getPartiesList(completion: @escaping (PartiesList?, Error?)->()) {
-        Alamofire.request(path).responseObject { (response: DataResponse<PartiesList>) in
+        Alamofire.request(BASE_URL + path).responseObject { (response: DataResponse<PartiesList>) in
             let parties = response.result
             print("Result of downloading PartiesList -> First party's title: \(String(describing: parties.value?.parties))")
             
