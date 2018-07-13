@@ -82,7 +82,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
             destinationVC.parties = parties
         case StoryboardSegues.ToFriendsList:
             let destinationVC = segue.destination as! FriendsListVC
-//            destinationVC.friends = mockDataFriends()
+            destinationVC.friends = friends
         default:
             fatalError("Unknow segue")
         }
