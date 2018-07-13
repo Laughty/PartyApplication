@@ -17,12 +17,20 @@ class FriendDetailsVC: UIViewController {
     @IBOutlet weak var friendImage: UIImageView!
     
     @IBOutlet weak var friendName: UILabel!
+    @IBOutlet weak var friendTelephone: UILabel!
+    @IBOutlet weak var friendEmail: UILabel!
+    @IBOutlet weak var friendDescription: UILabel!
+    @IBOutlet weak var friendLikes: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
                 
         friendImage.image = friend?.image
-        friendName.text = friend?.name
+        friendName.text = (friend?.name)! + " " + (friend?.surname)!
+        friendDescription.text = friend?.description
+        guard let likesText = friend?.likes else { return }
+        friendLikes.text = "Likes: " + "\(likesText)"
+        friendTelephone.text = friend?.phone
     }
 }
 /*

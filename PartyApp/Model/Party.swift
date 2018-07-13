@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import ObjectMapper
 
 /*
  TODO:
@@ -20,14 +21,14 @@ import UIKit
  - image
  */
 
-struct Party {
+struct Party: Mappable {
     
-    let id: String
-    let location: String
-    let time: Date
-    let title: String
-    let description: String
-    let image: UIImage
+    var id: String
+    var location: String
+    var time: Date
+    var title: String
+    var description: String
+    var image: UIImage
     
     init(id: String, location: String, time: Date, title: String, description: String, image: UIImage) {
         self.id = id
@@ -38,6 +39,17 @@ struct Party {
         self.image = image
     }
     
+    init?(map: Map) {
+        fatalError()
+    }
     
+    mutating func mapping(map: Map) {
+        id <- map["id"]
+        location <- map["location"]
+        time <- map["time"]
+        title <- map["title"]
+        description <- map["description"]
+        image <- map["image"]
+    }
     
 }
