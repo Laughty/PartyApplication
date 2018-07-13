@@ -86,7 +86,6 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         default:
             fatalError("Unknow segue")
         }
-        
         }
     }
     

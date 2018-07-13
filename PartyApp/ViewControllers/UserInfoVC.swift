@@ -7,10 +7,17 @@
 //
 
 import Foundation
-
-
+import UIKit
 /*
  TODO:
  implementation
  - View controller for user details
  */
+
+class UserInfoVC: UIViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+}

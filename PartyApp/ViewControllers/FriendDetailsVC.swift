@@ -9,8 +9,6 @@
 
 import UIKit
 
-
-
 class FriendDetailsVC: UIViewController {
     var friend: FriendVMProtocol?
     
