@@ -14,7 +14,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     @IBOutlet weak var welcomeImage: UIImageView!
     var parties: [PartyVMProtocol] = []
     var friends: [FriendVMProtocol] = []
-    
+    var user: UserVMProtocol? = nil
     
 //    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -83,6 +83,11 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         case StoryboardSegues.ToFriendsList:
             let destinationVC = segue.destination as! FriendsListVC
             destinationVC.friends = friends
+        case StoryboardSegues.ToProfile:
+            let destinationVC = segue.destination as! UserInfoVC
+            if let user = user {
+                destinationVC.user = user
+            }
         default:
             fatalError("Unknow segue")
         }
