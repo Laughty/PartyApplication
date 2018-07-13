@@ -6,7 +6,6 @@
 //  Copyright © 2018 Piotr Rola. All rights reserved.
 //
 
-import Foundation
 import Alamofire
 import AlamofireObjectMapper
 

@@ -6,8 +6,6 @@
 //  Copyright © 2018 Piotr Rola. All rights reserved.
 //
 
-import Foundation
-
 class GetPartyRequest: AbstractRequest {
     
     var partyId: String {

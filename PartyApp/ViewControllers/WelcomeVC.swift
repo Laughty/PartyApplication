@@ -10,11 +10,10 @@ import Foundation
 import UIKit
 
 class WelcomeVC: DefaultViewController, UITextFieldDelegate {
-
-    let blaaa = ""
     
     @IBOutlet weak var welcomeImage: UIImageView!
     var parties: [PartyVMProtocol] = []
+    var friends: [FriendVMProtocol] = []
     
     
 //    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -55,7 +54,22 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
             print(error ?? "Something went wrong")
         }
         
+    }
+    
+    
+    @IBAction func toFriendListButtonTapped(_ sender: UIButton) {
         
+        loadingView.show()
+        
+        let request = GetFriendsRequest()
+        FriendsService.shared.getFriendsList(request, success: { [weak self] (friends) in
+            self?.friends = friends
+            self?.performSegue(withIdentifier: StoryboardSegues.ToFriendsList, sender: self)
+            self?.loadingView.hide()
+        }){[weak self] (error) in
+            self?.loadingView.hide()
+            print(error ?? "Something went wrong")
+        }
         
     }
     
@@ -68,7 +82,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
             destinationVC.parties = parties
         case StoryboardSegues.ToFriendsList:
             let destinationVC = segue.destination as! FriendsListVC
-            destinationVC.friends = mockDataFriends()
+//            destinationVC.friends = mockDataFriends()
         default:
             fatalError("Unknow segue")
         }
@@ -77,29 +91,29 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     }
     
     
-    private func mockDataParties() -> [PartyVMProtocol]{
-        var parties: [PartyVMProtocol] = []
-        for index in 1...3 {
-            let party = Party(id: String(index), location: "here", time: Date(), title: "Party" + String(index), description: "Super Party", image: "catParty\(index)")
-            let partyVM = PartyVM(party: party)
-            parties.append(partyVM)
-            
-        }
-        return parties
-        
-    }
-    
-    private func mockDataFriends() -> [FriendVMProtocol]{
-        
-        var friends: [FriendVMProtocol] = []
-        for index in 1...3 {
-            let friend = Friend(id: String(index), name: "Bob\(index)", surname: "Bobsky", likes: index, description: "funny", photo: "catParty\(index)", phone: "1111", email: "abc@abc.pl")
-            let friendVM = FriendVM(friend: friend)
-            friends.append(friendVM)
-            
-        }
-        return friends
-    }
+//    private func mockDataParties() -> [PartyVMProtocol]{
+//        var parties: [PartyVMProtocol] = []
+//        for index in 1...3 {
+//            let party = Party(id: String(index), location: "here", time: Date(), title: "Party" + String(index), description: "Super Party", image: "catParty\(index)")
+//            let partyVM = PartyVM(party: party)
+//            parties.append(partyVM)
+//
+//        }
+//        return parties
+//
+//    }
+//
+//    private func mockDataFriends() -> [FriendVMProtocol]{
+//
+//        var friends: [FriendVMProtocol] = []
+//        for index in 1...3 {
+//            let friend = Friend(id: String(index), name: "Bob\(index)", surname: "Bobsky", likes: index, description: "funny", photo: "catParty\(index)", phone: "1111", email: "abc@abc.pl")
+//            let friendVM = FriendVM(friend: friend)
+//            friends.append(friendVM)
+//
+//        }
+//        return friends
+//    }
 
     
     

@@ -6,17 +6,28 @@
 //  Copyright © 2018 Piotr Rola. All rights reserved.
 //
 
-import Foundation
+import AlamofireObjectMapper
+import Alamofire
 
-
-class GetFriendsRequest: AbstractRequest{
+class GetFriendsRequest: AbstractRequest {
     
-    override init (){
-        
+    override init() {
         super.init()
+        self.path = "friends"
         self.method = .get
-        self.path = "getFriendsPath"
-        
     }
     
+    func getFriendsList(completion: @escaping (FriendList?, Error?)->()) {
+        Alamofire.request(BASE_URL + path).responseObject { (response: DataResponse<FriendList>) in
+            let friends = response.result
+            print("Result of downloading FriendList -> First friend's name: \(String(describing: friends.value?.friends))")
+            
+            switch friends {
+            case .success(let value):
+                completion(value, nil)
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
 }

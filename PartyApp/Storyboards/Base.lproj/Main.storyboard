@@ -71,6 +71,7 @@
                                         <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Friends List"/>
                                         <connections>
+                                            <action selector="toFriendListButtonTapped:" destination="Qb7-C7-0n5" eventType="touchUpInside" id="nuw-EH-XaQ"/>
                                             <segue destination="4ql-nY-vUn" kind="show" identifier="toFriendsListVC" id="gN2-Ah-QdJ"/>
                                         </connections>
                                     </button>
