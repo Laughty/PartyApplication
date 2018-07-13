@@ -10,6 +10,7 @@
 import UIKit
 
 class FriendDetailsVC: UIViewController {
+    
     var friend: FriendVMProtocol?
     
     @IBOutlet weak var friendImage: UIImageView!

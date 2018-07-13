@@ -16,6 +16,8 @@ import UIKit
 
 class UserInfoVC: UIViewController {
     
+    var user: UserVMProtocol?
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
@@ -24,6 +26,12 @@ class UserInfoVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imageView.image = user?.image
+        nameLabel.text = "\(user?.name) \(user?.surname)"
+        phoneLabel.text = user?.phone
+        emailLabel.text = user?.email
+        descriptionLabel.text = user?.description
     }
     
 }
