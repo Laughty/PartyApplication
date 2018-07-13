@@ -7,28 +7,43 @@
 //
 
 import Foundation
-import UIKit
+import ObjectMapper
 
-struct Friend {
+struct Friend: Mappable {
     
-    let id: String
-    let name: String
-    let surname: String
-    let likes: Int
-    let description: String
-    let photo: UIImage
-    let phone: String
-    let email: String
+    var id: String = ""
+    var name: String = ""
+    var surname: String = ""
+    var likes: Int = 0
+    var description: String = ""
+    var image: String = ""
+    var phone: String = ""
+    var email: String = ""
     
-    init(id: String, name: String, surname: String, likes: Int, description: String, photo: UIImage, phone: String, email: String) {
+    init(id: String, name: String, surname: String, likes: Int, description: String, photo: String, phone: String, email: String) {
         self.id = id
         self.name = name
         self.surname = surname
         self.likes = likes
         self.description = description
-        self.photo = photo
+        self.image = photo
         self.phone = phone
         self.email = email
+    }
+    
+    init?(map: Map) {
+        
+    }
+    
+    mutating func mapping(map: Map) {
+        id <- map["id"]
+        name <- map["name"]
+        surname <- map["surname"]
+        likes <- map["likes"]
+        description <- map["description"]
+        image <- map["photo"]
+        phone <- map["phone"]
+        email <- map["email"]
     }
 }
 

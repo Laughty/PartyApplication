@@ -7,9 +7,25 @@
 //
 
 import Foundation
-
+import ObjectMapper
 /*
  TODO:
  implementation
 - list of friends
  */
+
+struct FriendList: Mappable {
+    var friends: [Friend] = []
+    
+    init(friends: [Friend]) {
+        self.friends = friends
+    }
+    
+    init?(map: Map) {
+        
+    }
+    
+    mutating func mapping(map: Map) {
+        friends <- map["friends"]
+    }
+}
