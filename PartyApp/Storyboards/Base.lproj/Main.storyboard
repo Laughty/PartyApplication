@@ -114,21 +114,23 @@
                     <navigationItem key="navigationItem" id="O25-et-aPO"/>
                     <connections>
                         <outlet property="welcomeImage" destination="UBt-M1-MSs" id="b3R-uj-HL2"/>
-                        <segue destination="O2d-jL-aKr" kind="show" identifier="toPartyListVC" id="GWc-cl-wmN"/>
                         <segue destination="4ql-nY-vUn" kind="show" identifier="toFriendsListVC" id="YEo-Hg-3FZ"/>
+                        <segue destination="Rdq-D9-7bz" kind="show" identifier="toPartyListVC" id="8Sr-j9-V03"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZc-6P-Qt6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="605.60000000000002" y="848.72563718140941"/>
         </scene>
-        <!--Parties ListVC-->
+        <!--Item-->
         <scene sceneID="cJ3-yq-m0u">
             <objects>
-                <pageViewController storyboardIdentifier="PartiesListVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="O2d-jL-aKr" customClass="PartiesListVC" customModule="PartyApp" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="PartiesListVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="O2d-jL-aKr" customClass="PartiesListVC" customModule="PartyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="EC9-rq-6Ta"/>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DSc-Tb-VcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1625" y="849"/>
+            <point key="canvasLocation" x="2449" y="224"/>
         </scene>
         <!--User InfoVC-->
         <scene sceneID="vjh-af-yyh">
@@ -391,6 +393,58 @@
             </objects>
             <point key="canvasLocation" x="2464.8000000000002" y="1628.6356821589206"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="fWF-re-BUb">
+            <objects>
+                <tabBarController id="Rdq-D9-7bz" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CJz-ov-rXd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="O2d-jL-aKr" kind="relationship" relationship="viewControllers" id="RtI-Uf-FzH"/>
+                        <segue destination="2yw-YR-H4d" kind="relationship" relationship="viewControllers" id="jTF-p9-NSs"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G6X-oZ-8sy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1361" y="849"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="8VU-fv-l0K">
+            <objects>
+                <viewController id="2yw-YR-H4d" customClass="PartyMapViewController" customModule="PartyApp" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IPr-gO-wPB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3ss-OI-KKn">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2yw-YR-H4d" id="q1r-ff-9nx"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3ss-OI-KKn" firstAttribute="top" secondItem="xmq-1Q-bwm" secondAttribute="top" id="FZX-wA-giX"/>
+                            <constraint firstItem="3ss-OI-KKn" firstAttribute="leading" secondItem="xmq-1Q-bwm" secondAttribute="leading" id="gUc-cF-Axz"/>
+                            <constraint firstItem="xmq-1Q-bwm" firstAttribute="trailing" secondItem="3ss-OI-KKn" secondAttribute="trailing" id="gsQ-aL-UVR"/>
+                            <constraint firstItem="xmq-1Q-bwm" firstAttribute="bottom" secondItem="3ss-OI-KKn" secondAttribute="bottom" id="wCf-lg-bwh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xmq-1Q-bwm"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="lQa-iJ-UGk"/>
+                    <connections>
+                        <outlet property="mapView" destination="3ss-OI-KKn" id="pcR-Ag-iO8"/>
+                        <segue destination="880-TV-sWu" kind="presentation" identifier="toPartyMoreDetailsVC" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="ZyM-CE-6Xm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nqL-wR-gRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2448.8000000000002" y="951.27436281859082"/>
+        </scene>
         <!--Party More DetailsVC-->
         <scene sceneID="bxR-nG-Upb">
             <objects>
@@ -459,7 +513,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nD2-h8-DKU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2464.8000000000002" y="124.58770614692655"/>
+            <point key="canvasLocation" x="4076" y="707"/>
         </scene>
         <!--Party DetailsVC-->
         <scene sceneID="Tas-vz-QUk">
@@ -512,7 +566,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67x-Yr-3X7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2464.8000000000002" y="848.72563718140941"/>
+            <point key="canvasLocation" x="3230" y="224"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="aJs-po-6lR">
@@ -541,10 +595,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oT5-Em-1ac" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3164" y="848.72563718140941"/>
+            <point key="canvasLocation" x="4926" y="224"/>
         </scene>
     </scenes>
     <resources>
         <image name="welcome_image" width="300" height="225"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZyM-CE-6Xm"/>
+    </inferredMetricsTieBreakers>
 </document>

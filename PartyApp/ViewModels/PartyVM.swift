@@ -18,7 +18,7 @@ protocol PartyVMProtocol {
     var title: String { get set }
     var image: UIImage { get set }
     var description: String { get set }
-    var location: String { get set }
+    var location: [Double] { get set }
     var time: Date { get set }
 }
 
@@ -26,7 +26,7 @@ class PartyVM: PartyVMProtocol {
     var title: String
     var image: UIImage
     var description: String
-    var location: String
+    var location: [Double]
     var time: Date
     
     init(party: Party){

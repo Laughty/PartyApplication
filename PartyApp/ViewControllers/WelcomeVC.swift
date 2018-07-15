@@ -78,8 +78,11 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         if let segueId = segue.identifier {
         switch segueId {
         case StoryboardSegues.ToPartyList:
-            let destinationVC = segue.destination as! PartiesListVC
-            destinationVC.parties = parties
+            let destinationVC = segue.destination as! UITabBarController
+            let partiesListVC = destinationVC.viewControllers?.first! as! PartiesListVC
+            partiesListVC.parties = parties
+            let partyMapVC = destinationVC.viewControllers?.last! as! PartyMapViewController
+            partyMapVC.parties = parties
         case StoryboardSegues.ToFriendsList:
             let destinationVC = segue.destination as! FriendsListVC
             destinationVC.friends = friends

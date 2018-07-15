@@ -24,13 +24,13 @@ import ObjectMapper
 struct Party: Mappable {
     
     var id: String = ""
-    var location: String  = ""
+    var location: [Double]  = []
     var time: Date  = Date()
     var title: String  = ""
     var description: String  = ""
     var image: String = "person"
     
-    init(id: String, location: String, time: Date, title: String, description: String, image: String) {
+    init(id: String, location: [Double], time: Date, title: String, description: String, image: String) {
         self.id = id
         self.location = location
         self.time = time

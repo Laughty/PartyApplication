@@ -24,6 +24,8 @@
 		AF65DB1820F8AAC800525D24 /* DefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DB1720F8AAC800525D24 /* DefaultViewController.swift */; };
 		AF65DB1A20F8AB2000525D24 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF65DB1920F8AB2000525D24 /* LoadingView.xib */; };
 		AF65DB1C20F8AE6A00525D24 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DB1B20F8AE6A00525D24 /* LoadingView.swift */; };
+		AF65DB1E20FBAB4400525D24 /* PartyMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DB1D20FBAB4400525D24 /* PartyMapViewController.swift */; };
+		AF65DB2020FBBBF500525D24 /* PartyMapItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DB1F20FBBBF500525D24 /* PartyMapItem.swift */; };
 		AFD6C0BC20F3C7A3006856EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C0BB20F3C7A3006856EA /* AppDelegate.swift */; };
 		AFD6C0BE20F3C7A3006856EA /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C0BD20F3C7A3006856EA /* SplashViewController.swift */; };
 		AFD6C0C120F3C7A3006856EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFD6C0BF20F3C7A3006856EA /* Main.storyboard */; };
@@ -95,6 +97,8 @@
 		AF65DB1720F8AAC800525D24 /* DefaultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultViewController.swift; sourceTree = "<group>"; };
 		AF65DB1920F8AB2000525D24 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		AF65DB1B20F8AE6A00525D24 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		AF65DB1D20FBAB4400525D24 /* PartyMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyMapViewController.swift; sourceTree = "<group>"; };
+		AF65DB1F20FBBBF500525D24 /* PartyMapItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyMapItem.swift; sourceTree = "<group>"; };
 		AFD6C0B820F3C7A3006856EA /* PartyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PartyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFD6C0BB20F3C7A3006856EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFD6C0BD20F3C7A3006856EA /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -273,6 +277,7 @@
 		AFD6C0EC20F3C7B1006856EA /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				AF65DB1D20FBAB4400525D24 /* PartyMapViewController.swift */,
 				AFD6C0BD20F3C7A3006856EA /* SplashViewController.swift */,
 				AFD6C0F120F3C85A006856EA /* WelcomeVC.swift */,
 				AFD6C0F320F3C873006856EA /* PartiesListVC.swift */,
@@ -339,6 +344,7 @@
 				AFD6C11220F3CC30006856EA /* Party.swift */,
 				AFD6C11420F3CC3E006856EA /* PartiesList.swift */,
 				7F1B70A220F8E7D200BBD7FA /* User.swift */,
+				AF65DB1F20FBBBF500525D24 /* PartyMapItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -631,7 +637,9 @@
 				AFD6C0BC20F3C7A3006856EA /* AppDelegate.swift in Sources */,
 				AFD6C10620F3C97A006856EA /* UserInfoVC.swift in Sources */,
 				7FE3F5A920F7454000806FAC /* PartyMoreDetailsVC.swift in Sources */,
+				AF65DB1E20FBAB4400525D24 /* PartyMapViewController.swift in Sources */,
 				AFFA158D20F5EB6E000C954F /* Constans.swift in Sources */,
+				AF65DB2020FBBBF500525D24 /* PartyMapItem.swift in Sources */,
 				AFD6C12020F42099006856EA /* RootVC.swift in Sources */,
 				7F1B70A320F8E7D200BBD7FA /* User.swift in Sources */,
 				AFD6C10420F3C94E006856EA /* PartiesListVM.swift in Sources */,
