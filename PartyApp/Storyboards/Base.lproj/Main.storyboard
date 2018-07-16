@@ -18,7 +18,7 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -123,11 +123,11 @@
             </objects>
             <point key="canvasLocation" x="605.60000000000002" y="848.72563718140941"/>
         </scene>
-        <!--Item-->
+        <!--Parties List-->
         <scene sceneID="cJ3-yq-m0u">
             <objects>
                 <pageViewController storyboardIdentifier="PartiesListVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="O2d-jL-aKr" customClass="PartiesListVC" customModule="PartyApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="EC9-rq-6Ta"/>
+                    <tabBarItem key="tabBarItem" title="Parties List" badgeValue="1" id="EC9-rq-6Ta"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DSc-Tb-VcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -412,7 +412,7 @@
             </objects>
             <point key="canvasLocation" x="1361" y="849"/>
         </scene>
-        <!--Item-->
+        <!--Parties On Map-->
         <scene sceneID="8VU-fv-l0K">
             <objects>
                 <viewController id="2yw-YR-H4d" customClass="PartyMapViewController" customModule="PartyApp" sceneMemberID="viewController">
@@ -436,17 +436,34 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xmq-1Q-bwm"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="lQa-iJ-UGk"/>
+                    <tabBarItem key="tabBarItem" title="Parties On Map" id="lQa-iJ-UGk"/>
                     <connections>
                         <outlet property="mapView" destination="3ss-OI-KKn" id="pcR-Ag-iO8"/>
-                        <segue destination="880-TV-sWu" kind="presentation" identifier="toPartyMoreDetailsVC" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="ZyM-CE-6Xm"/>
+                        <segue destination="U7m-77-JfN" kind="presentation" identifier="toPartyMoreDetailsVC" id="AJX-k1-3kN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nqL-wR-gRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2448.8000000000002" y="951.27436281859082"/>
         </scene>
-        <!--Party More DetailsVC-->
+        <!--Navigation Controller-->
+        <scene sceneID="cUp-p0-FL5">
+            <objects>
+                <navigationController id="U7m-77-JfN" sceneMemberID="viewController">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="u9K-XO-3lj">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="880-TV-sWu" kind="relationship" relationship="rootViewController" id="Bti-0G-TK4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ZD-cr-Dhk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3753" y="992"/>
+        </scene>
+        <!--Party Details-->
         <scene sceneID="bxR-nG-Upb">
             <objects>
                 <viewController storyboardIdentifier="PartyMoreDetailsVC" id="880-TV-sWu" customClass="PartyMoreDetailsVC" customModule="PartyApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -455,7 +472,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x8A-vB-Rll">
-                                <rect key="frame" x="16" y="36" width="343" height="517"/>
+                                <rect key="frame" x="16" y="80" width="343" height="473"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vpe-32-ShH">
                                 <rect key="frame" x="16" y="569" width="343" height="82"/>
@@ -504,6 +521,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RFC-Xc-Vf4"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Party Details" leftItemsSupplementBackButton="YES" id="2m2-Po-Mg8">
+                        <barButtonItem key="backBarButtonItem" systemItem="done" id="tB8-qG-ZOi"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="partyDescription" destination="1Kk-7D-3Ze" id="zqh-pW-GIb"/>
                         <outlet property="partyImage" destination="x8A-vB-Rll" id="kbC-SD-SXF"/>
@@ -514,7 +534,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nD2-h8-DKU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4076" y="707"/>
+            <point key="canvasLocation" x="4652" y="992"/>
         </scene>
         <!--Party DetailsVC-->
         <scene sceneID="Tas-vz-QUk">
@@ -603,6 +623,6 @@
         <image name="partyMain1" width="680" height="452"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u3u-cE-liM"/>
+        <segue reference="Bti-0G-TK4"/>
     </inferredMetricsTieBreakers>
 </document>

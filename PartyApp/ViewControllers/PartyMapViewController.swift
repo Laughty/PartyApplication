@@ -37,13 +37,13 @@ class PartyMapViewController: UIViewController  {
     }
     
     private func checkLocationAuthorizationStatus() {
-        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+        if CLLocationManager.authorizationStatus() == .authorizedAlways {
             mapView.showsUserLocation = true
-            centerMapOnLocation(location: CLLocation(latitude: parties.first!.location[0], longitude: parties.first!.location[1]))
-//            centerMapOnLocation(location: CLLocation(latitude: mapView.userLocation.coordinate.latitude, longitude: mapView.userLocation.coordinate.longitude ))
+//            centerMapOnLocation(location: CLLocation(latitude: parties.first!.location[0], longitude: parties.first!.location[1]))
+            centerMapOnLocation(location: CLLocation(latitude: mapView.userLocation.coordinate.latitude, longitude: mapView.userLocation.coordinate.longitude ))
         } else {
-            centerMapOnLocation(location: CLLocation(latitude: parties.first!.location[0], longitude: parties.first!.location[1]))
-            locationManager.requestWhenInUseAuthorization()
+//            centerMapOnLocation(location: CLLocation(latitude: parties.first!.location[0], longitude: parties.first!.location[1]))
+            locationManager.requestAlwaysAuthorization()
         }
     }
     
@@ -60,8 +60,11 @@ class PartyMapViewController: UIViewController  {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let _ = segue.identifier, selectedParty != nil {
-            let destinationVC = segue.destination as! PartyMoreDetailsVC
-            destinationVC.party = selectedParty!
+            let destinationVC = segue.destination as! UINavigationController
+            let partyMoreVC = destinationVC.viewControllers.first! as! PartyMoreDetailsVC
+            
+            partyMoreVC.party = selectedParty!
+            partyMoreVC.isPresentedModally = true
         }
     }
     
@@ -111,15 +114,15 @@ extension PartyMapViewController: CLLocationManagerDelegate {
         switch status {
         case .notDetermined:
             // If status has not yet been determied, ask for authorization
-            manager.requestWhenInUseAuthorization()
+           // manager.requestWhenInUseAuthorization()
             break
         case .authorizedWhenInUse:
             // If authorized when in use
-            manager.startUpdatingLocation()
+         //   manager.startUpdatingLocation()
             break
         case .authorizedAlways:
             // If always authorized
-            manager.startUpdatingLocation()
+           // manager.startUpdatingLocation()
             break
         case .restricted:
             // If restricted by e.g. parental controls. User can't enable Location Services

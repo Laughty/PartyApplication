@@ -18,6 +18,8 @@ class PartyMoreDetailsVC: UIViewController {
     @IBOutlet weak var partyLocation: UILabel!
     @IBOutlet weak var partyDescription: UILabel!
     
+    var isPresentedModally = false
+    
     
     
     override func viewDidLoad() {
@@ -30,6 +32,19 @@ class PartyMoreDetailsVC: UIViewController {
             partyDescription.text = party.description
             partyTime.text = party.time.toString()
         }
+        
+        if isPresentedModally {
+           navigationController?.navigationBar.backItem?.hidesBackButton = false
+           
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(PartyMoreDetailsVC.dismissFromModal))
+            view.addGestureRecognizer(gesture)
+            
+        }
+        
+    }
+    
+    @objc func dismissFromModal(){
+        navigationController?.dismiss(animated: true, completion: nil)
         
     }
     

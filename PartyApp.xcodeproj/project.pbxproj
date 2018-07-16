@@ -13,6 +13,7 @@
 		7F1B70A320F8E7D200BBD7FA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1B70A220F8E7D200BBD7FA /* User.swift */; };
 		7FDD261520F8BDFE00DC88FA /* DateToStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD261420F8BDFE00DC88FA /* DateToStringExtension.swift */; };
 		7FE3F5A920F7454000806FAC /* PartyMoreDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3F5A820F7454000806FAC /* PartyMoreDetailsVC.swift */; };
+		AF58009420FCA32100667D41 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF58009320FCA32100667D41 /* MapKit.framework */; };
 		AF65DAB520F64F6500525D24 /* AbstractRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DAB420F64F6500525D24 /* AbstractRequest.swift */; };
 		AF65DAB920F64FC400525D24 /* FriendsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DAB820F64FC400525D24 /* FriendsServices.swift */; };
 		AF65DABB20F6509B00525D24 /* PartiesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DABA20F6509B00525D24 /* PartiesServices.swift */; };
@@ -86,6 +87,7 @@
 		7FE3F5A820F7454000806FAC /* PartyMoreDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyMoreDetailsVC.swift; sourceTree = "<group>"; };
 		9E763A04FDAB739C90979869 /* Pods_PartyAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartyAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FE703F05F080B17F25E216 /* Pods-PartyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PartyApp/Pods-PartyApp.debug.xcconfig"; sourceTree = "<group>"; };
+		AF58009320FCA32100667D41 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AF65DAB420F64F6500525D24 /* AbstractRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractRequest.swift; sourceTree = "<group>"; };
 		AF65DAB820F64FC400525D24 /* FriendsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsServices.swift; sourceTree = "<group>"; };
 		AF65DABA20F6509B00525D24 /* PartiesServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartiesServices.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05BD803CB173D3A9EA50DC05 /* Pods_PartyApp.framework in Frameworks */,
+				AF58009420FCA32100667D41 /* MapKit.framework in Frameworks */,
 				7F0ADE3720F78A5600DC4EFC /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,6 +176,7 @@
 		1FCBCA453A9BF6A55EC0F413 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AF58009320FCA32100667D41 /* MapKit.framework */,
 				7F0ADE3620F78A5500DC4EFC /* Alamofire.framework */,
 				F37D5FFA016BD74A8B9E9353 /* Pods_PartyApp.framework */,
 				9E763A04FDAB739C90979869 /* Pods_PartyAppTests.framework */,
@@ -447,6 +451,11 @@
 				TargetAttributes = {
 					AFD6C0B720F3C7A3006856EA = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					AFD6C0CE20F3C7A5006856EA = {
 						CreatedOnToolsVersion = 9.4.1;
