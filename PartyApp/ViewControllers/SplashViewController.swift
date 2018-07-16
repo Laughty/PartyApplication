@@ -10,12 +10,18 @@ import UIKit
 
 class SplashViewController: UIViewController {
 
-    let animatedULogoView = UIImageView(frame: CGRect(x: 16, y: 50, width: 343, height: 419))
+
     
     public init(tileViewFileName: String) {
 
         super.init(nibName: nil, bundle: nil)
-        let image = UIImage.animatedImage(with: [UIImage(named: "catParty1")!, UIImage(named: "catParty2")!, UIImage(named: "catParty3")!], duration: 0.2)
+        let animatedULogoView = UIImageView(frame: CGRect(x: 0, y: 0, width: view.frame.width - 32, height: 419))
+        animatedULogoView.center = view.center
+        var images: [UIImage] = []
+        for index in 1...12 {
+            images.append(UIImage(named: "intro\(index)")!)
+        }
+        let image = UIImage.animatedImage(with: images, duration: 0.4)
         animatedULogoView.image = image
         view.addSubview(animatedULogoView)
         

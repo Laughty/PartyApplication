@@ -18,19 +18,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="catParty1" translatesAutoresizingMaskIntoConstraints="NO" id="l0G-l0-UaL">
-                                <rect key="frame" x="16" y="50" width="343" height="419"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Awesome Party Comapany App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hy-HD-cC9">
-                                <rect key="frame" x="16" y="494" width="343" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Awesome Party Comapany App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hy-HD-cC9">
+                                <rect key="frame" x="37.666666666666657" y="576" width="300" height="41"/>
                                 <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro1" translatesAutoresizingMaskIntoConstraints="NO" id="oGt-4D-RVs">
+                                <rect key="frame" x="16" y="265.66666666666669" width="343" height="281.00000000000006"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oGt-4D-RVs" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1c9-BQ-NYD"/>
+                            <constraint firstItem="oGt-4D-RVs" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="6HP-r4-kxb"/>
+                            <constraint firstItem="oGt-4D-RVs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Jzm-29-fzm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oGt-4D-RVs" secondAttribute="trailing" constant="16" id="ZCw-DE-BoU"/>
+                            <constraint firstItem="1Hy-HD-cC9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dHD-De-XR6"/>
+                            <constraint firstItem="1Hy-HD-cC9" firstAttribute="top" secondItem="oGt-4D-RVs" secondAttribute="bottom" constant="29.333333333333258" id="tcd-2P-vWz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -40,6 +46,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="catParty1" width="249" height="178"/>
+        <image name="intro1" width="500" height="281"/>
     </resources>
 </document>

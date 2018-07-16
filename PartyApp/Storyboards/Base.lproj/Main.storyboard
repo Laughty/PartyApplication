@@ -50,37 +50,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome_image" translatesAutoresizingMaskIntoConstraints="NO" id="UBt-M1-MSs">
-                                <rect key="frame" x="16" y="80" width="343" height="225"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="partyMain1" translatesAutoresizingMaskIntoConstraints="NO" id="dtC-DP-Zh1">
+                                <rect key="frame" x="0.0" y="64" width="375" height="452"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jom-oZ-tiq">
-                                <rect key="frame" x="16" y="321" width="343" height="330"/>
+                                <rect key="frame" x="16" y="492" width="343" height="159"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erm-KD-Wk3">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="110"/>
-                                        <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Party List"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="53"/>
+                                        <fontDescription key="fontDescription" name="AlNile" family="Al Nile" pointSize="30"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Party List">
+                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="toPartyListButtonTapped:" destination="Qb7-C7-0n5" eventType="touchUpInside" id="Qe2-sN-R84"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7e-ce-frn">
-                                        <rect key="frame" x="0.0" y="110" width="343" height="110"/>
-                                        <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Friends List"/>
+                                        <rect key="frame" x="0.0" y="53" width="343" height="53"/>
+                                        <fontDescription key="fontDescription" name="AlNile" family="Al Nile" pointSize="30"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Friends List">
+                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="toFriendListButtonTapped:" destination="Qb7-C7-0n5" eventType="touchUpInside" id="nuw-EH-XaQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8L-Hf-gQr">
-                                        <rect key="frame" x="0.0" y="220" width="343" height="110"/>
-                                        <color key="backgroundColor" red="0.45085787770000002" green="0.98829740290000001" blue="0.83763033149999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="MyProfile"/>
+                                        <rect key="frame" x="0.0" y="106" width="343" height="53"/>
+                                        <fontDescription key="fontDescription" name="AlNile" family="Al Nile" pointSize="30"/>
+                                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="MyProfile">
+                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="paY-JI-hZZ" kind="show" id="Uly-cU-Yhp"/>
                                         </connections>
@@ -98,22 +102,19 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Jom-oZ-tiq" firstAttribute="leading" secondItem="ovT-os-iXU" secondAttribute="leading" constant="16" id="8fr-jm-CFV"/>
                             <constraint firstItem="ovT-os-iXU" firstAttribute="bottom" secondItem="Jom-oZ-tiq" secondAttribute="bottom" constant="16" id="9mK-yv-WOg"/>
-                            <constraint firstItem="UBt-M1-MSs" firstAttribute="leading" secondItem="ovT-os-iXU" secondAttribute="leading" constant="16" id="G7W-2h-1j6"/>
-                            <constraint firstItem="UBt-M1-MSs" firstAttribute="centerX" secondItem="jPp-w3-DpE" secondAttribute="centerX" id="IQe-LW-ZlQ"/>
-                            <constraint firstItem="UBt-M1-MSs" firstAttribute="top" secondItem="ovT-os-iXU" secondAttribute="top" constant="16" id="Ltj-Ua-R4n"/>
+                            <constraint firstItem="dtC-DP-Zh1" firstAttribute="top" secondItem="ovT-os-iXU" secondAttribute="top" id="G1s-1D-DoO"/>
+                            <constraint firstItem="dtC-DP-Zh1" firstAttribute="leading" secondItem="ovT-os-iXU" secondAttribute="leading" id="HJe-ot-v9z"/>
+                            <constraint firstItem="ovT-os-iXU" firstAttribute="trailing" secondItem="dtC-DP-Zh1" secondAttribute="trailing" id="cax-Zb-nGX"/>
                             <constraint firstItem="ovT-os-iXU" firstAttribute="trailing" secondItem="Jom-oZ-tiq" secondAttribute="trailing" constant="16" id="jCz-R2-8qR"/>
-                            <constraint firstItem="Jom-oZ-tiq" firstAttribute="top" secondItem="UBt-M1-MSs" secondAttribute="bottom" constant="16" id="wZC-D2-las"/>
-                            <constraint firstItem="ovT-os-iXU" firstAttribute="trailing" secondItem="UBt-M1-MSs" secondAttribute="trailing" constant="16" id="yLq-bx-Y2K"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ovT-os-iXU"/>
                     </view>
                     <navigationItem key="navigationItem" id="O25-et-aPO"/>
                     <connections>
-                        <outlet property="welcomeImage" destination="UBt-M1-MSs" id="b3R-uj-HL2"/>
                         <segue destination="4ql-nY-vUn" kind="show" identifier="toFriendsListVC" id="YEo-Hg-3FZ"/>
                         <segue destination="Rdq-D9-7bz" kind="show" identifier="toPartyListVC" id="8Sr-j9-V03"/>
                     </connections>
@@ -599,9 +600,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="welcome_image" width="300" height="225"/>
+        <image name="partyMain1" width="680" height="452"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZyM-CE-6Xm"/>
+        <segue reference="u3u-cE-liM"/>
     </inferredMetricsTieBreakers>
 </document>
