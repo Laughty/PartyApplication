@@ -9,6 +9,10 @@
 import Foundation
 import UIKit
 
+extension Notification.Name {
+    static let didReceivedPartiesData = Notification.Name("didReceiveDataParty")
+}
+
 class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     
     @IBOutlet weak var welcomeImage: UIImageView!
@@ -21,6 +25,8 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadingView.frame=self.view.frame
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: .didReceivedPartiesData, object: nil)
 
     }
     
@@ -47,13 +53,17 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         let request = GetPartiesRequest()
         PartiesService.shared.getPartiesList(request, success: {[weak self] (parties) in
             self?.parties = parties
-            self?.performSegue(withIdentifier: StoryboardSegues.ToPartyList, sender: self)
             self?.loadingView.hide()
+            NotificationCenter.default.post(name: .didReceivedPartiesData, object: nil)
         }){[weak self] (error) in
             self?.loadingView.hide()
             print(error ?? "Something went wrong")
         }
         
+    }
+    
+    @objc func onDidReceiveData(_ notification:Notification) {
+        performSegue(withIdentifier: StoryboardSegues.ToPartyList, sender: self)
     }
     
     
