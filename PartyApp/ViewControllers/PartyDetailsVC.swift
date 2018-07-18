@@ -1,3 +1,4 @@
+
 //
 //  PartyDetailsVC.swift
 //  PartyApp
@@ -29,6 +30,11 @@ class PartyDetailsVC: UIViewController {
             image.image = party.image
             partyTitle.text = party.title
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("we are here")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

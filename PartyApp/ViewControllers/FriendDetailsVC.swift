@@ -14,8 +14,8 @@ class FriendDetailsVC: UIViewController {
     
     var friend: FriendVMProtocol?
     
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    var context: NSManagedObjectContext!
+    let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
     
     @IBOutlet weak var friendImage: UIImageView!
     
@@ -28,19 +28,20 @@ class FriendDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        context = appDelegate.persistentContainer.viewContext
         
-        let entity = NSEntityDescription.entity(forEntityName: "Friends", in: context)
-        let newFriend = NSManagedObject(entity: entity!, insertInto: context) as? Friends
+        let entity = NSEntityDescription.entity(forEntityName: "Friends", in: moc)
+        let newFriend = NSManagedObject(entity: entity!, insertInto: moc) as? Friends
+        let nextFriend = Friends(entity: entity!, insertInto: moc)
         
         
         newFriend?.setValue(friend?.name, forKey: "name")
         newFriend?.setValue(friend?.description, forKey: "desc")
         newFriend?.setValue(friend?.likes, forKey: "likes")
         newFriend?.email = "yolo@blabla.com"
+       
         
         do {
-            try context.save()
+            try moc.save()
         } catch {
             print("Failed saving")
         }
@@ -59,12 +60,13 @@ class FriendDetailsVC: UIViewController {
     
     func findFriendByName(name: String){
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Friends")
-        //request.predicate = NSPredicate(format: "age = %@", "12")
+      //  request.predicate = NSPredicate(format: "age = %@ ", "12")
         request.returnsObjectsAsFaults = false
         do {
-            let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {
-                print(data.value(forKey: "name") as! String)
+            let result = try moc.fetch(request)
+            for data in result as! [Friends] {
+                print(data.name)
+                print(data.email)
             }
             
         } catch {

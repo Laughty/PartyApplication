@@ -13,12 +13,26 @@ extension Notification.Name {
     static let didReceivedPartiesData = Notification.Name("didReceiveDataParty")
 }
 
+
+enum FetchStatus {
+    case saved
+    case inprogress
+    case failed
+    case notStarted
+}
+
 class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     
     @IBOutlet weak var welcomeImage: UIImageView!
-    var parties: [PartyVMProtocol] = []
-    var friends: [FriendVMProtocol] = []
-    var user: UserVMProtocol? = nil
+    
+    var partiesDataStatus: FetchStatus = .notStarted
+    
+    
+   // var parties: [PartyVMProtocol] = []
+  //  var friends: [FriendVMProtocol] = []
+ //   var user: UserVMProtocol? = nil
+    
+    
     
 //    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -27,6 +41,17 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         loadingView.frame=self.view.frame
         
         NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: .didReceivedPartiesData, object: nil)
+        
+        let request = GetPartiesRequest()
+        partiesDataStatus = .inprogress
+        PartiesService.shared.getPartiesList(request, success: {[weak self] (parties) in
+            //self?.parties = parties
+            self?.loadingView.hide()
+            NotificationCenter.default.post(name: .didReceivedPartiesData, object: nil)
+        }){[weak self] (error) in
+            self?.loadingView.hide()
+            print(error ?? "Something went wrong")
+        }
 
     }
     
@@ -48,21 +73,25 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     
     @IBAction func toPartyListButtonTapped(_ sender: UIButton) {
         
-        loadingView.show()
+    
         
-        let request = GetPartiesRequest()
-        PartiesService.shared.getPartiesList(request, success: {[weak self] (parties) in
-            self?.parties = parties
-            self?.loadingView.hide()
-            NotificationCenter.default.post(name: .didReceivedPartiesData, object: nil)
-        }){[weak self] (error) in
-            self?.loadingView.hide()
-            print(error ?? "Something went wrong")
-        }
+ 
         
     }
     
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        NotificationCenter.default.removeObserver(self, name: .didReceivedPartiesData, object: nil)
+    }
+    
+    @objc func fetchDataStatusUpdate(_ notification:Notification) {
+        notification.userInfo
+    }
+    
     @objc func onDidReceiveData(_ notification:Notification) {
+     //   notification.userInfo?["status"]
+        
         performSegue(withIdentifier: StoryboardSegues.ToPartyList, sender: self)
     }
     

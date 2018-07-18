@@ -20,6 +20,7 @@ import UIKit
 var currentParty:PartyVMProtocol!
 
 
+
 class PartiesListVC: UIPageViewController,UIPageViewControllerDelegate {
     
     let DEFAULT_CELL_HEIGHT = 100

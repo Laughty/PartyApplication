@@ -8,7 +8,7 @@
 
 import Alamofire
 import AlamofireObjectMapper
-
+import CoreData
 
 protocol PartiesServiceProtocol {
     func getPartiesList(_ request: GetPartiesRequest, success: @escaping ([PartyVMProtocol]) -> (), failure: @escaping (Error?) -> ())
@@ -16,7 +16,11 @@ protocol PartiesServiceProtocol {
 }
 
 class PartiesService: AbstractService, PartiesServiceProtocol {
+    let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     func getPartiesList(_ request: GetPartiesRequest, success: @escaping ([PartyVMProtocol]) -> (), failure: @escaping (Error?) -> ()) {
+        
+       
         
 //        executeRequest(abstractRequest: request, requestResponse: {
 //            (response) in
@@ -38,11 +42,17 @@ class PartiesService: AbstractService, PartiesServiceProtocol {
             
             var partiesVMList: [PartyVMProtocol] = []
             if parties != nil {
+                
+                // Save data to core data
+                
+                NotificationCenter.default.post(name: .didReceivedPartiesData, object: nil, userInfo: ["status": FetchStatus.saved])
+                
             for party in parties!.parties {
                 partiesVMList.append(PartyVM(party: party))
             }
                 success(partiesVMList)
             } else {
+                NotificationCenter.default.post(name: .didReceivedPartiesData, object: nil, userInfo: ["status": FetchStatus.failed])
                 failure(nil)
             }
         }
