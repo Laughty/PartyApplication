@@ -22,27 +22,22 @@ UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
     var locationStop = CLLocation()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.googleMaps.delegate = self
         checkLocationAuthorizationStatus()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingHeading()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startMonitoringSignificantLocationChanges()
-        //
-        
 
     }
     override func viewWillAppear(_ animated: Bool) {
         self.googleMaps.clear()
-        
-        
-        
         self.locationStop = CLLocation(latitude: currentParty.location[0], longitude: currentParty.location[1])
-        if (self.googleMaps.myLocation != nil){
-            locationStart = self.googleMaps.myLocation!
+        if (locationManager.location != nil){
+            locationStart = locationManager.location!
         }
         self.googleMaps.camera = GMSCameraPosition(target: locationStart.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
-        self.googleMaps.delegate = self
         self.googleMaps?.isMyLocationEnabled = true
         self.googleMaps.settings.myLocationButton = true
         self.googleMaps.settings.compassButton = true
