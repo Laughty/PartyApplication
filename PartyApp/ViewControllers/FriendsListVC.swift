@@ -73,9 +73,14 @@ class FriendsListVC: UITableViewController, UISearchResultsUpdating {
         
     }
     func updateSearchResults(for searchController: UISearchController) {
+        var inname = false
+        var insurname = false
+        
         if let searchText = searchController.searchBar.text, !searchText.isEmpty {
             filteredFriends = friends.filter { friend in
-                return friend.name.lowercased().contains(searchText.lowercased())
+                inname = friend.name.lowercased().contains(searchText.lowercased())
+                insurname = friend.surname.lowercased().contains(searchText.lowercased())
+                return inname||insurname
             }
             
         } else {

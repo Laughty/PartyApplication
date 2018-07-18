@@ -8,10 +8,12 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 extension Notification.Name {
     static let didReceivedPartiesData = Notification.Name("didReceiveDataParty")
 }
+
 
 
 enum FetchStatus {
@@ -28,9 +30,11 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     var partiesDataStatus: FetchStatus = .notStarted
     
     
-   // var parties: [PartyVMProtocol] = []
-  //  var friends: [FriendVMProtocol] = []
- //   var user: UserVMProtocol? = nil
+    let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var parties: [PartyVMProtocol] = []
+    var friends: [FriendVMProtocol] = []
+    var user: UserVMProtocol? = nil
     
     
     
@@ -72,8 +76,20 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     }
     
     @IBAction func toPartyListButtonTapped(_ sender: UIButton) {
+        //TOBE DELETED
         
-    
+        loadingView.show()
+        
+        let request = GetPartiesRequest()
+        PartiesService.shared.getPartiesList(request, success: {[weak self] (parties) in
+            self?.parties = parties
+            self?.performSegue(withIdentifier: StoryboardSegues.ToPartyList, sender: self) //TODLETE
+            self?.loadingView.hide()
+            NotificationCenter.default.post(name: .didReceivedPartiesData, object: nil)
+        }){[weak self] (error) in
+            self?.loadingView.hide()
+            print(error ?? "Something went wrong")
+        }
         
  
         
@@ -92,7 +108,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     @objc func onDidReceiveData(_ notification:Notification) {
      //   notification.userInfo?["status"]
         
-        performSegue(withIdentifier: StoryboardSegues.ToPartyList, sender: self)
+        //performSegue(withIdentifier: StoryboardSegues.ToPartyList, sender: self) //WHAT
     }
     
     
