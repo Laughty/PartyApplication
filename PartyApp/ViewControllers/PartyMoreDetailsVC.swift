@@ -35,7 +35,8 @@ class PartyMoreDetailsVC: UIViewController {
         
         if isPresentedModally {
            navigationController?.navigationBar.backItem?.hidesBackButton = false
-           
+            let leftButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(dismissFromModal))
+            self.navigationItem.leftBarButtonItem = leftButton
             let gesture = UITapGestureRecognizer(target: self, action: #selector(PartyMoreDetailsVC.dismissFromModal))
             view.addGestureRecognizer(gesture)
             

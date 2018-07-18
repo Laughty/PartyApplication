@@ -31,6 +31,8 @@ class PartiesService: AbstractService, PartiesServiceProtocol {
 //        })
         
         Alamofire.request(BASE_URL + request.path).responseObject { (response: DataResponse<PartiesList>) in
+         
+        
             let parties = response.result.value
 //            print("Result of downloading PartiesList -> First party's title: \(String(describing: parties.value?.parties))")
             

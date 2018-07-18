@@ -123,6 +123,25 @@
             </objects>
             <point key="canvasLocation" x="605.60000000000002" y="848.72563718140941"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="7DD-QZ-Xt6">
+            <objects>
+                <viewController id="4xl-3z-ncf" customClass="GoogleMapsViewController" customModule="PartyApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CyF-EL-KPl" customClass="GMSMapView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="zgQ-Q4-4Jj"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Yad-xe-B4J"/>
+                    <connections>
+                        <outlet property="googleMaps" destination="CyF-EL-KPl" id="tV6-6C-Cs7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3VT-cm-Pft" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1361" y="-5"/>
+        </scene>
         <!--Parties List-->
         <scene sceneID="cJ3-yq-m0u">
             <objects>
@@ -406,6 +425,7 @@
                     <connections>
                         <segue destination="O2d-jL-aKr" kind="relationship" relationship="viewControllers" id="RtI-Uf-FzH"/>
                         <segue destination="2yw-YR-H4d" kind="relationship" relationship="viewControllers" id="jTF-p9-NSs"/>
+                        <segue destination="4xl-3z-ncf" kind="relationship" relationship="viewControllers" id="i3L-e8-hvX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G6X-oZ-8sy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -521,9 +541,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RFC-Xc-Vf4"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Party Details" leftItemsSupplementBackButton="YES" id="2m2-Po-Mg8">
-                        <barButtonItem key="backBarButtonItem" systemItem="done" id="tB8-qG-ZOi"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Party Details" leftItemsSupplementBackButton="YES" id="2m2-Po-Mg8"/>
                     <connections>
                         <outlet property="partyDescription" destination="1Kk-7D-3Ze" id="zqh-pW-GIb"/>
                         <outlet property="partyImage" destination="x8A-vB-Rll" id="kbC-SD-SXF"/>

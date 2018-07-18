@@ -11,8 +11,10 @@
 		73DE1793112D9526D35D9644 /* Pods_PartyAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF2F62DFA6419F4D809BD2 /* Pods_PartyAppUITests.framework */; };
 		7F0ADE3720F78A5600DC4EFC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0ADE3620F78A5500DC4EFC /* Alamofire.framework */; };
 		7F1B70A320F8E7D200BBD7FA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1B70A220F8E7D200BBD7FA /* User.swift */; };
+		7F5291A720FE00C300807AB8 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5291A620FE00C300807AB8 /* GoogleMapsViewController.swift */; };
 		7FDD261520F8BDFE00DC88FA /* DateToStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD261420F8BDFE00DC88FA /* DateToStringExtension.swift */; };
 		7FE3F5A920F7454000806FAC /* PartyMoreDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3F5A820F7454000806FAC /* PartyMoreDetailsVC.swift */; };
+		7FFA20CE20FCC4D8006024D5 /* CustomMKMarkerAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA20CD20FCC4D8006024D5 /* CustomMKMarkerAnnotationView.swift */; };
 		AF58009420FCA32100667D41 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF58009320FCA32100667D41 /* MapKit.framework */; };
 		AF65DAB520F64F6500525D24 /* AbstractRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DAB420F64F6500525D24 /* AbstractRequest.swift */; };
 		AF65DAB920F64FC400525D24 /* FriendsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DAB820F64FC400525D24 /* FriendsServices.swift */; };
@@ -83,8 +85,10 @@
 		48284D0F4D288F069C7C96AF /* Pods-PartyAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartyAppUITests/Pods-PartyAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7F0ADE3620F78A5500DC4EFC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		7F1B70A220F8E7D200BBD7FA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7F5291A620FE00C300807AB8 /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
 		7FDD261420F8BDFE00DC88FA /* DateToStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateToStringExtension.swift; sourceTree = "<group>"; };
 		7FE3F5A820F7454000806FAC /* PartyMoreDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyMoreDetailsVC.swift; sourceTree = "<group>"; };
+		7FFA20CD20FCC4D8006024D5 /* CustomMKMarkerAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMKMarkerAnnotationView.swift; sourceTree = "<group>"; };
 		9E763A04FDAB739C90979869 /* Pods_PartyAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartyAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FE703F05F080B17F25E216 /* Pods-PartyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PartyApp/Pods-PartyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AF58009320FCA32100667D41 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -293,6 +297,7 @@
 				AFD6C11F20F42099006856EA /* RootVC.swift */,
 				7FE3F5A820F7454000806FAC /* PartyMoreDetailsVC.swift */,
 				AF65DB1720F8AAC800525D24 /* DefaultViewController.swift */,
+				7F5291A620FE00C300807AB8 /* GoogleMapsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 				AFD6C11C20F3CCCC006856EA /* FriendCellItem.xib */,
 				AF65DB1920F8AB2000525D24 /* LoadingView.xib */,
 				AF65DB1B20F8AE6A00525D24 /* LoadingView.swift */,
+				7FFA20CD20FCC4D8006024D5 /* CustomMKMarkerAnnotationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -391,6 +397,7 @@
 				AFD6C0B620F3C7A3006856EA /* Resources */,
 				52FDBC7D4FB585B0856B3BC9 /* [CP] Embed Pods Frameworks */,
 				7F0ADE3820F78C2800DC4EFC /* ShellScript */,
+				6123C4AC9C03F70F438D9697 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -540,6 +547,26 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PartyApp/Pods-PartyApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6123C4AC9C03F70F438D9697 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PartyApp/Pods-PartyApp-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PartyApp/Pods-PartyApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7F0ADE3820F78C2800DC4EFC /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -622,6 +649,7 @@
 				7FDD261520F8BDFE00DC88FA /* DateToStringExtension.swift in Sources */,
 				AFD6C10820F3C985006856EA /* UserVM.swift in Sources */,
 				AFD6C11120F3CC1D006856EA /* FriendsList.swift in Sources */,
+				7F5291A720FE00C300807AB8 /* GoogleMapsViewController.swift in Sources */,
 				AFD6C0C420F3C7A3006856EA /* PartyApp.xcdatamodeld in Sources */,
 				AF65DABF20F6589700525D24 /* AbstractService.swift in Sources */,
 				AF65DAC520F6641D00525D24 /* GetFriendsRequest.swift in Sources */,
@@ -634,6 +662,7 @@
 				AF65DAB920F64FC400525D24 /* FriendsServices.swift in Sources */,
 				AFD6C0FE20F3C91D006856EA /* FriendVM.swift in Sources */,
 				AFD6C11B20F3CCB9006856EA /* FriendCellItem.swift in Sources */,
+				7FFA20CE20FCC4D8006024D5 /* CustomMKMarkerAnnotationView.swift in Sources */,
 				AFD6C0FC20F3C90D006856EA /* FriendDetailsVC.swift in Sources */,
 				AFD6C11320F3CC30006856EA /* Party.swift in Sources */,
 				AF65DAB520F64F6500525D24 /* AbstractRequest.swift in Sources */,

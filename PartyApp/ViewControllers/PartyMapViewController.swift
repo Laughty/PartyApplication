@@ -66,6 +66,7 @@ class PartyMapViewController: UIViewController  {
             partyMoreVC.party = selectedParty!
             partyMoreVC.isPresentedModally = true
         }
+    
     }
     
 
@@ -86,27 +87,24 @@ extension PartyMapViewController: MKMapViewDelegate {
             view = dequeuedView
         } else {
             // 5
-            view = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            view.canShowCallout = true
-            view.calloutOffset = CGPoint(x: -5, y: 5)
-            view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-            view.action
+            view = CustomMKMarkerAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            let view = view as! CustomMKMarkerAnnotationView
+            view.delegate = self
+            
         }
         return view
     }
+
+
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        let clickedView = view as! MKAnnotationView
         let party = view.annotation as! PartyMapItem
-    
-        selectedParty = party.party
-        performSegue(withIdentifier: StoryboardSegues.ToPartyMoreDetailsVC, sender: self)
-        
-//        let ac = UIAlertController(title: party.title, message: party.title, preferredStyle: .alert)
-//        ac.addAction(UIAlertAction(title: "OK", style: .default))
-//        present(ac, animated: true)
+        centerMapOnLocation(location: CLLocation(latitude: party.coordinate.latitude, longitude: party.coordinate.longitude ))
     }
     
 }
+
 
 extension PartyMapViewController: CLLocationManagerDelegate {
     

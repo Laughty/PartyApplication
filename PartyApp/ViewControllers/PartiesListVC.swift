@@ -17,12 +17,12 @@ import UIKit
  - View Controller showing list of parties
  
  */
+var currentParty:PartyVMProtocol!
 
 
-class PartiesListVC: UIPageViewController {
+class PartiesListVC: UIPageViewController,UIPageViewControllerDelegate {
     
     let DEFAULT_CELL_HEIGHT = 100
-    
     
     var parties: [PartyVMProtocol] = []
     var orderedViewControllers: [UIViewController] = []
@@ -30,9 +30,12 @@ class PartiesListVC: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configurePageViewController()
+        
+        delegate = self
     }
     
     private func configurePageViewController(){
+        
         prepareViewControllers()
         dataSource = self
         if let initialVC = orderedViewControllers.first {
@@ -55,6 +58,7 @@ class PartiesListVC: UIPageViewController {
             let noPartiesVC = UIStoryboard(name: StoryboardIds.main.rawValue, bundle: nil).instantiateViewController(withIdentifier: PartiesVCIds.noParties.rawValue)
             orderedViewControllers.append(noPartiesVC)
         } else {
+            currentParty = parties[0]
             for party in parties {
                 orderedViewControllers.append(initPartyVC(withParty: party))
             }
@@ -65,6 +69,7 @@ class PartiesListVC: UIPageViewController {
         
         if let vc = UIStoryboard(name: StoryboardIds.main.rawValue, bundle: nil).instantiateViewController(withIdentifier: PartiesVCIds.partyDetails.rawValue) as? PartyDetailsVC {
             vc.party = party
+            
             return vc
         } else {
             
@@ -72,14 +77,12 @@ class PartiesListVC: UIPageViewController {
         }
         
     }
-    
-    private func loadViewControllers() {
-        
-    }
+
     
     
     
 }
+
 
 // MARK: UIPageViewControllerDataSource
 
@@ -114,6 +117,9 @@ extension PartiesListVC: UIPageViewControllerDataSource {
         let nextIndex = viewControllerIndex + 1
         let orderedViewControllersCount = orderedViewControllers.count
         
+        
+        currentParty = parties[viewControllerIndex]
+        
         // User is on the last view controller and swiped right to loop to
         // the first view controller.
         guard orderedViewControllersCount != nextIndex else {
@@ -123,7 +129,7 @@ extension PartiesListVC: UIPageViewControllerDataSource {
         guard orderedViewControllersCount > nextIndex else {
             return nil
         }
-        
+
         return orderedViewControllers[nextIndex]
     }
     
