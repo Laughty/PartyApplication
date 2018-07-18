@@ -171,8 +171,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
 //        //        })
     
         
-    }
+}
 
     
-    
-}
+
