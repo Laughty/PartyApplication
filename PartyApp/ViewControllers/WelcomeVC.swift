@@ -14,8 +14,6 @@ extension Notification.Name {
     static let didReceivedPartiesData = Notification.Name("didReceiveDataParty")
 }
 
-
-
 enum FetchStatus {
     case saved
     case inprogress
@@ -29,7 +27,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     
     var partiesDataStatus: FetchStatus = .notStarted
     
-    
+    //could be used
     let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     var parties: [PartyVMProtocol] = []
@@ -37,61 +35,24 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     var user: UserVMProtocol? = nil
     
     
-    
-//    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadingView.frame=self.view.frame
         
         NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: .didReceivedPartiesData, object: nil)
+    
+        GhettoDataLoad() //To CoreData Service
         
-        let request = GetPartiesRequest()
-        partiesDataStatus = .inprogress
-        PartiesService.shared.getPartiesList(request, success: {[weak self] (parties) in
-            //self?.parties = parties
-            self?.loadingView.hide()
-            NotificationCenter.default.post(name: .didReceivedPartiesData, object: nil)
-        }){[weak self] (error) in
-            self?.loadingView.hide()
-            print(error ?? "Something went wrong")
-        }
+        //####    COREDATA ######
+        
 
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-//        UIView.animate(withDuration: 1, delay: 1, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .allowAnimatedContent, animations: {
-//            self.welcomeImage.center = CGPoint(x: self.welcomeImage.center.x, y: self.welcomeImage.center.y + 300)
-//
-//        }, completion: { _ in
-//            UIView.animate(withDuration: 1, animations: {
-//                         self.welcomeImage.center = CGPoint(x: self.welcomeImage.center.x, y: self.welcomeImage.center.y - 300)
-//            })
-//
-//        })
-        
-        
-    }
     
     @IBAction func toPartyListButtonTapped(_ sender: UIButton) {
-        //TOBE DELETED
         
-        loadingView.show()
-        
-        let request = GetPartiesRequest()
-        PartiesService.shared.getPartiesList(request, success: {[weak self] (parties) in
-            self?.parties = parties
-            self?.performSegue(withIdentifier: StoryboardSegues.ToPartyList, sender: self) //TODLETE
-            self?.loadingView.hide()
-            NotificationCenter.default.post(name: .didReceivedPartiesData, object: nil)
-        }){[weak self] (error) in
-            self?.loadingView.hide()
-            print(error ?? "Something went wrong")
-        }
-        
- 
+        //REDO
+        self.performSegue(withIdentifier: StoryboardSegues.ToPartyList, sender: self) //TODLETE
         
     }
     
@@ -114,17 +75,8 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     
     @IBAction func toFriendListButtonTapped(_ sender: UIButton) {
         
-        loadingView.show()
-        
-        let request = GetFriendsRequest()
-        FriendsService.shared.getFriendsList(request, success: { [weak self] (friends) in
-            self?.friends = friends
-            self?.performSegue(withIdentifier: StoryboardSegues.ToFriendsList, sender: self)
-            self?.loadingView.hide()
-        }){[weak self] (error) in
-            self?.loadingView.hide()
-            print(error ?? "Something went wrong")
-        }
+        //REDO
+        self.performSegue(withIdentifier: StoryboardSegues.ToFriendsList, sender: self)
         
     }
     
@@ -153,6 +105,33 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         }
     }
     
+    func GhettoDataLoad(){ //Ghetto function -> to CoreData services
+        
+        //GhettoLoad Parties
+        self.loadingView.show()
+        let requestP = GetPartiesRequest()
+        partiesDataStatus = .inprogress
+        PartiesService.shared.getPartiesList(requestP, success: {[weak self] (parties) in
+            self?.parties = parties
+            self?.loadingView.hide()
+            NotificationCenter.default.post(name: .didReceivedPartiesData, object: nil)
+        }){[weak self] (error) in
+            self?.loadingView.hide()
+            print(error ?? "Something went wrong")
+        }
+        
+        //GhettoLoad Friends
+        loadingView.show()
+        let requestF = GetFriendsRequest()
+        FriendsService.shared.getFriendsList(requestF, success: { [weak self] (friends) in
+            self?.friends = friends
+            self?.loadingView.hide()
+        }){[weak self] (error) in
+            self?.loadingView.hide()
+            print(error ?? "Something went wrong")
+        }
+    }
+    
     
 //    private func mockDataParties() -> [PartyVMProtocol]{
 //        var parties: [PartyVMProtocol] = []
@@ -177,6 +156,22 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
 //        }
 //        return friends
 //    }
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//
+//        //        UIView.animate(withDuration: 1, delay: 1, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .allowAnimatedContent, animations: {
+//        //            self.welcomeImage.center = CGPoint(x: self.welcomeImage.center.x, y: self.welcomeImage.center.y + 300)
+//        //
+//        //        }, completion: { _ in
+//        //            UIView.animate(withDuration: 1, animations: {
+//        //                         self.welcomeImage.center = CGPoint(x: self.welcomeImage.center.x, y: self.welcomeImage.center.y - 300)
+//        //            })
+//        //
+//        //        })
+    
+        
+    }
 
     
     
