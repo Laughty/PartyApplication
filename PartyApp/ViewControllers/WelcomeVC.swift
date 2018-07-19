@@ -14,13 +14,14 @@ import UserNotifications
 
 /*TODO:
 użyć nowego serwisu do pobrania danych i zasilenia core data
- ustwić flage w user defaults że dane już zostały pobrane :)
+ ustwić flage w user defaults że dane już zostały pobrane :) plus observer
  Ustawić localize titles dla każdego viewcontroller i przyciski nawigacji
  Ustawić error handling
  Korzystać z core data do wyswietlania list
  Ustawić nofikacje co godzinę przypomina nad wisełką, dodatkowa akcja otwiera mape z lokalizacją imprezy
  Wrócić do mvvm :)
  */
+
 
 
 extension Notification.Name {
@@ -45,9 +46,9 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     var partiesDataStatus: FetchStatus = .notStarted
     
     let center = UNUserNotificationCenter.current()
-    
+    let userDefaults = UserDefaults.standard
     //could be used
-    let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     
     var parties: [PartyVMProtocol] = []
     var friends: [FriendVMProtocol] = []
@@ -58,16 +59,103 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         super.viewDidLoad()
         loadingView.frame = self.view.frame
         
+        NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange), name: UserDefaults.didChangeNotification, object: nil)
+
+        userDefaults.setValue(true, forKey: "isloaded")
+        
+        let isloaded = userDefaults.bool(forKey: "isloaded")
+        if(isloaded) { loadingView.hide() }
+        
+        GhettoDataLoad() //To CoreData Service
+        
+        
         partyButton.setTitle(NSLocalizedString("toparty", comment: ""), for: .normal)
         friendsButton.setTitle(NSLocalizedString("tofriends", comment: ""), for: .normal)
         profileButton.setTitle(NSLocalizedString("toprofile", comment: ""), for: .normal)
         
         NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: .didReceivedPartiesData, object: nil)
+<<<<<<< Updated upstream
     
         GhettoDataLoad() //To CoreData Service
+=======
+        
+        
+        
+        
+        center.getNotificationSettings { (settings) in
+            if settings.authorizationStatus != .authorized {
+                // Notifications not allowed
+            }
+        }
+    
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5,
+                                                        repeats: false)
+        
+//        let date = Date(timeIntervalSinceNow: 3600)
+//        let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: date)
+        
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate,
+//                                                    repeats: false)
+        
+//        let triggerDaily = Calendar.current.dateComponents([hour,.minute,.second,], from: date)
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: true)
+        
+//        let triggerWeekly = Calendar.current.dateComponents([.weekday,hour,.minute,.second,], from: date)
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerWeekly, repeats: true)
+        
+        //let trigger = UNLocationNotificationTrigger(triggerWithRegion:region, repeats:false)
+        
+        
+        let snoozeAction = UNNotificationAction(identifier: "Snooze",
+                                                title: "Snooze", options: [])
+        let deleteAction = UNNotificationAction(identifier: "UYLDeleteAction",
+                                                title: "Delete", options: [.destructive])
+        
+        let category = UNNotificationCategory(identifier: "UYLReminderCategory",
+                                              actions: [snoozeAction,deleteAction],
+                                              intentIdentifiers: [], options: [])
+        
+        center.setNotificationCategories([category])
+        
+        
+        let content = UNMutableNotificationContent()
+        content.title = NSLocalizedString("notificationTitle", comment: "")
+        content.body = "Damian Idzie po piwko bo nie patrzy :)"
+        content.sound = UNNotificationSound.default()
+        content.categoryIdentifier = "UYLReminderCategory"
+        
+        
+        if let url = Bundle.main.url(forResource: "beer",
+                                     withExtension: "jpg") {
+            if let attachment = try? UNNotificationAttachment(identifier:
+                "image", url: url, options: nil) {
+                content.attachments = [attachment]
+            }
+        }
+        
+        let identifier = "UYLLocalNotification"
+        let request = UNNotificationRequest(identifier: identifier,
+                                            content: content, trigger: trigger)
+        
+        
+        center.add(request, withCompletionHandler: { (error) in
+            if error != nil {
+                // Something went wrong
+            }
+        })
+        
+        
+    
+        
+>>>>>>> Stashed changes
         //####    COREDATA ######
         
         addUserNotifications()
+    }
+    
+    @objc func userDefaultsDidChange(){
+        print("userdefaultdidchange")
     }
     
     

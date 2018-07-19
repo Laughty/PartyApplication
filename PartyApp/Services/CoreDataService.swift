@@ -56,7 +56,7 @@ class CoreDataService {
                 newParty?.desc = p.description
                 newParty?.latitude = p.location[0]
                 newParty?.longitude = p.location[1]
-             //   newParty?.time = NSData(p.time)
+                newParty?.setValue(p.time, forKey: "time")
                 newParty?.title = p.title
                 newParty?.image = p.image
             }
