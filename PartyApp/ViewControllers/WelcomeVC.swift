@@ -165,7 +165,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     }
     
     @objc func fetchDataStatusUpdate(_ notification:Notification) {
-        notification.userInfo
+        //notification.userInfo
     }
     
     @objc func onDidReceiveData(_ notification:Notification) {
@@ -255,7 +255,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     
 //        let trigger5sec = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         //let trigger1hour = UNTimeIntervalNotificationTrigger(timeInterval: 3600, repeats: true)
-        let trigger5sec = UNTimeIntervalNotificationTrigger(timeInterval: 30, repeats: false)
+        let trigger5sec = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
         let trigger1hour = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
         
         let snoozeAction = UNNotificationAction(identifier: "Snooze",
@@ -268,8 +268,9 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
                                               actions: [snoozeAction,deleteAction],
                                               intentIdentifiers: [], options: [])
         let vistulaBeerCategory = UNNotificationCategory(identifier: "UYLVistulaReminderCategory",
-                                                         actions: [openMap, deleteAction],
-                                                         intentIdentifiers: [], options: [])
+                                                         actions: [openMap, deleteAction, snoozeAction],
+                                                         intentIdentifiers: ["vistulaMaps", "vistulaDelete"],
+                                                         options: [])
         
         center.setNotificationCategories([damianNieWidzialCategory, vistulaBeerCategory])
         
