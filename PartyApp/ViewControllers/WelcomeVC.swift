@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreData
+import UserNotifications
 
 extension Notification.Name {
     static let didReceivedPartiesData = Notification.Name("didReceiveDataParty")
@@ -27,6 +28,8 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     
     var partiesDataStatus: FetchStatus = .notStarted
     
+    let center = UNUserNotificationCenter.current()
+    
     //could be used
     let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -39,9 +42,83 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         super.viewDidLoad()
         loadingView.frame=self.view.frame
         
+        center.requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
+            
+        })
+        
         NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: .didReceivedPartiesData, object: nil)
     
         GhettoDataLoad() //To CoreData Service
+        
+        center.getNotificationSettings { (settings) in
+            if settings.authorizationStatus != .authorized {
+                // Notifications not allowed
+            }
+        }
+    
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5,
+                                                        repeats: false)
+        
+//        let date = Date(timeIntervalSinceNow: 3600)
+//        let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: date)
+        
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate,
+//                                                    repeats: false)
+        
+//        let triggerDaily = Calendar.current.dateComponents([hour,.minute,.second,], from: date)
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDaily, repeats: true)
+        
+//        let triggerWeekly = Calendar.current.dateComponents([.weekday,hour,.minute,.second,], from: date)
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerWeekly, repeats: true)
+        
+        //let trigger = UNLocationNotificationTrigger(triggerWithRegion:region, repeats:false)
+        
+        
+        let snoozeAction = UNNotificationAction(identifier: "Snooze",
+                                                title: "Snooze", options: [])
+        let deleteAction = UNNotificationAction(identifier: "UYLDeleteAction",
+                                                title: "Delete", options: [.destructive])
+        
+        let category = UNNotificationCategory(identifier: "UYLReminderCategory",
+                                              actions: [snoozeAction,deleteAction],
+                                              intentIdentifiers: [], options: [])
+        
+        center.setNotificationCategories([category])
+        
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Don't forget"
+        content.body = "Buy some milk"
+        content.sound = UNNotificationSound.default()
+        content.categoryIdentifier = "UYLReminderCategory"
+        
+        
+        if let path = Bundle.main.path(forResource: "catParty", ofType: "jpg"){
+            print(path)
+        }
+        
+        if let url = Bundle.main.url(forResource: "catParty1",
+                                     withExtension: nil) {
+            if let attachment = try? UNNotificationAttachment(identifier:
+                "image", url: url, options: nil) {
+                content.attachments = [attachment]
+            }
+        }
+        
+        let identifier = "UYLLocalNotification"
+        let request = UNNotificationRequest(identifier: identifier,
+                                            content: content, trigger: trigger)
+        
+        
+        center.add(request, withCompletionHandler: { (error) in
+            if error != nil {
+                // Something went wrong
+            }
+        })
+        
+        
+    
         
         //####    COREDATA ######
         
@@ -108,7 +185,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     func GhettoDataLoad(){ //Ghetto function -> to CoreData services
         
         //GhettoLoad Parties
-        self.loadingView.show()
+        //loadingView.show()
         let requestP = GetPartiesRequest()
         partiesDataStatus = .inprogress
         PartiesService.shared.getPartiesList(requestP, success: {[weak self] (parties) in
@@ -121,7 +198,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         }
         
         //GhettoLoad Friends
-        loadingView.show()
+       // loadingView.show()
         let requestF = GetFriendsRequest()
         FriendsService.shared.getFriendsList(requestF, success: { [weak self] (friends) in
             self?.friends = friends

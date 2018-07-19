@@ -15,6 +15,7 @@
 		7FDD261520F8BDFE00DC88FA /* DateToStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD261420F8BDFE00DC88FA /* DateToStringExtension.swift */; };
 		7FE3F5A920F7454000806FAC /* PartyMoreDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3F5A820F7454000806FAC /* PartyMoreDetailsVC.swift */; };
 		7FFA20CE20FCC4D8006024D5 /* CustomMKMarkerAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA20CD20FCC4D8006024D5 /* CustomMKMarkerAnnotationView.swift */; };
+		AF32DAAE20FFEAEA00B1EF53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFD6C0C520F3C7A5006856EA /* Assets.xcassets */; };
 		AF58009420FCA32100667D41 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF58009320FCA32100667D41 /* MapKit.framework */; };
 		AF65DAB520F64F6500525D24 /* AbstractRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DAB420F64F6500525D24 /* AbstractRequest.swift */; };
 		AF65DAB920F64FC400525D24 /* FriendsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DAB820F64FC400525D24 /* FriendsServices.swift */; };
@@ -56,7 +57,6 @@
 		AFD6C11920F3CCAA006856EA /* PartyCellItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFD6C11820F3CCAA006856EA /* PartyCellItem.xib */; };
 		AFD6C11B20F3CCB9006856EA /* FriendCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C11A20F3CCB9006856EA /* FriendCellItem.swift */; };
 		AFD6C11D20F3CCCC006856EA /* FriendCellItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFD6C11C20F3CCCC006856EA /* FriendCellItem.xib */; };
-		AFD6C11E20F3D0DC006856EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFD6C0C520F3C7A5006856EA /* Assets.xcassets */; };
 		AFD6C12020F42099006856EA /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C11F20F42099006856EA /* RootVC.swift */; };
 		AFFA158D20F5EB6E000C954F /* Constans.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFA158C20F5EB6E000C954F /* Constans.swift */; };
 		CCA034696CF593E5884466D1 /* Pods_PartyAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E763A04FDAB739C90979869 /* Pods_PartyAppTests.framework */; };
@@ -91,6 +91,7 @@
 		7FFA20CD20FCC4D8006024D5 /* CustomMKMarkerAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMKMarkerAnnotationView.swift; sourceTree = "<group>"; };
 		9E763A04FDAB739C90979869 /* Pods_PartyAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartyAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FE703F05F080B17F25E216 /* Pods-PartyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PartyApp/Pods-PartyApp.debug.xcconfig"; sourceTree = "<group>"; };
+		AF32DAAD20FFE5B100B1EF53 /* PartyApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PartyApp.entitlements; sourceTree = "<group>"; };
 		AF58009320FCA32100667D41 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AF65DAB420F64F6500525D24 /* AbstractRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractRequest.swift; sourceTree = "<group>"; };
 		AF65DAB820F64FC400525D24 /* FriendsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsServices.swift; sourceTree = "<group>"; };
@@ -247,6 +248,8 @@
 		AFD6C0BA20F3C7A3006856EA /* PartyApp */ = {
 			isa = PBXGroup;
 			children = (
+				AFD6C0C520F3C7A5006856EA /* Assets.xcassets */,
+				AF32DAAD20FFE5B100B1EF53 /* PartyApp.entitlements */,
 				AFFA158E20F5EB77000C954F /* Utils */,
 				AFD6C12120F48CAA006856EA /* Storyboards */,
 				AFD6C10B20F3CB7E006856EA /* Assets */,
@@ -362,7 +365,6 @@
 		AFD6C10B20F3CB7E006856EA /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				AFD6C0C520F3C7A5006856EA /* Assets.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -466,6 +468,9 @@
 							com.apple.Maps.iOS = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 						};
 					};
 					AFD6C0CE20F3C7A5006856EA = {
@@ -503,12 +508,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF32DAAE20FFEAEA00B1EF53 /* Assets.xcassets in Resources */,
 				AFD6C0C920F3C7A5006856EA /* LaunchScreen.storyboard in Resources */,
 				AFD6C11920F3CCAA006856EA /* PartyCellItem.xib in Resources */,
 				AFD6C0C120F3C7A3006856EA /* Main.storyboard in Resources */,
 				AF65DB1A20F8AB2000525D24 /* LoadingView.xib in Resources */,
 				AFD6C11D20F3CCCC006856EA /* FriendCellItem.xib in Resources */,
-				AFD6C11E20F3D0DC006856EA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -920,15 +925,20 @@
 			baseConfigurationReference = A3FE703F05F080B17F25E216 /* Pods-PartyApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PartyApp/PartyApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = STZX823UT2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = PartyApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = test.PartyApp;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = just.fun.partyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -940,15 +950,20 @@
 			baseConfigurationReference = 3539B635EA872F67944ED200 /* Pods-PartyApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PartyApp/PartyApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = STZX823UT2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = PartyApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = test.PartyApp;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = just.fun.partyApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -963,7 +978,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PartyAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = test.PartyAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -980,7 +999,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PartyAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = test.PartyAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -996,7 +1019,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PartyAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = test.PartyAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1012,7 +1039,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PartyAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = test.PartyAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
