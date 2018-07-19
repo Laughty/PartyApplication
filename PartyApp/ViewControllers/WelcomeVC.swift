@@ -11,6 +11,18 @@ import UIKit
 import CoreData
 import UserNotifications
 
+
+/*TODO:
+użyć nowego serwisu do pobrania danych i zasilenia core data
+ ustwić flage w user defaults że dane już zostały pobrane :)
+ Ustawić localize titles dla każdego viewcontroller i przyciski nawigacji
+ Ustawić error handling
+ Korzystać z core data do wyswietlania list
+ Ustawić nofikacje co godzinę przypomina nad wisełką, dodatkowa akcja otwiera mape z lokalizacją imprezy
+ Wrócić do mvvm :)
+ */
+
+
 extension Notification.Name {
     static let didReceivedPartiesData = Notification.Name("didReceiveDataParty")
 }
@@ -67,7 +79,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         }
     
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10,
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5,
                                                         repeats: false)
         
 //        let date = Date(timeIntervalSinceNow: 3600)
@@ -98,18 +110,14 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         
         
         let content = UNMutableNotificationContent()
-        content.title = "Piwko"
+        content.title = NSLocalizedString("notificationTitle", comment: "")
         content.body = "Damian Idzie po piwko bo nie patrzy :)"
         content.sound = UNNotificationSound.default()
         content.categoryIdentifier = "UYLReminderCategory"
         
         
-        if let path = Bundle.main.path(forResource: "catParty", ofType: "jpg"){
-            print(path)
-        }
-        
-        if let url = Bundle.main.url(forResource: "catParty1",
-                                     withExtension: nil) {
+        if let url = Bundle.main.url(forResource: "beer",
+                                     withExtension: "jpg") {
             if let attachment = try? UNNotificationAttachment(identifier:
                 "image", url: url, options: nil) {
                 content.attachments = [attachment]
@@ -195,7 +203,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     func GhettoDataLoad(){ //Ghetto function -> to CoreData services
         
         //GhettoLoad Parties
-        //loadingView.show()
+        loadingView.show()
         let requestP = GetPartiesRequest()
         partiesDataStatus = .inprogress
         PartiesService.shared.getPartiesList(requestP, success: {[weak self] (parties) in
@@ -208,7 +216,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         }
         
         //GhettoLoad Friends
-       // loadingView.show()
+        //loadingView.show()
         let requestF = GetFriendsRequest()
         FriendsService.shared.getFriendsList(requestF, success: { [weak self] (friends) in
             self?.friends = friends

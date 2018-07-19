@@ -59,11 +59,12 @@ class FriendDetailsVC: UIViewController {
     
     
     func findFriendByName(name: String){
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Friends")
+        //let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Friends")
       //  request.predicate = NSPredicate(format: "age = %@ ", "12")
-        request.returnsObjectsAsFaults = false
+      //  request.returnsObjectsAsFaults = false
+        
         do {
-            let result = try moc.fetch(request)
+            let result = try moc.fetch(Friends.fetchRequest())
             for data in result as! [Friends] {
                 print(data.name)
                 print(data.email)
