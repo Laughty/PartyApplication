@@ -144,8 +144,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         
     
         
->>>>>>> Stashed changes
-        //####    COREDATA ######
+
         
         addUserNotifications()
     }
