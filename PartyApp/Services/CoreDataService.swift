@@ -28,7 +28,7 @@ class CoreDataService {
     func saveDataToCoreData(name:FetchDetail,response:DataResponse<Any>){
         switch name {
         case .friendList:
-            cleanDataData(name: name)
+            cleanRecordForEntity(name: name)
             let friendList = response.result.value as! FriendList
             friendList.friends.map(){ f in
                 let entity = NSEntityDescription.entity(forEntityName: "Friends", in: self.moc)
@@ -39,6 +39,7 @@ class CoreDataService {
                 newFriend?.name = f.name
                 newFriend?.phone = f.phone
                 newFriend?.surname = f.surname
+                newFriend?.image = f.image
             }
             do {
                 try self.moc.save()
@@ -48,7 +49,7 @@ class CoreDataService {
 
             
         case .partyList:
-            cleanDataData(name: name)
+            cleanRecordForEntity(name: name)
             let partyList = response.result.value as! PartiesList
             partyList.parties.map(){ p in
                 let entity = NSEntityDescription.entity(forEntityName: "Parties", in: self.moc)
@@ -58,6 +59,7 @@ class CoreDataService {
                 newParty?.longitude = p.location[1]
                 newParty?.time = p.time
                 newParty?.title = p.title
+                newParty?.image = p.image
             }
             do {
                 try self.moc.save()
@@ -69,7 +71,7 @@ class CoreDataService {
             return
         }
     }
-    private func cleanDataData(name:FetchDetail){
+    private func cleanRecordForEntity(name:FetchDetail){
         switch name {
             //TODO
         case .friendList:
