@@ -49,7 +49,7 @@ class PartyVM: PartyVMProtocol {
         self.description = party.description ?? ""
         self.latitude = party.latitude ?? 0
         self.longitude = party.longitude ?? 0
-        self.time = party.time!
+        self.time = party.time! as Date
     }
     
 }
