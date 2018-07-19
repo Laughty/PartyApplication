@@ -1,0 +1,96 @@
+
+/* Class = "UILabel"; text = "description"; ObjectID = "1Kk-7D-3Ze"; */
+"1Kk-7D-3Ze.text" = "description";
+
+/* Class = "UINavigationItem"; title = "Party Details"; ObjectID = "2m2-Po-Mg8"; */
+"2m2-Po-Mg8.title" = "Party Details";
+
+/* Class = "UILabel"; text = "John Doe"; ObjectID = "2nI-kL-cDr"; */
+"2nI-kL-cDr.text" = "John Doe";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "4bJ-PR-4uZ"; */
+"4bJ-PR-4uZ.text" = "Title";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "5Hd-kA-i31"; */
+"5Hd-kA-i31.text" = "Label";
+
+/* Class = "UITabBarItem"; badgeValue = "1"; ObjectID = "EC9-rq-6Ta"; */
+"EC9-rq-6Ta.badgeValue" = "1";
+
+/* Class = "UITabBarItem"; title = "Parties List"; ObjectID = "EC9-rq-6Ta"; */
+"EC9-rq-6Ta.title" = "Parties List";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "FyV-w7-K2b"; */
+"FyV-w7-K2b.text" = "Label";
+
+/* Class = "UILabel"; text = "location"; ObjectID = "Jf5-C1-uda"; */
+"Jf5-C1-uda.text" = "location";
+
+/* Class = "UILabel"; text = "🗒"; ObjectID = "KrP-bp-dOJ"; */
+"KrP-bp-dOJ.text" = "🗒";
+
+/* Class = "UILabel"; text = "Mocky guy."; ObjectID = "MiK-Ae-KHt"; */
+"MiK-Ae-KHt.text" = "Mocky guy.";
+
+/* Class = "UIButton"; normalTitle = "MyProfile"; ObjectID = "Q8L-Hf-gQr"; */
+"Q8L-Hf-gQr.normalTitle" = "MyProfile";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "VFg-Pl-5GQ"; */
+"VFg-Pl-5GQ.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "Yad-xe-B4J"; */
+"Yad-xe-B4J.title" = "Item";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Yaf-bG-gzz"; */
+"Yaf-bG-gzz.text" = "Label";
+
+/* Class = "UILabel"; text = "📧"; ObjectID = "YbV-Mt-1CM"; */
+"YbV-Mt-1CM.text" = "📧";
+
+/* Class = "UILabel"; text = "👱‍♂️"; ObjectID = "cnR-mt-6Ha"; */
+"cnR-mt-6Ha.text" = "👱‍♂️";
+
+/* Class = "UILabel"; text = "time"; ObjectID = "dLH-pE-xt2"; */
+"dLH-pE-xt2.text" = "time";
+
+/* Class = "UILabel"; text = "📧"; ObjectID = "dq6-hd-qzR"; */
+"dq6-hd-qzR.text" = "📧";
+
+/* Class = "UIButton"; normalTitle = "Details"; ObjectID = "e1E-4W-CpV"; */
+"e1E-4W-CpV.normalTitle" = "Details";
+
+/* Class = "UIButton"; normalTitle = "Party List"; ObjectID = "erm-KD-Wk3"; */
+"erm-KD-Wk3.normalTitle" = "Party List";
+
+/* Class = "UILabel"; text = "📞"; ObjectID = "g6y-aB-kdY"; */
+"g6y-aB-kdY.text" = "📞";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "k6E-KI-Eho"; */
+"k6E-KI-Eho.text" = "Title";
+
+/* Class = "UITabBarItem"; title = "Parties On Map"; ObjectID = "lQa-iJ-UGk"; */
+"lQa-iJ-UGk.title" = "Parties On Map";
+
+/* Class = "UILabel"; text = "📞"; ObjectID = "lWu-Um-WQf"; */
+"lWu-Um-WQf.text" = "📞";
+
+/* Class = "UILabel"; text = "👱‍♂️"; ObjectID = "me4-W7-RE0"; */
+"me4-W7-RE0.text" = "👱‍♂️";
+
+/* Class = "UIButton"; normalTitle = "Friends List"; ObjectID = "p7e-ce-frn"; */
+"p7e-ce-frn.normalTitle" = "Friends List";
+
+/* Class = "UILabel"; text = "123456789"; ObjectID = "rhU-A3-kvX"; */
+"rhU-A3-kvX.text" = "123456789";
+
+/* Class = "UILabel"; text = "j.doe@mail.com"; ObjectID = "uDH-nd-BEQ"; */
+"uDH-nd-BEQ.text" = "j.doe@mail.com";
+
+/* Class = "UILabel"; text = "Name surname"; ObjectID = "ura-hR-MxS"; */
+"ura-hR-MxS.text" = "Name surname";
+
+/* Class = "UILabel"; text = "OH NO THERE IS NO PARTIES"; ObjectID = "wtD-uY-h1O"; */
+"wtD-uY-h1O.text" = "OH NO THERE IS NO PARTIES";
+
+/* Class = "UILabel"; text = "🗒"; ObjectID = "z9r-y0-y1o"; */
+"z9r-y0-y1o.text" = "🗒";

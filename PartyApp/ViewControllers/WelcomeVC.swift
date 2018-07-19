@@ -26,6 +26,10 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     
     @IBOutlet weak var welcomeImage: UIImageView!
     
+    @IBOutlet weak var partyButton: UIButton!
+    @IBOutlet weak var friendsButton: UIButton!
+    @IBOutlet weak var profileButton: UIButton!
+    
     var partiesDataStatus: FetchStatus = .notStarted
     
     let center = UNUserNotificationCenter.current()
@@ -41,6 +45,12 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadingView.frame=self.view.frame
+        
+        partyButton.setTitle(NSLocalizedString("toparty", comment: ""), for: .normal)
+        friendsButton.setTitle(NSLocalizedString("tofriends", comment: ""), for: .normal)
+        profileButton.setTitle(NSLocalizedString("toprofile", comment: ""), for: .normal)
+        
+       
         
         center.requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in
             
@@ -58,7 +68,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10,
-                                                        repeats: true)
+                                                        repeats: false)
         
 //        let date = Date(timeIntervalSinceNow: 3600)
 //        let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: date)

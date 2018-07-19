@@ -115,6 +115,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="O25-et-aPO"/>
                     <connections>
+                        <outlet property="friendsButton" destination="p7e-ce-frn" id="8Jr-HS-bYm"/>
+                        <outlet property="partyButton" destination="erm-KD-Wk3" id="wcv-c7-nLK"/>
+                        <outlet property="profileButton" destination="Q8L-Hf-gQr" id="75A-QZ-avc"/>
                         <segue destination="4ql-nY-vUn" kind="show" identifier="toFriendsListVC" id="YEo-Hg-3FZ"/>
                         <segue destination="Rdq-D9-7bz" kind="show" identifier="toPartyListVC" id="8Sr-j9-V03"/>
                     </connections>
