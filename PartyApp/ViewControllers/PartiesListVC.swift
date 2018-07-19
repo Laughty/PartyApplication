@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 // Implement as page based view controller
 
@@ -23,6 +24,8 @@ var currentParty:PartyVMProtocol!
 
 class PartiesListVC: UIPageViewController,UIPageViewControllerDelegate {
     
+    let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
     let DEFAULT_CELL_HEIGHT = 100
     
     var parties: [PartyVMProtocol] = []
@@ -31,6 +34,18 @@ class PartiesListVC: UIPageViewController,UIPageViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         configurePageViewController()
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Parties")
+        request.returnsObjectsAsFaults = false
+        do {
+            let partyObject = try moc.fetch(request) as! [Parties]
+            for party in partyObject {
+                parties.append(PartyVM(party: party))
+            }
+            
+        }catch{
+            print("Failed")
+        }
         
         delegate = self
     }

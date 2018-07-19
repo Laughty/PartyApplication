@@ -28,7 +28,7 @@ class PartyMoreDetailsVC: UIViewController {
         if let party = party {
             partyImage.image = party.image
             partyTitle.text = party.title
-            partyLocation.text = "long: \(party.location.first!) lati: \(party.location.last!)"
+            partyLocation.text = "long: \(party.longitude) lati: \(party.latitude)"
             partyDescription.text = party.description
             partyTime.text = party.time.toString()
         }

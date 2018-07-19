@@ -33,7 +33,7 @@ UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         self.googleMaps.clear()
-        self.locationStop = CLLocation(latitude: currentParty.location[0], longitude: currentParty.location[1])
+        self.locationStop = CLLocation(latitude: currentParty.latitude, longitude: currentParty.longitude)
         if (locationManager.location != nil){
             locationStart = locationManager.location!
         }

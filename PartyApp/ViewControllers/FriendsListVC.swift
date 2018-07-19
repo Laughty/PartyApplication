@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 // Implement as TableViewController
 
@@ -18,6 +19,8 @@ import UIKit
  */
 
 class FriendsListVC: UITableViewController, UISearchResultsUpdating {
+    
+    let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     let numberOfSections = 1
     
@@ -30,6 +33,19 @@ class FriendsListVC: UITableViewController, UISearchResultsUpdating {
         
         super.viewDidLoad()
         tableView.register(UINib(nibName: FriendCellItem.CellReusableIdentifier, bundle: nil), forCellReuseIdentifier: FriendCellItem.CellReusableIdentifier)
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Friends")
+        request.returnsObjectsAsFaults = false
+        do {
+            let friendObject = try moc.fetch(request) as! [Friends]
+            for friend in friendObject {
+                friends.append(FriendVM(friend: friend))
+            }
+            
+        }catch{
+            print("Failed")
+        }
+        
         filteredFriends = friends
         searchControllerSetup()
         

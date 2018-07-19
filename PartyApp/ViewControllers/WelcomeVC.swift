@@ -176,29 +176,29 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     }
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let segueId = segue.identifier {
-        switch segueId {
-        case StoryboardSegues.ToPartyList:
-            let destinationVC = segue.destination as! UITabBarController
-            let partiesListVC = destinationVC.viewControllers?.first! as! PartiesListVC
-            partiesListVC.parties = parties
-            let partyMapVC = destinationVC.viewControllers?[1] as! PartyMapViewController
-            partyMapVC.parties = parties
-         
-        case StoryboardSegues.ToFriendsList:
-            let destinationVC = segue.destination as! FriendsListVC
-            destinationVC.friends = friends
-        case StoryboardSegues.ToProfile:
-            let destinationVC = segue.destination as! UserInfoVC
-            if let user = user {
-                destinationVC.user = user
-            }
-        default:
-            fatalError("Unknow segue")
-        }
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let segueId = segue.identifier {
+//        switch segueId {
+//        case StoryboardSegues.ToPartyList:
+//            let destinationVC = segue.destination as! UITabBarController
+////            let partiesListVC = destinationVC.viewControllers?.first! as! PartiesListVC
+////            partiesListVC.parties = parties
+////            let partyMapVC = destinationVC.viewControllers?[1] as! PartyMapViewController
+////            partyMapVC.parties = parties
+//         
+//        case StoryboardSegues.ToFriendsList:
+//            let destinationVC = segue.destination as! FriendsListVC
+//            destinationVC.friends = friends
+//        case StoryboardSegues.ToProfile:
+//            let destinationVC = segue.destination as! UserInfoVC
+//            if let user = user {
+//                destinationVC.user = user
+//            }
+//        default:
+//            fatalError("Unknow segue")
+//        }
+//        }
+//    }
     
     func GhettoDataLoad(){ //Ghetto function -> to CoreData services
         
