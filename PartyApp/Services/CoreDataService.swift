@@ -54,9 +54,9 @@ class CoreDataService {
                 let entity = NSEntityDescription.entity(forEntityName: name.rawValue, in: self.moc)
                 let newParty = NSManagedObject(entity: entity!, insertInto: self.moc) as? Parties
                 newParty?.desc = p.description
-                newParty?.latitude = p.location[0]
-                newParty?.longitude = p.location[1]
-             //   newParty?.time = NSData(p.time)
+                newParty?.latitude = p.latitude
+                newParty?.longitude = p.longitude
+                newParty?.setValue(p.time, forKey: "time")
                 newParty?.title = p.title
                 newParty?.image = p.image
             }

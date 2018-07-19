@@ -13,7 +13,7 @@ class DefaultViewController: UIViewController {
     let loadingView: LoadingView = UIView.fromNib()
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadingView.isHidden = true
+        loadingView.hide()
         view.addSubview(loadingView)
         
 

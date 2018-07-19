@@ -24,15 +24,19 @@ import ObjectMapper
 struct Party: Mappable {
     
     var id: String = ""
-    var location: [Double]  = []
+//    var location: [Double]  = []
+    var latitude: Double = 0.0
+    var longitude: Double = 0.0
     var time: Date  = Date()
     var title: String  = ""
     var description: String  = ""
     var image: String = "person"
     
-    init(id: String, location: [Double], time: Date, title: String, description: String, image: String) {
+    init(id: String, latitude: Double, longitude: Double, time: Date, title: String, description: String, image: String) {
         self.id = id
-        self.location = location
+//        self.location = location
+        self.latitude = latitude
+        self.longitude = longitude
         self.time = time
         self.title = title
         self.description = description
@@ -47,7 +51,9 @@ struct Party: Mappable {
     
     mutating func mapping(map: Map) {
         id <- map["id"]
-        location <- map["location"]
+//        location <- map["location"]
+        latitude <- map["latitude"]
+        longitude <- map["longitude"]
         time <- map["time"]
         title <- map["title"]
         description <- map["description"]
