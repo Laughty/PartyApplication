@@ -74,10 +74,6 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         profileButton.setTitle(NSLocalizedString("toprofile", comment: ""), for: .normal)
         
         NotificationCenter.default.addObserver(self, selector: #selector(onDidReceiveData(_:)), name: .didReceivedPartiesData, object: nil)
-<<<<<<< Updated upstream
-    
-        GhettoDataLoad() //To CoreData Service
-=======
         
         
         
