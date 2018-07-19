@@ -31,7 +31,7 @@ class CoreDataService {
             cleanRecordForEntity(name: name)
             let friendList = response.result.value as! FriendList
             friendList.friends.map(){ f in
-                let entity = NSEntityDescription.entity(forEntityName: "Friends", in: self.moc)
+                let entity = NSEntityDescription.entity(forEntityName: name.rawValue, in: self.moc)
                 let newFriend = NSManagedObject(entity: entity!, insertInto: self.moc) as? Friends
                 newFriend?.id = Int32(f.id)!
                 newFriend?.desc = f.description
@@ -52,7 +52,7 @@ class CoreDataService {
             cleanRecordForEntity(name: name)
             let partyList = response.result.value as! PartiesList
             partyList.parties.map(){ p in
-                let entity = NSEntityDescription.entity(forEntityName: "Parties", in: self.moc)
+                let entity = NSEntityDescription.entity(forEntityName: name.rawValue, in: self.moc)
                 let newParty = NSManagedObject(entity: entity!, insertInto: self.moc) as? Parties
                 newParty?.desc = p.description
                 newParty?.latitude = p.location[0]
@@ -75,7 +75,7 @@ class CoreDataService {
         switch name {
             //TODO
         case .friendList:
-            let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Friends")
+            let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: name.rawValue)
             let request = NSBatchDeleteRequest(fetchRequest: fetch)
             do{
                 _ = try self.moc.execute(request)
@@ -83,7 +83,7 @@ class CoreDataService {
                 print("Failed")
             }
         case .partyList:
-            let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Parties")
+            let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: name.rawValue)
             let request = NSBatchDeleteRequest(fetchRequest: fetch)
             do{
                 _ = try self.moc.execute(request)
@@ -94,33 +94,32 @@ class CoreDataService {
     }
     
     
-    func fetchDetailWith(name:FetchDetail, predicate:NSPredicate?) -> Any{
+    func fetchDetailWith(name:FetchDetail, predicate:NSPredicate?) -> Any?{
         switch name {
         case .friendList:
-            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Friends")
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: name.rawValue)
             request.predicate = predicate
             request.returnsObjectsAsFaults = false
             do {
-                let result = try moc.fetch(request)
-                return request
+                return try moc.fetch(request)
             }catch{
                     print("Failed")
             }
         case .partyList:
-                let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Parties")
+                let request = NSFetchRequest<NSFetchRequestResult>(entityName: name.rawValue)
                 request.predicate = predicate
                 request.returnsObjectsAsFaults = false
                 do {
-                    let result = try moc.fetch(request)
-                    return request
+                    return try moc.fetch(request) 
                 }catch{
                     print("Failed")
                 }
         default:
-            return name
+            print("WARNING: Can't find entity")
+            return nil
             
         }
-     return name
+     return nil
     }
     
 }
