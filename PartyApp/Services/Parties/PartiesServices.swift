@@ -43,8 +43,7 @@ class PartiesService: AbstractService, PartiesServiceProtocol {
             var partiesVMList: [PartyVMProtocol] = []
             if parties != nil {
                 
-                // Save data to core data
-                
+                CoreDataService.shared.saveDataToCoreData(name: FetchDetail.partyList, dataObject: parties)
                 NotificationCenter.default.post(name: .didReceivedPartiesData, object: nil, userInfo: ["status": FetchStatus.saved])
                 
             for party in parties!.parties {
