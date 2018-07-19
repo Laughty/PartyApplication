@@ -53,6 +53,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+        
+        
+    }
 
     // MARK: - Core Data stack
 
@@ -82,6 +88,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         return container
     }()
+    
+    
 
     // MARK: - Core Data Saving support
 
@@ -130,5 +138,8 @@ class UYLNotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
         }
         completionHandler()
     }
+    
+    
+    
 }
 
