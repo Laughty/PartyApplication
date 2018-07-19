@@ -24,9 +24,9 @@ użyć nowego serwisu do pobrania danych i zasilenia core data
 
 
 
-extension Notification.Name {
-    static let didReceivedPartiesData = Notification.Name("didReceiveDataParty")
-}
+//extension Notification.Name {
+//    static let didReceivedPartiesData = Notification.Name("didReceiveDataParty")
+//}
 
 enum FetchStatus {
     case saved
@@ -38,7 +38,6 @@ enum FetchStatus {
 class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     
     @IBOutlet weak var welcomeImage: UIImageView!
-    
     @IBOutlet weak var partyButton: UIButton!
     @IBOutlet weak var friendsButton: UIButton!
     @IBOutlet weak var profileButton: UIButton!
@@ -47,8 +46,6 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     
     let center = UNUserNotificationCenter.current()
     let userDefaults = UserDefaults.standard
-    //could be used
-    
     
     var parties: [PartyVMProtocol] = []
     var friends: [FriendVMProtocol] = []

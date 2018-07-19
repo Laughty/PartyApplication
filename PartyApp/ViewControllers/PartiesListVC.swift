@@ -89,7 +89,7 @@ class PartiesListVC: UIPageViewController,UIPageViewControllerDelegate {
             return vc
         } else {
             
-            fatalError("Not able to find PartyDetailVC in Main storyboard")
+            fatalError(Error.notFindPartyDetail.rawValue)
         }
         
     }

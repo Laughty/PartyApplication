@@ -20,6 +20,15 @@ enum PartiesVCIds: String {
     case partyMoreDetails = "PartyMoreDetailsVC"
 }
 
+enum Error: String {
+    case notImplemented = "has not been implemented"
+    case notFindPartyDetail = "Not able to find PartyDetailVC in Main storyboard"
+}
+
+enum Notification: String {
+
+}
+
 struct StoryboardSegues {
     static let ToPartyList = "toPartyListVC"
     static let ToFriendsList = "toFriendsListVC"

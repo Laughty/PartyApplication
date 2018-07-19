@@ -28,7 +28,7 @@ class SplashViewController: UIViewController {
     }
     
     required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError(Error.notImplemented.rawValue)
     }
     
     open override var prefersStatusBarHidden : Bool {
