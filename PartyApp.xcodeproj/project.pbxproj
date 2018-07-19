@@ -14,7 +14,7 @@
 		7F5291A720FE00C300807AB8 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5291A620FE00C300807AB8 /* GoogleMapsViewController.swift */; };
 		7FCB3CDC2100C949004D0B74 /* InitialData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB3CDA2100BA74004D0B74 /* InitialData.swift */; };
 		7FCB3CDD2100C964004D0B74 /* InitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB3CD82100B7FF004D0B74 /* InitService.swift */; };
-		7FDD261520F8BDFE00DC88FA /* DateToStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD261420F8BDFE00DC88FA /* DateToStringExtension.swift */; };
+		7FDD261520F8BDFE00DC88FA /* Date+ToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD261420F8BDFE00DC88FA /* Date+ToString.swift */; };
 		7FE3F5A920F7454000806FAC /* PartyMoreDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3F5A820F7454000806FAC /* PartyMoreDetailsVC.swift */; };
 		7FF32DBA2100C6CB00432CB4 /* Friends+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF32DB62100C6CB00432CB4 /* Friends+CoreDataClass.swift */; };
 		7FF32DBB2100C6CB00432CB4 /* Friends+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF32DB72100C6CB00432CB4 /* Friends+CoreDataProperties.swift */; };
@@ -99,7 +99,7 @@
 		7F5291A620FE00C300807AB8 /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
 		7FCB3CD82100B7FF004D0B74 /* InitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitService.swift; sourceTree = "<group>"; };
 		7FCB3CDA2100BA74004D0B74 /* InitialData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialData.swift; sourceTree = "<group>"; };
-		7FDD261420F8BDFE00DC88FA /* DateToStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateToStringExtension.swift; sourceTree = "<group>"; };
+		7FDD261420F8BDFE00DC88FA /* Date+ToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ToString.swift"; sourceTree = "<group>"; };
 		7FE3F5A820F7454000806FAC /* PartyMoreDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyMoreDetailsVC.swift; sourceTree = "<group>"; };
 		7FF32DB62100C6CB00432CB4 /* Friends+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friends+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7FF32DB72100C6CB00432CB4 /* Friends+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friends+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -419,7 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				AFFA158C20F5EB6E000C954F /* Constans.swift */,
-				7FDD261420F8BDFE00DC88FA /* DateToStringExtension.swift */,
+				7FDD261420F8BDFE00DC88FA /* Date+ToString.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -698,7 +698,7 @@
 				7FF32DBB2100C6CB00432CB4 /* Friends+CoreDataProperties.swift in Sources */,
 				AFD6C0F620F3C896006856EA /* FriendsListVC.swift in Sources */,
 				7FF32DBD2100C6CB00432CB4 /* Parties+CoreDataProperties.swift in Sources */,
-				7FDD261520F8BDFE00DC88FA /* DateToStringExtension.swift in Sources */,
+				7FDD261520F8BDFE00DC88FA /* Date+ToString.swift in Sources */,
 				AFD6C10820F3C985006856EA /* UserVM.swift in Sources */,
 				AFD6C11120F3CC1D006856EA /* FriendsList.swift in Sources */,
 				7FCB3CDC2100C949004D0B74 /* InitialData.swift in Sources */,
@@ -946,7 +946,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PartyApp/PartyApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QZ7GPNNM9G;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -971,7 +971,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PartyApp/PartyApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QZ7GPNNM9G;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

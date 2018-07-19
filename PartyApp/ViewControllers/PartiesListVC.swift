@@ -33,7 +33,7 @@ class PartiesListVC: UIPageViewController,UIPageViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configurePageViewController()
+        
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Parties")
         request.returnsObjectsAsFaults = false
@@ -41,11 +41,14 @@ class PartiesListVC: UIPageViewController,UIPageViewControllerDelegate {
             let partyObject = try moc.fetch(request) as! [Parties]
             for party in partyObject {
                 parties.append(PartyVM(party: party))
+                print(party)
             }
             
         }catch{
             print("Failed")
         }
+        
+        configurePageViewController()
         
         delegate = self
     }

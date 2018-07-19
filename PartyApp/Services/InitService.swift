@@ -24,9 +24,12 @@ class InitService {
     
     func getInitData(_ urlAdress: String) -> () {
         
+        UserDefaults.standard.set(false, forKey: "IsDataInitialized")
+        
         Alamofire.request(URL(string: urlAdress)!).responseObject{ (response: DataResponse<InitialData>) in
             guard let initData = response.result.value else { return }
             self.saveDataToCoreData(dataObject: initData)
+            
             UserDefaults.standard.set(true, forKey: "IsDataInitialized")
         }
     }
@@ -41,9 +44,9 @@ class InitService {
             let entity = NSEntityDescription.entity(forEntityName: FetchDetail.partyList.rawValue, in: self.moc)
             let newParty = NSManagedObject(entity: entity!, insertInto: self.moc) as? Parties
             newParty?.desc = p.description
-            newParty?.latitude = p.location[0]
-            newParty?.longitude = p.location[1]
-            newParty?.time = p.time
+            newParty?.latitude = p.latitude
+            newParty?.longitude = p.longitude
+            newParty?.setValue(p.time, forKey: "time")
             newParty?.title = p.title
             newParty?.image = p.image
         }
