@@ -18,12 +18,6 @@ enum FetchDetail: String {
     
 }
 
-protocol CoreDataSaveable {
-    
-}
-
-
-
 class CoreDataService {
     let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
   
