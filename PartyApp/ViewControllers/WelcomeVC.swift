@@ -57,8 +57,8 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         }
     
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5,
-                                                        repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10,
+                                                        repeats: true)
         
 //        let date = Date(timeIntervalSinceNow: 3600)
 //        let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: date)

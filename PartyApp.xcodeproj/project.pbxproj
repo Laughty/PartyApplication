@@ -16,6 +16,7 @@
 		7FE3F5A920F7454000806FAC /* PartyMoreDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3F5A820F7454000806FAC /* PartyMoreDetailsVC.swift */; };
 		7FFA20CE20FCC4D8006024D5 /* CustomMKMarkerAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA20CD20FCC4D8006024D5 /* CustomMKMarkerAnnotationView.swift */; };
 		AF32DAAE20FFEAEA00B1EF53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFD6C0C520F3C7A5006856EA /* Assets.xcassets */; };
+		AF32DAB02100777B00B1EF53 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32DAAF2100777A00B1EF53 /* CoreDataService.swift */; };
 		AF58009420FCA32100667D41 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF58009320FCA32100667D41 /* MapKit.framework */; };
 		AF65DAB520F64F6500525D24 /* AbstractRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DAB420F64F6500525D24 /* AbstractRequest.swift */; };
 		AF65DAB920F64FC400525D24 /* FriendsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DAB820F64FC400525D24 /* FriendsServices.swift */; };
@@ -92,6 +93,7 @@
 		9E763A04FDAB739C90979869 /* Pods_PartyAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartyAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FE703F05F080B17F25E216 /* Pods-PartyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PartyApp/Pods-PartyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AF32DAAD20FFE5B100B1EF53 /* PartyApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PartyApp.entitlements; sourceTree = "<group>"; };
+		AF32DAAF2100777A00B1EF53 /* CoreDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		AF58009320FCA32100667D41 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		AF65DAB420F64F6500525D24 /* AbstractRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractRequest.swift; sourceTree = "<group>"; };
 		AF65DAB820F64FC400525D24 /* FriendsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsServices.swift; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 		AFD6C0F020F3C838006856EA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AF32DAAF2100777A00B1EF53 /* CoreDataService.swift */,
 				AF65DABD20F657A000525D24 /* Parties */,
 				AF65DABC20F6579300525D24 /* Friends */,
 				AF65DAB420F64F6500525D24 /* AbstractRequest.swift */,
@@ -740,6 +743,7 @@
 				AFD6C11520F3CC3E006856EA /* PartiesList.swift in Sources */,
 				AF65DAC120F663F100525D24 /* GetPartiesRequest.swift in Sources */,
 				AF65DAC320F6640C00525D24 /* GetPartyRequest.swift in Sources */,
+				AF32DAB02100777B00B1EF53 /* CoreDataService.swift in Sources */,
 				AFD6C0FA20F3C8F7006856EA /* PartyDetailsVC.swift in Sources */,
 				AFD6C0BC20F3C7A3006856EA /* AppDelegate.swift in Sources */,
 				AFD6C10620F3C97A006856EA /* UserInfoVC.swift in Sources */,
