@@ -14,6 +14,10 @@
 		7F5291A720FE00C300807AB8 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5291A620FE00C300807AB8 /* GoogleMapsViewController.swift */; };
 		7FDD261520F8BDFE00DC88FA /* DateToStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD261420F8BDFE00DC88FA /* DateToStringExtension.swift */; };
 		7FE3F5A920F7454000806FAC /* PartyMoreDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3F5A820F7454000806FAC /* PartyMoreDetailsVC.swift */; };
+		7FF32DBA2100C6CB00432CB4 /* Friends+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF32DB62100C6CB00432CB4 /* Friends+CoreDataClass.swift */; };
+		7FF32DBB2100C6CB00432CB4 /* Friends+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF32DB72100C6CB00432CB4 /* Friends+CoreDataProperties.swift */; };
+		7FF32DBC2100C6CB00432CB4 /* Parties+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF32DB82100C6CB00432CB4 /* Parties+CoreDataClass.swift */; };
+		7FF32DBD2100C6CB00432CB4 /* Parties+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF32DB92100C6CB00432CB4 /* Parties+CoreDataProperties.swift */; };
 		7FFA20CE20FCC4D8006024D5 /* CustomMKMarkerAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA20CD20FCC4D8006024D5 /* CustomMKMarkerAnnotationView.swift */; };
 		AF32DAAE20FFEAEA00B1EF53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFD6C0C520F3C7A5006856EA /* Assets.xcassets */; };
 		AF32DAB02100777B00B1EF53 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32DAAF2100777A00B1EF53 /* CoreDataService.swift */; };
@@ -93,6 +97,10 @@
 		7F5291A620FE00C300807AB8 /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
 		7FDD261420F8BDFE00DC88FA /* DateToStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateToStringExtension.swift; sourceTree = "<group>"; };
 		7FE3F5A820F7454000806FAC /* PartyMoreDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyMoreDetailsVC.swift; sourceTree = "<group>"; };
+		7FF32DB62100C6CB00432CB4 /* Friends+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friends+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7FF32DB72100C6CB00432CB4 /* Friends+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friends+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7FF32DB82100C6CB00432CB4 /* Parties+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Parties+CoreDataClass.swift"; sourceTree = "<group>"; };
+		7FF32DB92100C6CB00432CB4 /* Parties+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Parties+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7FFA20CD20FCC4D8006024D5 /* CustomMKMarkerAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMKMarkerAnnotationView.swift; sourceTree = "<group>"; };
 		9E763A04FDAB739C90979869 /* Pods_PartyAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartyAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FE703F05F080B17F25E216 /* Pods-PartyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PartyApp/Pods-PartyApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -372,8 +380,12 @@
 		AFD6C10A20F3CB62006856EA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AFD6C10E20F3CC10006856EA /* Friend.swift */,
+				7FF32DB62100C6CB00432CB4 /* Friends+CoreDataClass.swift */,
+				7FF32DB72100C6CB00432CB4 /* Friends+CoreDataProperties.swift */,
+				7FF32DB82100C6CB00432CB4 /* Parties+CoreDataClass.swift */,
+				7FF32DB92100C6CB00432CB4 /* Parties+CoreDataProperties.swift */,
 				AFD6C11020F3CC1D006856EA /* FriendsList.swift */,
+				AFD6C10E20F3CC10006856EA /* Friend.swift */,
 				AFD6C11220F3CC30006856EA /* Party.swift */,
 				AFD6C11420F3CC3E006856EA /* PartiesList.swift */,
 				7F1B70A220F8E7D200BBD7FA /* User.swift */,
@@ -738,7 +750,9 @@
 			files = (
 				AF65DB1820F8AAC800525D24 /* DefaultViewController.swift in Sources */,
 				AF65DABB20F6509B00525D24 /* PartiesServices.swift in Sources */,
+				7FF32DBB2100C6CB00432CB4 /* Friends+CoreDataProperties.swift in Sources */,
 				AFD6C0F620F3C896006856EA /* FriendsListVC.swift in Sources */,
+				7FF32DBD2100C6CB00432CB4 /* Parties+CoreDataProperties.swift in Sources */,
 				7FDD261520F8BDFE00DC88FA /* DateToStringExtension.swift in Sources */,
 				AFD6C10820F3C985006856EA /* UserVM.swift in Sources */,
 				AFD6C11120F3CC1D006856EA /* FriendsList.swift in Sources */,
@@ -753,6 +767,7 @@
 				AFD6C0F420F3C873006856EA /* PartiesListVC.swift in Sources */,
 				AFD6C0BE20F3C7A3006856EA /* SplashViewController.swift in Sources */,
 				AF65DAB920F64FC400525D24 /* FriendsServices.swift in Sources */,
+				7FF32DBC2100C6CB00432CB4 /* Parties+CoreDataClass.swift in Sources */,
 				AFD6C0FE20F3C91D006856EA /* FriendVM.swift in Sources */,
 				AFD6C11B20F3CCB9006856EA /* FriendCellItem.swift in Sources */,
 				7FFA20CE20FCC4D8006024D5 /* CustomMKMarkerAnnotationView.swift in Sources */,
@@ -775,6 +790,7 @@
 				AFD6C12020F42099006856EA /* RootVC.swift in Sources */,
 				7F1B70A320F8E7D200BBD7FA /* User.swift in Sources */,
 				AFD6C10420F3C94E006856EA /* PartiesListVM.swift in Sources */,
+				7FF32DBA2100C6CB00432CB4 /* Friends+CoreDataClass.swift in Sources */,
 				AFD6C10220F3C93E006856EA /* PartyVM.swift in Sources */,
 				AFD6C10F20F3CC10006856EA /* Friend.swift in Sources */,
 			);
