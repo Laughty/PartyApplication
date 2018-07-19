@@ -13,8 +13,12 @@ import UIKit
 import Alamofire
 
 enum FetchDetail: String {
-    case partyList = "partyList"
-    case friendList = "friendList"
+    case partyList = "Parties"
+    case friendList = "Friends"
+    
+}
+
+protocol CoreDataSaveable {
     
 }
 
@@ -25,11 +29,12 @@ class CoreDataService {
   
     
     
-    func saveDataToCoreData(name:FetchDetail,response:DataResponse<Any>){
+    func saveDataToCoreData(name:FetchDetail,dataObject:Any){
         switch name {
         case .friendList:
+            
             cleanRecordForEntity(name: name)
-            let friendList = response.result.value as! FriendList
+            let friendList = dataObject as! FriendList
             friendList.friends.map(){ f in
                 let entity = NSEntityDescription.entity(forEntityName: name.rawValue, in: self.moc)
                 let newFriend = NSManagedObject(entity: entity!, insertInto: self.moc) as? Friends
@@ -50,7 +55,7 @@ class CoreDataService {
             
         case .partyList:
             cleanRecordForEntity(name: name)
-            let partyList = response.result.value as! PartiesList
+            let partyList = dataObject as! PartiesList
             partyList.parties.map(){ p in
                 let entity = NSEntityDescription.entity(forEntityName: name.rawValue, in: self.moc)
                 let newParty = NSManagedObject(entity: entity!, insertInto: self.moc) as? Parties
@@ -120,6 +125,12 @@ class CoreDataService {
             
         }
      return nil
+    }
+    class var shared: CoreDataService {
+        struct Static {
+            static let instance = CoreDataService()
+        }
+        return Static.instance
     }
     
 }

@@ -130,6 +130,9 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
             self?.loadingView.hide()
             print(error ?? "Something went wrong")
         }
+        
+        //GhettoCoreData
+        
     }
     
     

@@ -14,7 +14,7 @@ import ObjectMapper
 - list of friends
  */
 
-struct FriendList: Mappable {
+struct FriendList: Mappable, CoreDataSaveable {
     var friends: [Friend] = []
     
     init(friends: [Friend]) {

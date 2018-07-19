@@ -32,7 +32,11 @@ class FriendsService: AbstractService, FriendsServiceProtocol {
         
         Alamofire.request(BASE_URL + request.path).responseObject { (response: DataResponse<FriendList>) in
             let friends = response.result.value
-            //            print("Result of downloading FriendList -> First friend's name: \(String(describing: friends.value?.friends))")
+            
+            
+            CoreDataService.shared.saveDataToCoreData(name: FetchDetail.friendList, dataObject: friends )
+
+        
             
             var friendsVMList: [FriendVMProtocol] = []
             if friends != nil {
