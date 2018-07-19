@@ -88,8 +88,8 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         
         
         let content = UNMutableNotificationContent()
-        content.title = "Don't forget"
-        content.body = "Buy some milk"
+        content.title = "Piwko"
+        content.body = "Damian Idzie po piwko bo nie patrzy :)"
         content.sound = UNNotificationSound.default()
         content.categoryIdentifier = "UYLReminderCategory"
         
