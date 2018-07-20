@@ -24,6 +24,12 @@ class PartyMapViewController: UIViewController  {
         locationManager.delegate = self
         loadPartiesPoint()
         checkLocationAuthorizationStatus()
+        
+        mapView.showsUserLocation=true
+        
+        //mapView.setCenter(mapView.userLocation.coordinate, animated: true)
+        
+        print(mapView.userLocation.coordinate)
 
         // Do any additional setup after loading the view.
     }
@@ -40,7 +46,8 @@ class PartyMapViewController: UIViewController  {
         if CLLocationManager.authorizationStatus() == .authorizedAlways {
             mapView.showsUserLocation = true
 //            centerMapOnLocation(location: CLLocation(latitude: parties.first!.location[0], longitude: parties.first!.location[1]))
-            centerMapOnLocation(location: CLLocation(latitude: mapView.userLocation.coordinate.latitude, longitude: mapView.userLocation.coordinate.longitude ))
+            //print(mapView.userLocation.coordinate)
+            //centerMapOnLocation(location: CLLocation(latitude: mapView.userLocation.coordinate.latitude, longitude: mapView.userLocation.coordinate.longitude ))
         } else {
 //            centerMapOnLocation(location: CLLocation(latitude: parties.first!.location[0], longitude: parties.first!.location[1]))
             locationManager.requestAlwaysAuthorization()
@@ -100,7 +107,12 @@ extension PartyMapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let clickedView = view as! MKAnnotationView
         let party = view.annotation as! PartyMapItem
-        centerMapOnLocation(location: CLLocation(latitude: party.coordinate.latitude, longitude: party.coordinate.longitude ))
+        //centerMapOnLocation(location: CLLocation(latitude: party.coordinate.latitude, longitude: party.coordinate.longitude ))
+    }
+    
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        //mapView.setCenter(userLocation.coordinate, animated: true)
+        mapView.setRegion(MKCoordinateRegionMakeWithDistance(userLocation.coordinate, regionRadius, regionRadius), animated: true)
     }
     
 }
