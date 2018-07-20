@@ -41,7 +41,7 @@ class InitService {
         
         _ = initData.parties.map(){
             p in
-            let entity = NSEntityDescription.entity(forEntityName: FetchDetail.partyList.rawValue, in: self.moc)
+            let entity = NSEntityDescription.entity(forEntityName: "Parties", in: self.moc)
             let newParty = NSManagedObject(entity: entity!, insertInto: self.moc) as? Parties
             newParty?.desc = p.description
             newParty?.latitude = p.latitude
@@ -51,7 +51,7 @@ class InitService {
             newParty?.image = p.image
         }
         _ = initData.friends.map(){ f in
-            let entity = NSEntityDescription.entity(forEntityName: FetchDetail.friendList.rawValue, in: self.moc)
+            let entity = NSEntityDescription.entity(forEntityName: "Friends", in: self.moc)
             let newFriend = NSManagedObject(entity: entity!, insertInto: self.moc) as? Friends
             newFriend?.id = Int32(f.id)!
             newFriend?.desc = f.description
