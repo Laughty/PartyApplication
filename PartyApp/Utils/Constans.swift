@@ -8,6 +8,9 @@
 
 import Foundation
 
+enum ConfigurationSrings: String{
+    case apiURL = "http://demo9453650.mockable.io/appInitialData"
+}
 
 enum StoryboardIds: String {
     case main = "Main"
