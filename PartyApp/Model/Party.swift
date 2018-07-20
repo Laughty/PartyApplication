@@ -52,8 +52,8 @@ struct Party: Mappable {
     mutating func mapping(map: Map) {
         id <- map["id"]
 //        location <- map["location"]
-        latitude <- map["latitude"]
-        longitude <- map["longitude"]
+        latitude <- map["location.0"]
+        longitude <- map["location.1"]
         time <- map["time"]
         title <- map["title"]
         description <- map["description"]

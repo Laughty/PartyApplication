@@ -38,13 +38,12 @@ class PartiesListVC: UIPageViewController,UIPageViewControllerDelegate {
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Parties")
         request.returnsObjectsAsFaults = false
         do {
-            let partyObject = try moc.fetch(request) as! [Parties]
-            for party in partyObject {
+            let partyObjects = try moc.fetch(request) as! [Parties]
+            for party in partyObjects {
                 parties.append(PartyVM(party: party))
-                print(party)
+                //print(party)
             }
-            
-        }catch{
+        } catch{
             print("Failed")
         }
         

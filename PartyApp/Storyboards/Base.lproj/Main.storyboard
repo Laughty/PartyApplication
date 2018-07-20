@@ -126,7 +126,7 @@
             </objects>
             <point key="canvasLocation" x="605.60000000000002" y="848.72563718140941"/>
         </scene>
-        <!--Item-->
+        <!--Google Maps-->
         <scene sceneID="7DD-QZ-Xt6">
             <objects>
                 <viewController id="4xl-3z-ncf" customClass="GoogleMapsViewController" customModule="PartyApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -136,7 +136,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="zgQ-Q4-4Jj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Yad-xe-B4J"/>
+                    <tabBarItem key="tabBarItem" title="Google Maps" id="Yad-xe-B4J"/>
                     <connections>
                         <outlet property="googleMaps" destination="CyF-EL-KPl" id="tV6-6C-Cs7"/>
                     </connections>
@@ -495,7 +495,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x8A-vB-Rll">
-                                <rect key="frame" x="16" y="80" width="343" height="473"/>
+                                <rect key="frame" x="16" y="36" width="343" height="517"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vpe-32-ShH">
                                 <rect key="frame" x="16" y="569" width="343" height="82"/>
@@ -644,6 +644,6 @@
         <image name="partyMain1" width="680" height="452"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bti-0G-TK4"/>
+        <segue reference="u3u-cE-liM"/>
     </inferredMetricsTieBreakers>
 </document>

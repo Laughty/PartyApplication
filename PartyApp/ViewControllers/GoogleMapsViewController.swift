@@ -10,28 +10,30 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 import Alamofire
-
+import CoreData
 
 class GoogleMapsViewController:
 UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
  //   @IBOutlet var googleMaps: GMSMapView!
     
     @IBOutlet var googleMaps: GMSMapView!
+    
     var locationManager = CLLocationManager()
     var locationStart = CLLocation()
     var locationStop = CLLocation()
+    
+    var parties: [PartyVMProtocol] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.googleMaps.delegate = self
-        checkLocationAuthorizationStatus()
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingHeading()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startMonitoringSignificantLocationChanges()
-
+        
+        fetchPartiesData()
+        setupController()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         self.googleMaps.clear()
         self.locationStop = CLLocation(latitude: currentParty.latitude, longitude: currentParty.longitude)
         if (locationManager.location != nil){
@@ -42,16 +44,43 @@ UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
         self.googleMaps.settings.myLocationButton = true
         self.googleMaps.settings.compassButton = true
         self.googleMaps.settings.zoomGestures = true
-        
-        createMarker(title:currentParty.title , location: locationStop)
-        drawPatch(startLocation: self.locationStart, stopLocation: self.locationStop)
-        
+
+        //createMarker(title:currentParty.title , location: locationStop)
+        //drawPatch(startLocation: self.locationStart, stopLocation: self.locationStop)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        createMarkersFrom(parties)
     }
+    
+    // MARK: Setup the View Controller
+    func fetchPartiesData() {
+        let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Parties")
+        request.returnsObjectsAsFaults = false
+        do {
+            let partyObjects = try moc.fetch(request) as! [Parties]
+            for party in partyObjects {
+                parties.append(PartyVM(party: party))
+                //print(party)
+            }
+        } catch{
+            print("Failed")
+        }
+    }
+    
+    func setupController() {
+        self.googleMaps.delegate = self
+        checkLocationAuthorizationStatus()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingHeading()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startMonitoringSignificantLocationChanges()
+    }
+    
     private func checkLocationAuthorizationStatus() {
         if CLLocationManager.authorizationStatus() == .authorizedAlways {
             
@@ -60,30 +89,26 @@ UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
             locationManager.requestAlwaysAuthorization()
         }
     }
-    
 
+    // MARK: Creating markers
+    func createMarkersFrom(_ parties: [PartyVMProtocol]) {
+        for party in parties {
+            createMarker(title: party.title,
+                         location: CLLocation(latitude: party.latitude, longitude: party.longitude))
+        }
+        print(parties.count)
+    }
     
-
-    func createMarker(title:String, location:CLLocation){
+    func createMarker(title: String, location: CLLocation){
         let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: location.coordinate.latitude,    longitude:location.coordinate.longitude)
+        marker.position = CLLocationCoordinate2D(latitude: location.coordinate.latitude,
+                                                 longitude: location.coordinate.longitude)
         marker.title = title
         marker.map = googleMaps
-        
-        
-        
+        marker.appearAnimation = .pop
     }
-
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    // - MARK: Drawing paths
     func drawPatch(startLocation:CLLocation, stopLocation:CLLocation){
         let origin = "\(startLocation.coordinate.latitude),\(startLocation.coordinate.longitude)"
         let destanation = "\(stopLocation.coordinate.latitude),\(stopLocation.coordinate.longitude)"
