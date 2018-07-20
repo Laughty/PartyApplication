@@ -3,3 +3,11 @@
 "tofriends" = "Friends List";
 "toprofile" = "Profile";
 "notificationTitle" = "Beer";
+"FriendsListVCTitle" = "Friends list";
+"PartiesListVCTitle" = "Parties list";
+"PartyMapVCTitle" = "Party map";
+"PartyDetailsVCTitle" = "Party Details";
+"FriendDetailsVCTitle" = "Friend details";
+"UserInfoVCTitle" = "User info";
+"PartyMoreDetailsVCTitle" = "Party details (more)";
+"WelcomeVCTitle" = "Welcome";

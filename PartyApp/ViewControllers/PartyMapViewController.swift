@@ -22,6 +22,9 @@ class PartyMapViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = NSLocalizedString("PartyMapVCTitle", comment: "")
+        
         locationManager.delegate = self
         loadPartiesPoint()
         checkLocationAuthorizationStatus()

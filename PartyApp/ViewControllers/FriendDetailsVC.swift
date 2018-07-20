@@ -28,6 +28,8 @@ class FriendDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = NSLocalizedString("FriendDetailsVCTitle", comment: "")
+        
         //Piotrek zostawił śmieci :/ UITest wyłapał :-)
         //let entity = NSEntityDescription.entity(forEntityName: "Friends", in: moc)
         //let newFriend = NSManagedObject(entity: entity!, insertInto: moc) as? Friends

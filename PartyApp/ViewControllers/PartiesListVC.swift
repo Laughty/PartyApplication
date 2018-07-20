@@ -34,6 +34,7 @@ class PartiesListVC: UIPageViewController,UIPageViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = NSLocalizedString("PartiesListVCTitle", comment: "")
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Parties")
         request.returnsObjectsAsFaults = false

@@ -57,6 +57,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadingView.frame = self.view.frame
+        self.navigationItem.title = NSLocalizedString("WelcomeVCTitle", comment: "")
         
         NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange),
                                                name: UserDefaults.didChangeNotification, object: nil)

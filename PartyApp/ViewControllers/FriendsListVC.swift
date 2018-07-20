@@ -32,6 +32,9 @@ class FriendsListVC: UITableViewController, UISearchResultsUpdating {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        self.navigationItem.title = NSLocalizedString("FriendsListVCTitle", comment: "")
+        
         tableView.register(UINib(nibName: FriendCellItem.CellReusableIdentifier, bundle: nil), forCellReuseIdentifier: FriendCellItem.CellReusableIdentifier)
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Friends")

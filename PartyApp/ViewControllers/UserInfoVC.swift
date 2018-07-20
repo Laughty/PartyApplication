@@ -27,6 +27,8 @@ class UserInfoVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = NSLocalizedString("UserInfoVCTitle", comment: "")
+        
         imageView.image = user?.image
         nameLabel.text = "\(user?.name) \(user?.surname)"
         phoneLabel.text = user?.phone

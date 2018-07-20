@@ -25,6 +25,8 @@ class PartyMoreDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationItem.title = NSLocalizedString("PartyMoreDetailsVCTitle", comment: "")
+        
         if let party = party {
             partyImage.image = party.image
             partyTitle.text = party.title

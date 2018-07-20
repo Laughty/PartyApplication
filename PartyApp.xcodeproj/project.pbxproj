@@ -54,7 +54,6 @@
 		AFD6C0F220F3C85A006856EA /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C0F120F3C85A006856EA /* WelcomeVC.swift */; };
 		AFD6C0F420F3C873006856EA /* PartiesListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C0F320F3C873006856EA /* PartiesListVC.swift */; };
 		AFD6C0F620F3C896006856EA /* FriendsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C0F520F3C896006856EA /* FriendsListVC.swift */; };
-		AFD6C0F820F3C8BB006856EA /* PartiesMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C0F720F3C8BB006856EA /* PartiesMapVC.swift */; };
 		AFD6C0FA20F3C8F7006856EA /* PartyDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C0F920F3C8F7006856EA /* PartyDetailsVC.swift */; };
 		AFD6C0FC20F3C90D006856EA /* FriendDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C0FB20F3C90D006856EA /* FriendDetailsVC.swift */; };
 		AFD6C0FE20F3C91D006856EA /* FriendVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C0FD20F3C91D006856EA /* FriendVM.swift */; };
@@ -156,7 +155,6 @@
 		AFD6C0F120F3C85A006856EA /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
 		AFD6C0F320F3C873006856EA /* PartiesListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartiesListVC.swift; sourceTree = "<group>"; };
 		AFD6C0F520F3C896006856EA /* FriendsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListVC.swift; sourceTree = "<group>"; };
-		AFD6C0F720F3C8BB006856EA /* PartiesMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartiesMapVC.swift; sourceTree = "<group>"; };
 		AFD6C0F920F3C8F7006856EA /* PartyDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyDetailsVC.swift; sourceTree = "<group>"; };
 		AFD6C0FB20F3C90D006856EA /* FriendDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailsVC.swift; sourceTree = "<group>"; };
 		AFD6C0FD20F3C91D006856EA /* FriendVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendVM.swift; sourceTree = "<group>"; };
@@ -331,7 +329,6 @@
 				AFD6C0F120F3C85A006856EA /* WelcomeVC.swift */,
 				AFD6C0F320F3C873006856EA /* PartiesListVC.swift */,
 				AFD6C0F520F3C896006856EA /* FriendsListVC.swift */,
-				AFD6C0F720F3C8BB006856EA /* PartiesMapVC.swift */,
 				AFD6C0F920F3C8F7006856EA /* PartyDetailsVC.swift */,
 				AFD6C0FB20F3C90D006856EA /* FriendDetailsVC.swift */,
 				AFD6C10520F3C97A006856EA /* UserInfoVC.swift */,
@@ -718,7 +715,6 @@
 				AF65DAC720F6643000525D24 /* GetFriendRequest.swift in Sources */,
 				AFD6C0F220F3C85A006856EA /* WelcomeVC.swift in Sources */,
 				AFD6C11720F3CC9F006856EA /* PartyCellItem.swift in Sources */,
-				AFD6C0F820F3C8BB006856EA /* PartiesMapVC.swift in Sources */,
 				AFD6C0F420F3C873006856EA /* PartiesListVC.swift in Sources */,
 				AFD6C0BE20F3C7A3006856EA /* SplashViewController.swift in Sources */,
 				AF65DAB920F64FC400525D24 /* FriendsServices.swift in Sources */,
