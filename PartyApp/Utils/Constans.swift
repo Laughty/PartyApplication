@@ -28,10 +28,6 @@ enum Error: String {
     case notFindPartyDetail = "Not able to find PartyDetailVC in Main storyboard"
 }
 
-enum Notification: String {
-
-}
-
 struct StoryboardSegues {
     static let ToPartyList = "toPartyListVC"
     static let ToFriendsList = "toFriendsListVC"
