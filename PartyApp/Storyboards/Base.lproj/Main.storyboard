@@ -142,11 +142,12 @@
                     <tabBarItem key="tabBarItem" title="Google Maps" id="Yad-xe-B4J"/>
                     <connections>
                         <outlet property="googleMaps" destination="CyF-EL-KPl" id="tV6-6C-Cs7"/>
+                        <segue destination="880-TV-sWu" kind="show" identifier="toPartyMoreDetailsVC" id="se3-EA-twh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3VT-cm-Pft" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1361" y="-5"/>
+            <point key="canvasLocation" x="2596" y="-686"/>
         </scene>
         <!--Parties List-->
         <scene sceneID="cJ3-yq-m0u">
@@ -498,7 +499,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x8A-vB-Rll">
-                                <rect key="frame" x="16" y="36" width="343" height="517"/>
+                                <rect key="frame" x="16" y="80" width="343" height="473"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vpe-32-ShH">
                                 <rect key="frame" x="16" y="569" width="343" height="82"/>
@@ -647,6 +648,6 @@
         <image name="partyMain1" width="680" height="452"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u3u-cE-liM"/>
+        <segue reference="se3-EA-twh"/>
     </inferredMetricsTieBreakers>
 </document>

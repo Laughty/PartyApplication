@@ -12,8 +12,7 @@ import GooglePlaces
 import Alamofire
 import CoreData
 
-class GoogleMapsViewController:
-UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
+class GoogleMapsViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
  //   @IBOutlet var googleMaps: GMSMapView!
     
     @IBOutlet var googleMaps: GMSMapView!
@@ -23,6 +22,7 @@ UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
     var locationStop = CLLocation()
     
     var parties: [PartyVMProtocol] = []
+    var selectedParty: PartyVMProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,9 @@ UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
         
         self.googleMaps.clear()
         self.locationStop = CLLocation(latitude: currentParty.latitude, longitude: currentParty.longitude)
-        if (locationManager.location != nil){
+        if selectedParty != nil {
+            locationStart = CLLocation(latitude: selectedParty!.latitude, longitude: selectedParty!.longitude)
+        } else if locationManager.location != nil {
             locationStart = locationManager.location!
         }
         self.googleMaps.camera = GMSCameraPosition(target: locationStart.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
@@ -47,10 +49,6 @@ UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
 
         //createMarker(title:currentParty.title , location: locationStop)
         //drawPatch(startLocation: self.locationStart, stopLocation: self.locationStop)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         createMarkersFrom(parties)
     }
     
@@ -72,7 +70,7 @@ UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
     }
     
     func setupController() {
-        self.googleMaps.delegate = self
+        googleMaps.delegate = self
         checkLocationAuthorizationStatus()
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -97,7 +95,6 @@ UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
                          with: CLLocation(latitude: party.latitude, longitude: party.longitude),
                          from: party)
         }
-        print(parties.count)
     }
     
     func createMarker(title: String, with location: CLLocation, from party: PartyVMProtocol){
@@ -106,7 +103,6 @@ UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
         marker.title = title
         marker.snippet = "Tap for details"
         marker.map = googleMaps
-        marker.appearAnimation = .pop
     }
     
     // - MARK: Drawing paths
@@ -131,36 +127,41 @@ UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
                         polyline.map = self.googleMaps
                         
                     }
-                    
-                    
-                    
                 }
-            //let json = JSON(data: response.data!)
-            //let routes = json["routes"].arrayValue
-            
-            
         }
     }
-
-}
-
-extension GMSMarker {
-    struct PartyObject {
-        let party: PartyVMProtocol?
+    
+    // - MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case StoryboardSegues.ToPartyMoreDetailsVC:
+            let destinationVC = segue.destination as! PartyMoreDetailsVC
+            if selectedParty != nil {
+                destinationVC.party = selectedParty
+            }
+        default:
+            print("Default case, no segue found")
+        }
     }
 }
 
+// - MARK: GoogleMapsViewControllerDelegate methods
 extension GoogleMapsViewController {
-    
     func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
-        let view = UIView()
-        view.backgroundColor = .white
+        let view = GMSCustomMarkerWindow(frame: CGRect(origin: .zero, size: CGSize(width: 200, height: 50)))
+        
+        for party in parties {
+            if marker.position.latitude == party.latitude && marker.position.longitude == party.longitude {
+                selectedParty = party
+                view.titleLabel.text = party.title
+                view.imageView.image = party.image
+            }
+        }
+        
         return view
     }
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
-        
+        performSegue(withIdentifier: StoryboardSegues.ToPartyMoreDetailsVC, sender: self)
     }
-    
 }
-
