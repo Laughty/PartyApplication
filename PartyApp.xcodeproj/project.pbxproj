@@ -22,7 +22,6 @@
 		7FF32DBD2100C6CB00432CB4 /* Parties+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF32DB92100C6CB00432CB4 /* Parties+CoreDataProperties.swift */; };
 		7FFA20CE20FCC4D8006024D5 /* CustomMKMarkerAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFA20CD20FCC4D8006024D5 /* CustomMKMarkerAnnotationView.swift */; };
 		AF32DAAE20FFEAEA00B1EF53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFD6C0C520F3C7A5006856EA /* Assets.xcassets */; };
-		AF32DAB02100777B00B1EF53 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32DAAF2100777A00B1EF53 /* CoreDataService.swift */; };
 		AF32DAC1210088AD00B1EF53 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF32DAC3210088AD00B1EF53 /* Localizable.strings */; };
 		AF32DAC6210088CD00B1EF53 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF32DAC8210088CD00B1EF53 /* Localizable.strings */; };
 		AF32DACC210088FF00B1EF53 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AF32DACE210088FF00B1EF53 /* Localizable.strings */; };
@@ -109,7 +108,6 @@
 		9E763A04FDAB739C90979869 /* Pods_PartyAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PartyAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3FE703F05F080B17F25E216 /* Pods-PartyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PartyApp/Pods-PartyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AF32DAAD20FFE5B100B1EF53 /* PartyApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PartyApp.entitlements; sourceTree = "<group>"; };
-		AF32DAAF2100777A00B1EF53 /* CoreDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		AF32DABB2100860100B1EF53 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Main.strings; sourceTree = "<group>"; };
 		AF32DABC2100860100B1EF53 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		AF32DABD2100860A00B1EF53 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
@@ -362,7 +360,6 @@
 		AFD6C0F020F3C838006856EA /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				AF32DAAF2100777A00B1EF53 /* CoreDataService.swift */,
 				AF65DABD20F657A000525D24 /* Parties */,
 				AF65DABC20F6579300525D24 /* Friends */,
 				AF65DAB420F64F6500525D24 /* AbstractRequest.swift */,
@@ -726,7 +723,6 @@
 				AFD6C11520F3CC3E006856EA /* PartiesList.swift in Sources */,
 				AF65DAC120F663F100525D24 /* GetPartiesRequest.swift in Sources */,
 				AF65DAC320F6640C00525D24 /* GetPartyRequest.swift in Sources */,
-				AF32DAB02100777B00B1EF53 /* CoreDataService.swift in Sources */,
 				AFD6C0FA20F3C8F7006856EA /* PartyDetailsVC.swift in Sources */,
 				AFD6C0BC20F3C7A3006856EA /* AppDelegate.swift in Sources */,
 				AFD6C10620F3C97A006856EA /* UserInfoVC.swift in Sources */,

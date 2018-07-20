@@ -34,7 +34,7 @@ class FriendsService: AbstractService, FriendsServiceProtocol {
             let friends = response.result.value
             
             
-            CoreDataService.shared.saveDataToCoreData(name: FetchDetail.friendList, dataObject: friends )
+//            CoreDataService.shared.saveDataToCoreData(name: FetchDetail.friendList, dataObject: friends )
 
         
             
