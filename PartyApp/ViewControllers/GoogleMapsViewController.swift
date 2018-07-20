@@ -94,16 +94,17 @@ UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
     func createMarkersFrom(_ parties: [PartyVMProtocol]) {
         for party in parties {
             createMarker(title: party.title,
-                         location: CLLocation(latitude: party.latitude, longitude: party.longitude))
+                         with: CLLocation(latitude: party.latitude, longitude: party.longitude),
+                         from: party)
         }
         print(parties.count)
     }
     
-    func createMarker(title: String, location: CLLocation){
+    func createMarker(title: String, with location: CLLocation, from party: PartyVMProtocol){
         let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: location.coordinate.latitude,
-                                                 longitude: location.coordinate.longitude)
+        marker.position = CLLocationCoordinate2D(latitude: party.latitude, longitude: party.longitude)
         marker.title = title
+        marker.snippet = "Tap for details"
         marker.map = googleMaps
         marker.appearAnimation = .pop
     }
@@ -111,9 +112,9 @@ UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
     // - MARK: Drawing paths
     func drawPatch(startLocation:CLLocation, stopLocation:CLLocation){
         let origin = "\(startLocation.coordinate.latitude),\(startLocation.coordinate.longitude)"
-        let destanation = "\(stopLocation.coordinate.latitude),\(stopLocation.coordinate.longitude)"
+        let destination = "\(stopLocation.coordinate.latitude),\(stopLocation.coordinate.longitude)"
     
-        let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destanation)&mode=driving&key=AIzaSyC6AZgUwTCF97I-4FqEeBZkKgXFeR3NnGA"
+        let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=driving&key=AIzaSyC6AZgUwTCF97I-4FqEeBZkKgXFeR3NnGA"
         
         Alamofire.request(url).responseJSON{ response in
                 if let json = response.result.value {
@@ -140,6 +141,26 @@ UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
             
         }
     }
-    
 
 }
+
+extension GMSMarker {
+    struct PartyObject {
+        let party: PartyVMProtocol?
+    }
+}
+
+extension GoogleMapsViewController {
+    
+    func mapView(_ mapView: GMSMapView, markerInfoWindow marker: GMSMarker) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
+    }
+    
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        
+    }
+    
+}
+
