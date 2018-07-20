@@ -29,7 +29,13 @@ class PartyDetailsUITest: XCTestCase {
     }
     
     func testExample() {
-        // Use recording to get started writing UI tests.
+        
+        sleep(2)
+        let app = XCUIApplication()
+        app.buttons["Party List"].tap()
+        app.buttons["Details"].tap()
+
+        
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
