@@ -11,6 +11,10 @@
 		73DE1793112D9526D35D9644 /* Pods_PartyAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF2F62DFA6419F4D809BD2 /* Pods_PartyAppUITests.framework */; };
 		7F0ADE3720F78A5600DC4EFC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0ADE3620F78A5500DC4EFC /* Alamofire.framework */; };
 		7F1B70A320F8E7D200BBD7FA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1B70A220F8E7D200BBD7FA /* User.swift */; };
+		7F46E7AB2101FDF90049D3A0 /* PartyDetailsUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46E7AA2101FDF90049D3A0 /* PartyDetailsUITest.swift */; };
+		7F46E7AD2101FE1F0049D3A0 /* PartyDetailsFromMapUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46E7AC2101FE1F0049D3A0 /* PartyDetailsFromMapUITest.swift */; };
+		7F46E7AF2101FE3A0049D3A0 /* FriendDetailsUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46E7AE2101FE3A0049D3A0 /* FriendDetailsUITest.swift */; };
+		7F46E7B12101FE5E0049D3A0 /* UserDetailsUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46E7B02101FE5E0049D3A0 /* UserDetailsUITest.swift */; };
 		7F5291A720FE00C300807AB8 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5291A620FE00C300807AB8 /* GoogleMapsViewController.swift */; };
 		7FCB3CDC2100C949004D0B74 /* InitialData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB3CDA2100BA74004D0B74 /* InitialData.swift */; };
 		7FCB3CDD2100C964004D0B74 /* InitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB3CD82100B7FF004D0B74 /* InitService.swift */; };
@@ -95,6 +99,10 @@
 		48284D0F4D288F069C7C96AF /* Pods-PartyAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartyAppUITests/Pods-PartyAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7F0ADE3620F78A5500DC4EFC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		7F1B70A220F8E7D200BBD7FA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7F46E7AA2101FDF90049D3A0 /* PartyDetailsUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyDetailsUITest.swift; sourceTree = "<group>"; };
+		7F46E7AC2101FE1F0049D3A0 /* PartyDetailsFromMapUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyDetailsFromMapUITest.swift; sourceTree = "<group>"; };
+		7F46E7AE2101FE3A0049D3A0 /* FriendDetailsUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailsUITest.swift; sourceTree = "<group>"; };
+		7F46E7B02101FE5E0049D3A0 /* UserDetailsUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsUITest.swift; sourceTree = "<group>"; };
 		7F5291A620FE00C300807AB8 /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
 		7FCB3CD82100B7FF004D0B74 /* InitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitService.swift; sourceTree = "<group>"; };
 		7FCB3CDA2100BA74004D0B74 /* InitialData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialData.swift; sourceTree = "<group>"; };
@@ -307,6 +315,10 @@
 			children = (
 				AFD6C0DE20F3C7A5006856EA /* PartyAppUITests.swift */,
 				AFD6C0E020F3C7A5006856EA /* Info.plist */,
+				7F46E7AA2101FDF90049D3A0 /* PartyDetailsUITest.swift */,
+				7F46E7AC2101FE1F0049D3A0 /* PartyDetailsFromMapUITest.swift */,
+				7F46E7AE2101FE3A0049D3A0 /* FriendDetailsUITest.swift */,
+				7F46E7B02101FE5E0049D3A0 /* UserDetailsUITest.swift */,
 			);
 			path = PartyAppUITests;
 			sourceTree = "<group>";
@@ -751,7 +763,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F46E7AF2101FE3A0049D3A0 /* FriendDetailsUITest.swift in Sources */,
 				AFD6C0DF20F3C7A5006856EA /* PartyAppUITests.swift in Sources */,
+				7F46E7AD2101FE1F0049D3A0 /* PartyDetailsFromMapUITest.swift in Sources */,
+				7F46E7B12101FE5E0049D3A0 /* UserDetailsUITest.swift in Sources */,
+				7F46E7AB2101FDF90049D3A0 /* PartyDetailsUITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

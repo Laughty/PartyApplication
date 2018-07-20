@@ -8,7 +8,7 @@
 
 
 import UIKit
-import CoreData
+//import CoreData
 
 class FriendDetailsVC: UIViewController {
     
@@ -28,23 +28,23 @@ class FriendDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Piotrek zostawił śmieci :/ UITest wyłapał :-)
+        //let entity = NSEntityDescription.entity(forEntityName: "Friends", in: moc)
+        //let newFriend = NSManagedObject(entity: entity!, insertInto: moc) as? Friends
+        //let nextFriend = Friends(entity: entity!, insertInto: moc)
         
-        let entity = NSEntityDescription.entity(forEntityName: "Friends", in: moc)
-        let newFriend = NSManagedObject(entity: entity!, insertInto: moc) as? Friends
-        let nextFriend = Friends(entity: entity!, insertInto: moc)
         
-        
-        newFriend?.setValue(friend?.name, forKey: "name")
-        newFriend?.setValue(friend?.description, forKey: "desc")
-        newFriend?.setValue(friend?.likes, forKey: "likes")
-        newFriend?.email = "yolo@blabla.com"
-       
-        
-        do {
-            try moc.save()
-        } catch {
-            print("Failed saving")
-        }
+//        newFriend?.setValue(friend?.name, forKey: "name")
+//        newFriend?.setValue(friend?.description, forKey: "desc")
+//        newFriend?.setValue(friend?.likes, forKey: "likes")
+//        newFriend?.email = "yolo@blabla.com"
+//
+//
+//        do {
+//            try moc.save()
+//        } catch {
+//            print("Failed saving")
+//        }
         
         findFriendByName(name: (friend?.name)!)
         friendImage.image = friend?.image

@@ -55,6 +55,7 @@ class FriendVM: FriendVMProtocol {
         self.surname = friend.surname ?? ""
         self.description = friend.desc ?? ""
         self.likes = Int(friend.likes ?? 0)
+        print(friend.image)
         self.image = UIImage(named: friend.image!)!
         self.phone = friend.phone ?? ""
         self.email = friend.email ?? ""
