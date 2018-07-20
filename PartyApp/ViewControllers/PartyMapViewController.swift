@@ -9,13 +9,14 @@
 import UIKit
 import MapKit
 import CoreLocation
+import CoreData
 
 class PartyMapViewController: UIViewController  {
     
     var parties: [PartyVMProtocol] = []
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
-    let regionRadius: CLLocationDistance = 1000
+    let regionRadius: CLLocationDistance = 5000
     
     var selectedParty: PartyVMProtocol?
     
@@ -35,10 +36,26 @@ class PartyMapViewController: UIViewController  {
     }
     
     private func loadPartiesPoint(){
+        fetchPartiesData()
         for party in parties {
         let partyMapItem = PartyMapItem(party: party)
         mapView.addAnnotation(partyMapItem)
             
+        }
+    }
+    func fetchPartiesData() {
+        let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Parties")
+        request.returnsObjectsAsFaults = false
+        do {
+            let partyObjects = try moc.fetch(request) as! [Parties]
+            for party in partyObjects {
+                parties.append(PartyVM(party: party))
+                //print(party)
+            }
+        } catch{
+            print("Failed")
         }
     }
     
