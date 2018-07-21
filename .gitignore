@@ -1884,3 +1884,7 @@ PartyApp.xcodeproj/xcuserdata/Rafal.xcuserdatad/xcschemes/xcschememanagement.pli
 PartyApp.xcworkspace/xcuserdata/Rafal.xcuserdatad/UserInterfaceState.xcuserstate
 PartyApp.xcworkspace/xcuserdata/Rafal.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
 Pods/Pods.xcodeproj/xcuserdata/Rafal.xcuserdatad/xcschemes/xcschememanagement.plist
+Build/Intermediates/PartyApp.build/Debug-iphonesimulator/PartyApp.build/Objects-normal/x86_64/AppDelegate.swiftdeps~
+Build/Intermediates/PartyApp.build/Debug-iphonesimulator/PartyApp.build/Objects-normal/x86_64/PartiesServices.swiftdeps~
+Build/Intermediates/PartyApp.build/Debug-iphonesimulator/PartyApp.build/Objects-normal/x86_64/WelcomeVC.dia
+Build/Intermediates/PartyApp.build/Debug-iphonesimulator/PartyApp.build/Objects-normal/x86_64/WelcomeVC.swiftdeps~

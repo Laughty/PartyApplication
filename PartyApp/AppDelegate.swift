@@ -116,7 +116,7 @@ class UYLNotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
-        
+
         // Determine the user action
         switch response.actionIdentifier {
         case UNNotificationDismissActionIdentifier:
@@ -128,11 +128,7 @@ class UYLNotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
         case "Delete":
             print("Delete")
         case "GoToMap":
-            // TODO: Segue to Maps
-            print("Go to Maps")
-            
-            
-            
+            NotificationCenter.default.post(name: .goToGoogleMaps, object: nil)
         default:
             print("Unknown action")
         }

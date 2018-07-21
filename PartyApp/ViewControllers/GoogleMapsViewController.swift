@@ -35,7 +35,8 @@ class GoogleMapsViewController: UIViewController, GMSMapViewDelegate, CLLocation
         super.viewWillAppear(animated)
         
         self.googleMaps.clear()
-        self.locationStop = CLLocation(latitude: currentParty.latitude, longitude: currentParty.longitude)
+        let locationCopy = locationStart.coordinate
+        //self.locationStop = CLLocation(latitude: currentParty.latitude, longitude: currentParty.longitude)
         if selectedParty != nil {
             locationStart = CLLocation(latitude: selectedParty!.latitude, longitude: selectedParty!.longitude)
         } else if locationManager.location != nil {
@@ -165,3 +166,4 @@ extension GoogleMapsViewController {
         performSegue(withIdentifier: StoryboardSegues.ToPartyMoreDetailsVC, sender: self)
     }
 }
+

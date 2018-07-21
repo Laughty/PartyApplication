@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 import UserNotifications
-
+import GoogleMaps
 
 /*TODO:
 użyć nowego serwisu do pobrania danych i zasilenia core data
@@ -26,6 +26,7 @@ użyć nowego serwisu do pobrania danych i zasilenia core data
 
 extension Notification.Name {
     static let didReceivedPartiesData = Notification.Name("didReceiveDataParty")
+    static let goToGoogleMaps = Notification.Name("goToGoogleMaps")
 }
 
 enum FetchStatus {
@@ -48,7 +49,6 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     let center = UNUserNotificationCenter.current()
     let userDefaults = UserDefaults.standard
     
-    
     //var parties: [PartyVMProtocol] = []
     //var friends: [FriendVMProtocol] = []
     var user: UserVMProtocol? = nil
@@ -61,6 +61,8 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange),
                                                name: UserDefaults.didChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(goToPartyFromNotification),
+                                               name: .goToGoogleMaps, object: nil)
         
         InitService.shared.getInitData(ConfigurationSrings.apiURL.rawValue)
         
@@ -80,12 +82,15 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         }
     }
     
-    
     @IBAction func toPartyListButtonTapped(_ sender: UIButton) {
         
         //REDO
         self.performSegue(withIdentifier: StoryboardSegues.ToPartyList, sender: self) //TODLETE
         
+    }
+    
+    @objc func goToPartyFromNotification() {
+        performSegue(withIdentifier: StoryboardSegues.ToPartyList, sender: nil)
     }
     
     
@@ -191,61 +196,30 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         }
     }
     
-    
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case StoryboardSegues.ToPartyList:
+            // fetch Vistula Party
+            let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Parties")
+            request.predicate = NSPredicate(format: "title = %@", "Spacer nad wisełką")
+            do {
+                let vistulaParty = (try moc.fetch(request) as! [Parties]).first!
+                
+                let destinationVC = segue.destination as! UITabBarController
+                destinationVC.selectedIndex = 2
+                
+                let googleMapsVC = destinationVC.viewControllers![2] as! GoogleMapsViewController
+                googleMapsVC.selectedParty = PartyVM(party: vistulaParty)
+            } catch {
+                print("Failed fetching VistulaParty data")
+            }
+        default:
+            print("Default case for segue")
+        }
+    }
 }
 
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let segueId = segue.identifier {
-//        switch segueId {
-//        case StoryboardSegues.ToPartyList:
-//            let destinationVC = segue.destination as! UITabBarController
-////            let partiesListVC = destinationVC.viewControllers?.first! as! PartiesListVC
-////            partiesListVC.parties = parties
-////            let partyMapVC = destinationVC.viewControllers?[1] as! PartyMapViewController
-////            partyMapVC.parties = parties
-//
-//        case StoryboardSegues.ToFriendsList:
-//            let destinationVC = segue.destination as! FriendsListVC
-//            destinationVC.friends = friends
-//        case StoryboardSegues.ToProfile:
-//            let destinationVC = segue.destination as! UserInfoVC
-//            if let user = user {
-//                destinationVC.user = user
-//            }
-//        default:
-//            fatalError("Unknow segue")
-//        }
-//        }
-//    }
-
-//    func GhettoDataLoad(){ //Ghetto function -> to CoreData services
-//
-//        //GhettoLoad Parties
-//        loadingView.show()
-//        let requestP = GetPartiesRequest()
-//        partiesDataStatus = .inprogress
-//        PartiesService.shared.getPartiesList(requestP, success: {[weak self] (parties) in
-//            self?.parties = parties
-//            self?.loadingView.hide()
-//            NotificationCenter.default.post(name: .didReceivedPartiesData, object: nil)
-//        }){[weak self] (error) in
-//            self?.loadingView.hide()
-//            print(error ?? "Something went wrong")
-//        }
-//
-//        //GhettoLoad Friends
-//        //loadingView.show()
-//        let requestF = GetFriendsRequest()
-//        FriendsService.shared.getFriendsList(requestF, success: { [weak self] (friends) in
-//            self?.friends = friends
-//            self?.loadingView.hide()
-//        }){[weak self] (error) in
-//            self?.loadingView.hide()
-//            print(error ?? "Something went wrong")
-//        }
-//
-//    }
 
     
 
