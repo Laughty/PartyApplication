@@ -128,12 +128,7 @@ extension PartyMapViewController: MKMapViewDelegate {
     }
 
 
-    
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        let clickedView = view as! MKAnnotationView
-        let party = view.annotation as! PartyMapItem
-        //centerMapOnLocation(location: CLLocation(latitude: party.coordinate.latitude, longitude: party.coordinate.longitude ))
-    }
+
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         //mapView.setCenter(userLocation.coordinate, animated: true)

@@ -30,7 +30,7 @@ class UserInfoVC: UIViewController {
         self.navigationItem.title = NSLocalizedString("UserInfoVCTitle", comment: "")
         
         imageView.image = user?.image
-        nameLabel.text = "\(user?.name) \(user?.surname)"
+        nameLabel.text = "\(user?.name ?? "") \(user?.surname ?? "")"
         phoneLabel.text = user?.phone
         emailLabel.text = user?.email
         descriptionLabel.text = user?.description

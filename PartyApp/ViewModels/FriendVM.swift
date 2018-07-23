@@ -50,12 +50,11 @@ class FriendVM: FriendVMProtocol {
     }
 
     init(friend: Friends) {
-        self.id = String(friend.id ?? 0)
+        self.id = String(friend.id)
         self.name = friend.name ?? ""
         self.surname = friend.surname ?? ""
         self.description = friend.desc ?? ""
-        self.likes = Int(friend.likes ?? 0)
-        print(friend.image)
+        self.likes = Int(friend.likes)
         self.image = UIImage(named: friend.image!)!
         self.phone = friend.phone ?? ""
         self.email = friend.email ?? ""

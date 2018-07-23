@@ -26,7 +26,7 @@ class GetPartiesRequest: AbstractRequest {
             case .success(let value):
                 completion(value, nil)
             case .failure(let error):
-                completion(nil, error as! Error)
+                completion(nil, error as? Error)
             }
         }
     }

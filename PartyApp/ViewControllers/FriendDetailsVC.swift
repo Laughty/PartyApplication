@@ -30,25 +30,6 @@ class FriendDetailsVC: UIViewController {
         
         self.navigationItem.title = NSLocalizedString("FriendDetailsVCTitle", comment: "")
         
-        //Piotrek zostawił śmieci :/ UITest wyłapał :-)
-        //let entity = NSEntityDescription.entity(forEntityName: "Friends", in: moc)
-        //let newFriend = NSManagedObject(entity: entity!, insertInto: moc) as? Friends
-        //let nextFriend = Friends(entity: entity!, insertInto: moc)
-        
-        
-//        newFriend?.setValue(friend?.name, forKey: "name")
-//        newFriend?.setValue(friend?.description, forKey: "desc")
-//        newFriend?.setValue(friend?.likes, forKey: "likes")
-//        newFriend?.email = "yolo@blabla.com"
-//
-//
-//        do {
-//            try moc.save()
-//        } catch {
-//            print("Failed saving")
-//        }
-        
-        findFriendByName(name: (friend?.name)!)
         friendImage.image = friend?.image
         friendName.text = (friend?.name)! + " " + (friend?.surname)!
         friendDescription.text = friend?.description
@@ -59,24 +40,6 @@ class FriendDetailsVC: UIViewController {
     }
     
     
-    
-    func findFriendByName(name: String){
-        //let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Friends")
-      //  request.predicate = NSPredicate(format: "age = %@ ", "12")
-      //  request.returnsObjectsAsFaults = false
-        
-        do {
-            let result = try moc.fetch(Friends.fetchRequest())
-            for data in result as! [Friends] {
-                print(data.name)
-                print(data.email)
-            }
-            
-        } catch {
-            
-            print("Failed")
-        }
-    }
     
 }
 /*

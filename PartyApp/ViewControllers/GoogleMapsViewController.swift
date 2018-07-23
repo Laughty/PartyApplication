@@ -51,7 +51,6 @@ class GoogleMapsViewController: UIViewController, GMSMapViewDelegate, CLLocation
     }
     
     func loadCameraLocation(){
-        let locationCopy = locationStart.coordinate
         if selectedParty != nil {
             locationStart = CLLocation(latitude: selectedParty!.latitude, longitude: selectedParty!.longitude)
         } else if locationManager.location != nil {
