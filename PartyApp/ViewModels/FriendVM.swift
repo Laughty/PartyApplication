@@ -42,7 +42,7 @@ class FriendVM: FriendVMProtocol {
         self.id = String(friend.id)
         self.name = friend.name!
         self.surname = friend.surname!
-        self.description = friend.description
+        self.description = friend.desc!
         self.likes = Int(friend.likes)
         self.image = UIImage(named: friend.image!)!
         self.phone = friend.phone!

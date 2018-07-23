@@ -58,9 +58,7 @@
 		AFD6C0FA20F3C8F7006856EA /* PartyDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C0F920F3C8F7006856EA /* PartyDetailsVC.swift */; };
 		AFD6C0FC20F3C90D006856EA /* FriendDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C0FB20F3C90D006856EA /* FriendDetailsVC.swift */; };
 		AFD6C0FE20F3C91D006856EA /* FriendVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C0FD20F3C91D006856EA /* FriendVM.swift */; };
-		AFD6C10020F3C92A006856EA /* FriendsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C0FF20F3C92A006856EA /* FriendsVM.swift */; };
 		AFD6C10220F3C93E006856EA /* PartyVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C10120F3C93E006856EA /* PartyVM.swift */; };
-		AFD6C10420F3C94E006856EA /* PartiesListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C10320F3C94E006856EA /* PartiesListVM.swift */; };
 		AFD6C10620F3C97A006856EA /* UserInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C10520F3C97A006856EA /* UserInfoVC.swift */; };
 		AFD6C10820F3C985006856EA /* UserVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C10720F3C985006856EA /* UserVM.swift */; };
 		AFD6C11720F3CC9F006856EA /* PartyCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD6C11620F3CC9F006856EA /* PartyCellItem.swift */; };
@@ -158,9 +156,7 @@
 		AFD6C0F920F3C8F7006856EA /* PartyDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyDetailsVC.swift; sourceTree = "<group>"; };
 		AFD6C0FB20F3C90D006856EA /* FriendDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailsVC.swift; sourceTree = "<group>"; };
 		AFD6C0FD20F3C91D006856EA /* FriendVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendVM.swift; sourceTree = "<group>"; };
-		AFD6C0FF20F3C92A006856EA /* FriendsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsVM.swift; sourceTree = "<group>"; };
 		AFD6C10120F3C93E006856EA /* PartyVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyVM.swift; sourceTree = "<group>"; };
-		AFD6C10320F3C94E006856EA /* PartiesListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartiesListVM.swift; sourceTree = "<group>"; };
 		AFD6C10520F3C97A006856EA /* UserInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoVC.swift; sourceTree = "<group>"; };
 		AFD6C10720F3C985006856EA /* UserVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVM.swift; sourceTree = "<group>"; };
 		AFD6C11620F3CC9F006856EA /* PartyCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyCellItem.swift; sourceTree = "<group>"; };
@@ -342,9 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				AFD6C0FD20F3C91D006856EA /* FriendVM.swift */,
-				AFD6C0FF20F3C92A006856EA /* FriendsVM.swift */,
 				AFD6C10120F3C93E006856EA /* PartyVM.swift */,
-				AFD6C10320F3C94E006856EA /* PartiesListVM.swift */,
 				AFD6C10720F3C985006856EA /* UserVM.swift */,
 			);
 			path = ViewModels;
@@ -726,7 +720,6 @@
 				AFD6C0FC20F3C90D006856EA /* FriendDetailsVC.swift in Sources */,
 				7FCB3CDD2100C964004D0B74 /* InitService.swift in Sources */,
 				AF65DAB520F64F6500525D24 /* AbstractRequest.swift in Sources */,
-				AFD6C10020F3C92A006856EA /* FriendsVM.swift in Sources */,
 				AF65DB1C20F8AE6A00525D24 /* LoadingView.swift in Sources */,
 				AF65DAC120F663F100525D24 /* GetPartiesRequest.swift in Sources */,
 				AF65DAC320F6640C00525D24 /* GetPartyRequest.swift in Sources */,
@@ -741,7 +734,6 @@
 				AFFA158D20F5EB6E000C954F /* Constans.swift in Sources */,
 				AF65DB2020FBBBF500525D24 /* PartyMapItem.swift in Sources */,
 				AFD6C12020F42099006856EA /* RootVC.swift in Sources */,
-				AFD6C10420F3C94E006856EA /* PartiesListVM.swift in Sources */,
 				7FF32DBA2100C6CB00432CB4 /* Friends+CoreDataClass.swift in Sources */,
 				AFD6C10220F3C93E006856EA /* PartyVM.swift in Sources */,
 			);
