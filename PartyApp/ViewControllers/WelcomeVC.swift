@@ -56,7 +56,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadingView.frame = self.view.frame
+        //loadingView.frame = self.view.frame
         self.navigationItem.title = NSLocalizedString("WelcomeVCTitle", comment: "")
         
         NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange),
@@ -70,21 +70,27 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         friendsButton.setTitle(NSLocalizedString("tofriends", comment: ""), for: .normal)
         profileButton.setTitle(NSLocalizedString("toprofile", comment: ""), for: .normal)
         
+        partyButton.isEnabled=false
+        friendsButton.isEnabled=false
+        profileButton.isEnabled=false
+        
         addUserNotifications()
     }
     
     @objc func userDefaultsDidChange(){
         if(userDefaults.bool(forKey: "IsDataInitialized")){
-            loadingView.hide()
+            //loadingView.hide()
+            partyButton.isEnabled=true
+            friendsButton.isEnabled=true
+            profileButton.isEnabled=true
         }
         else{
-            loadingView.show()
+            //loadingView.show()
         }
     }
     
     @IBAction func toPartyListButtonTapped(_ sender: UIButton) {
         
-        //REDO
         self.performSegue(withIdentifier: StoryboardSegues.ToPartyList, sender: self)
         
     }

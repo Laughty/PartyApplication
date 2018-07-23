@@ -66,6 +66,9 @@
                                         <state key="normal" title="Party List">
                                             <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="toPartyListButtonTapped:" destination="Qb7-C7-0n5" eventType="touchUpInside" id="yA0-N5-iAf"/>
                                         </connections>
@@ -77,6 +80,9 @@
                                         <state key="normal" title="Friends List">
                                             <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="toFriendListButtonTapped:" destination="Qb7-C7-0n5" eventType="touchUpInside" id="nuw-EH-XaQ"/>
                                         </connections>
@@ -87,6 +93,9 @@
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="MyProfile">
                                             <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="disabled">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <segue destination="paY-JI-hZZ" kind="show" id="Uly-cU-Yhp"/>
@@ -649,7 +658,7 @@
         <image name="partyMain1" width="680" height="452"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Bti-0G-TK4"/>
+        <segue reference="se3-EA-twh"/>
         <segue reference="t9c-Kq-Iqi"/>
     </inferredMetricsTieBreakers>
 </document>
