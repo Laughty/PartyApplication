@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let center = UNUserNotificationCenter.current()
         center.delegate = notificationDelegate
         
+        UIApplication.shared.statusBarStyle = .lightContent
+        
         return true
     }
 

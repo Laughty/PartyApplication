@@ -425,7 +425,7 @@
         <scene sceneID="fWF-re-BUb">
             <objects>
                 <tabBarController id="Rdq-D9-7bz" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CJz-ov-rXd">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="CJz-ov-rXd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -649,7 +649,7 @@
         <image name="partyMain1" width="680" height="452"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="se3-EA-twh"/>
+        <segue reference="Bti-0G-TK4"/>
         <segue reference="t9c-Kq-Iqi"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -26,10 +26,9 @@ class GoogleMapsViewController: UIViewController, GMSMapViewDelegate, CLLocation
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         fetchPartiesData()
         setupController()
+        makeItDark()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,6 +84,19 @@ class GoogleMapsViewController: UIViewController, GMSMapViewDelegate, CLLocation
         locationManager.startUpdatingHeading()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startMonitoringSignificantLocationChanges()
+    }
+    
+    private func makeItDark(){
+        do {
+            // Set the map style by passing the URL of the local file.
+            if let styleURL = Bundle.main.url(forResource: "gmaps_style", withExtension: "json") {
+                googleMaps.mapStyle = try GMSMapStyle(contentsOfFileURL: styleURL)
+            } else {
+                NSLog("Unable to find style.json")
+            }
+        } catch {
+            NSLog("One or more of the map styles failed to load. \(error)")
+        }
     }
     
     private func checkLocationAuthorizationStatus() {
