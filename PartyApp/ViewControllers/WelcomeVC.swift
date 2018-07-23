@@ -10,7 +10,9 @@ import Foundation
 import UIKit
 import CoreData
 import UserNotifications
-import GoogleMaps
+//import GoogleMaps
+import AVKit
+import AVFoundation
 
 /*TODO:
 użyć nowego serwisu do pobrania danych i zasilenia core data
@@ -49,6 +51,8 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     let center = UNUserNotificationCenter.current()
     let userDefaults = UserDefaults.standard
     
+    var player: AVPlayer?
+    
     //var parties: [PartyVMProtocol] = []
     //var friends: [FriendVMProtocol] = []
     var user: UserVMProtocol? = nil
@@ -75,6 +79,8 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         profileButton.isEnabled=false
         
         addUserNotifications()
+        
+        videoMakerPartyShaker()
     }
     
     @objc func userDefaultsDidChange(){
@@ -223,7 +229,36 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
             print("Default case for segue")
         }
     }
+    func videoMakerPartyShaker(){
+        
+        let videoURL = Bundle.main.url(forResource: "blurred_lights", withExtension: "mp4")!
+        
+        player = AVPlayer(url: videoURL)
+        player?.actionAtItemEnd = .none
+        player?.isMuted = true
+        
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        playerLayer.zPosition = -1
+        
+        playerLayer.frame = view.frame
+        
+        view.layer.addSublayer(playerLayer)
+        
+        player?.play()
+        
+        //loop video
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(WelcomeVC.loopVideo),
+                                                         name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
+                                                         object: nil)
+    }
+    @objc func loopVideo() {
+        player?.seek(to: kCMTimeZero)
+        player?.play()
+    }
 }
+
 
 
     
