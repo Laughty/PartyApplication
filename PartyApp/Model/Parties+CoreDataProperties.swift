@@ -13,23 +13,11 @@ import CoreData
 
 extension Parties {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Parties> {
-        return NSFetchRequest<Parties>(entityName: "Parties")
+    @nonobjc public class func makePredicateWith(title: String) -> NSPredicate {
+        return NSPredicate(format: "title = %@",title)
     }
-    
-    @nonobjc public class func fetchRequestBy(title: String) -> NSFetchRequest<Parties> {
-        let request = NSFetchRequest<Parties>(entityName: "Parties")
-        let predicate = NSPredicate(format: "title = %@",title)
-        request.predicate = predicate
-        request.returnsObjectsAsFaults = false
-        return request
-    }
-    @nonobjc public class func fetchRequestBy(id: Int) -> NSFetchRequest<Parties> {
-        let request = NSFetchRequest<Parties>(entityName: "Parties")
-        let predicate = NSPredicate(format: "id = %@",id)
-        request.predicate = predicate
-        request.returnsObjectsAsFaults = false
-        return request
+    @nonobjc public class func makePredicateWith(id: Int) -> NSPredicate {
+        return NSPredicate(format: "id = %@",id)
     }
     
 
