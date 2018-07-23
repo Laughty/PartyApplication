@@ -15,3 +15,10 @@ public class Friends: NSManagedObject {
 
 }
 
+extension Friends {
+    
+    class func fetchByID() -> NSPredicate {
+        return NSPredicate()
+    }
+}
+

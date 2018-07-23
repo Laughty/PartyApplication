@@ -36,10 +36,6 @@
 		AF65DAB920F64FC400525D24 /* FriendsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DAB820F64FC400525D24 /* FriendsServices.swift */; };
 		AF65DABB20F6509B00525D24 /* PartiesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DABA20F6509B00525D24 /* PartiesServices.swift */; };
 		AF65DABF20F6589700525D24 /* AbstractService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DABE20F6589700525D24 /* AbstractService.swift */; };
-		AF65DAC120F663F100525D24 /* GetPartiesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DAC020F663F100525D24 /* GetPartiesRequest.swift */; };
-		AF65DAC320F6640C00525D24 /* GetPartyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DAC220F6640C00525D24 /* GetPartyRequest.swift */; };
-		AF65DAC520F6641D00525D24 /* GetFriendsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DAC420F6641D00525D24 /* GetFriendsRequest.swift */; };
-		AF65DAC720F6643000525D24 /* GetFriendRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DAC620F6643000525D24 /* GetFriendRequest.swift */; };
 		AF65DB1820F8AAC800525D24 /* DefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DB1720F8AAC800525D24 /* DefaultViewController.swift */; };
 		AF65DB1A20F8AB2000525D24 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF65DB1920F8AB2000525D24 /* LoadingView.xib */; };
 		AF65DB1C20F8AE6A00525D24 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF65DB1B20F8AE6A00525D24 /* LoadingView.swift */; };
@@ -127,10 +123,6 @@
 		AF65DAB820F64FC400525D24 /* FriendsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsServices.swift; sourceTree = "<group>"; };
 		AF65DABA20F6509B00525D24 /* PartiesServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartiesServices.swift; sourceTree = "<group>"; };
 		AF65DABE20F6589700525D24 /* AbstractService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractService.swift; sourceTree = "<group>"; };
-		AF65DAC020F663F100525D24 /* GetPartiesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPartiesRequest.swift; sourceTree = "<group>"; };
-		AF65DAC220F6640C00525D24 /* GetPartyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPartyRequest.swift; sourceTree = "<group>"; };
-		AF65DAC420F6641D00525D24 /* GetFriendsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFriendsRequest.swift; sourceTree = "<group>"; };
-		AF65DAC620F6643000525D24 /* GetFriendRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFriendRequest.swift; sourceTree = "<group>"; };
 		AF65DB1720F8AAC800525D24 /* DefaultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultViewController.swift; sourceTree = "<group>"; };
 		AF65DB1920F8AB2000525D24 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		AF65DB1B20F8AE6A00525D24 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -232,8 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				AF65DAB820F64FC400525D24 /* FriendsServices.swift */,
-				AF65DAC420F6641D00525D24 /* GetFriendsRequest.swift */,
-				AF65DAC620F6643000525D24 /* GetFriendRequest.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -242,8 +232,6 @@
 			isa = PBXGroup;
 			children = (
 				AF65DABA20F6509B00525D24 /* PartiesServices.swift */,
-				AF65DAC020F663F100525D24 /* GetPartiesRequest.swift */,
-				AF65DAC220F6640C00525D24 /* GetPartyRequest.swift */,
 			);
 			path = Parties;
 			sourceTree = "<group>";
@@ -706,8 +694,6 @@
 				7F5291A720FE00C300807AB8 /* GoogleMapsViewController.swift in Sources */,
 				AFD6C0C420F3C7A3006856EA /* PartyApp.xcdatamodeld in Sources */,
 				AF65DABF20F6589700525D24 /* AbstractService.swift in Sources */,
-				AF65DAC520F6641D00525D24 /* GetFriendsRequest.swift in Sources */,
-				AF65DAC720F6643000525D24 /* GetFriendRequest.swift in Sources */,
 				AFD6C0F220F3C85A006856EA /* WelcomeVC.swift in Sources */,
 				AFD6C11720F3CC9F006856EA /* PartyCellItem.swift in Sources */,
 				AFD6C0F420F3C873006856EA /* PartiesListVC.swift in Sources */,
@@ -721,8 +707,6 @@
 				7FCB3CDD2100C964004D0B74 /* InitService.swift in Sources */,
 				AF65DAB520F64F6500525D24 /* AbstractRequest.swift in Sources */,
 				AF65DB1C20F8AE6A00525D24 /* LoadingView.swift in Sources */,
-				AF65DAC120F663F100525D24 /* GetPartiesRequest.swift in Sources */,
-				AF65DAC320F6640C00525D24 /* GetPartyRequest.swift in Sources */,
 				7F90BD182105DF4D00B4B228 /* InitialData.swift in Sources */,
 				B5ADDA252102708D00E74059 /* GMSCustomMarkerWindow.swift in Sources */,
 				AFD6C0FA20F3C8F7006856EA /* PartyDetailsVC.swift in Sources */,
