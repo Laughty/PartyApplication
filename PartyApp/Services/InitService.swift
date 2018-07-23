@@ -60,6 +60,7 @@ class InitService {
             newFriend?.phone = f.phone
             newFriend?.surname = f.surname
             newFriend?.image = f.image
+            newFriend!.email = f.email
         }
         do {
             try self.moc.save()
