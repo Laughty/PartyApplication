@@ -27,12 +27,16 @@ class GoogleMapsViewController: UIViewController, GMSMapViewDelegate, CLLocation
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         fetchPartiesData()
         setupController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+    self.tabBarController?.navigationItem.title=NSLocalizedString("GoogleMapsVCTitle", comment: "")
         
         self.googleMaps.clear()
         let locationCopy = locationStart.coordinate

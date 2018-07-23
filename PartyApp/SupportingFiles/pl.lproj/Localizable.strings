@@ -5,9 +5,10 @@
 "notificationTitle" = "Piwerko";
 "FriendsListVCTitle" = "Przyjaciele";
 "PartiesListVCTitle" = "Imprezy";
-"PartyMapVCTitle" = "Mapa imprezek";
+"PartyMapVCTitle" = "Punkty";
 "PartyDetailsVCTitle" = "O bibie";
 "FriendDetailsVCTitle" = "Ziomeczek";
 "UserInfoVCTitle" = "To ty (chyba)";
 "PartyMoreDetailsVCTitle" = "Więcej o bibie";
 "WelcomeVCTitle" = "Siemasz";
+"GoogleMapsVCTitle" = "GPunkty";
