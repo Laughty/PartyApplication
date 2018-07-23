@@ -5,23 +5,34 @@
 //  Created by Piotr Rola on 11/07/2018.
 //  Copyright © 2018 Piotr Rola. All rights reserved.
 //
-
-import Alamofire
-import AlamofireObjectMapper
+import Foundation
 
 protocol FriendsServiceProtocol {
-    func getFriendsList(_ request: GetFriendsRequest, success: @escaping ([FriendVMProtocol]) -> (), failure: @escaping (Error?) -> ())
-    func getFriend(_ request: GetFriendRequest, success: @escaping (Friend) -> (), failure: @escaping (Error?) -> ())
+    func fetchAllFriends() -> [Friends]
+    func fetchByName(_ name: String) -> [Friends]
+    func fetchById(_ id: Int) -> Friends?
 }
 
-
-
-class FriendsSevices: AbstractService {
-    
-    
-    func fetchAllFriends() -> [Friends]{
-        let friends: [Friends] = fetchRequest(with: Friends.fetchRequestBy(id: <#T##Int#>))
+class FriendsServices: AbstractService, FriendsServiceProtocol {
+    func fetchAllFriends() -> [Friends] {
+        let friends: [Friends] = fetchRequest(with: nil)!
         return friends
     }
     
+    func fetchByName(_ name: String) -> [Friends] {
+        let friend: [Friends] = fetchRequest(with: Friends.makePredicateWith(name: name))!
+        return friend
+    }
+    
+    func fetchById(_ id: Int) -> Friends? {
+        let friend: [Friends] = fetchRequest(with: Friends.makePredicateWith(id: id))!
+        return friend.first
+    }
+    
+    class var shared: FriendsServices {
+        struct Static {
+            static let instance = FriendsServices()
+        }
+        return Static.instance
+    }
 }

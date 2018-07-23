@@ -13,22 +13,11 @@ import CoreData
 
 extension Friends {
 
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<Friends> {
-        return NSFetchRequest<Friends>(entityName: "Friends")
+    @nonobjc public class func makePredicateWith(name: String) -> NSPredicate {
+        return NSPredicate(format: "name = %@",name)
     }
-    @nonobjc public class func fetchRequestBy(name: String) -> NSFetchRequest<Friends> {
-        let request = NSFetchRequest<Friends>(entityName: "Friends")
-        let predicate = NSPredicate(format: "name = %@",name)
-        request.predicate = predicate
-        request.returnsObjectsAsFaults = false
-        return request
-    }
-    @nonobjc public class func fetchRequestBy(id: Int) -> NSFetchRequest<Friends> {
-        let request = NSFetchRequest<Friends>(entityName: "Friends")
-        let predicate = NSPredicate(format: "id = %@",id)
-        request.predicate = predicate
-        request.returnsObjectsAsFaults = false
-        return request
+    @nonobjc public class func makePredicateWith(id: Int) -> NSPredicate {
+        return NSPredicate(format: "id = %@",id)
     }
 
    

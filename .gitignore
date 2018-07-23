@@ -1888,3 +1888,60 @@ Build/Intermediates/PartyApp.build/Debug-iphonesimulator/PartyApp.build/Objects-
 Build/Intermediates/PartyApp.build/Debug-iphonesimulator/PartyApp.build/Objects-normal/x86_64/PartiesServices.swiftdeps~
 Build/Intermediates/PartyApp.build/Debug-iphonesimulator/PartyApp.build/Objects-normal/x86_64/WelcomeVC.dia
 Build/Intermediates/PartyApp.build/Debug-iphonesimulator/PartyApp.build/Objects-normal/x86_64/WelcomeVC.swiftdeps~
+Pods/AlamofireCoreData/LICENSE
+Pods/AlamofireCoreData/README.md
+Pods/AlamofireCoreData/AlamofireCoreData/source/alamofire+coredata/Alamofire+CoreData.swift
+Pods/AlamofireCoreData/AlamofireCoreData/source/insertable/Insertable.swift
+Pods/AlamofireCoreData/AlamofireCoreData/source/insertable/Many.swift
+Pods/AlamofireCoreData/AlamofireCoreData/source/insertable/NSManagedObject+Insertable.swift
+Pods/AlamofireCoreData/AlamofireCoreData/source/insertable/wrapper/Operator.swift
+Pods/AlamofireCoreData/AlamofireCoreData/source/insertable/wrapper/Wrapper.swift
+Pods/Groot/LICENSE.md
+Pods/Groot/README.md
+Pods/Groot/Groot/Groot.h
+Pods/Groot/Groot/Groot.swift
+Pods/Groot/Groot/GRTError.h
+Pods/Groot/Groot/GRTError.m
+Pods/Groot/Groot/GRTJSONSerialization.h
+Pods/Groot/Groot/GRTJSONSerialization.m
+Pods/Groot/Groot/GRTManagedStore.h
+Pods/Groot/Groot/GRTManagedStore.m
+Pods/Groot/Groot/NSValueTransformer+Groot.h
+Pods/Groot/Groot/NSValueTransformer+Groot.m
+Pods/Groot/Groot/ValueTransformer+Groot.swift
+Pods/Groot/Groot/Private/GRTCompositeUniquingSerializationStrategy.h
+Pods/Groot/Groot/Private/GRTCompositeUniquingSerializationStrategy.m
+Pods/Groot/Groot/Private/GRTInsertSerializationStrategy.h
+Pods/Groot/Groot/Private/GRTInsertSerializationStrategy.m
+Pods/Groot/Groot/Private/GRTManagedObjectSerializer.h
+Pods/Groot/Groot/Private/GRTManagedObjectSerializer.m
+Pods/Groot/Groot/Private/GRTSerializationStrategy.h
+Pods/Groot/Groot/Private/GRTSerializationStrategy.m
+Pods/Groot/Groot/Private/GRTUniquingSerializationStrategy.h
+Pods/Groot/Groot/Private/GRTUniquingSerializationStrategy.m
+Pods/Groot/Groot/Private/GRTValueTransformer.h
+Pods/Groot/Groot/Private/GRTValueTransformer.m
+Pods/Groot/Groot/Private/NSArray+DictionaryTransformer.h
+Pods/Groot/Groot/Private/NSArray+DictionaryTransformer.m
+Pods/Groot/Groot/Private/NSAttributeDescription+Groot.h
+Pods/Groot/Groot/Private/NSAttributeDescription+Groot.m
+Pods/Groot/Groot/Private/NSEntityDescription+Groot.h
+Pods/Groot/Groot/Private/NSEntityDescription+Groot.m
+Pods/Groot/Groot/Private/NSManagedObject+Groot.h
+Pods/Groot/Groot/Private/NSManagedObject+Groot.m
+Pods/Groot/Groot/Private/NSPropertyDescription+Groot.h
+Pods/Groot/Groot/Private/NSPropertyDescription+Groot.m
+Pods/Pods.xcodeproj/xcuserdata/user1.xcuserdatad/xcschemes/AlamofireCoreData.xcscheme
+Pods/Pods.xcodeproj/xcuserdata/user1.xcuserdatad/xcschemes/Groot.xcscheme
+Pods/Target Support Files/AlamofireCoreData/AlamofireCoreData-dummy.m
+Pods/Target Support Files/AlamofireCoreData/AlamofireCoreData-prefix.pch
+Pods/Target Support Files/AlamofireCoreData/AlamofireCoreData-umbrella.h
+Pods/Target Support Files/AlamofireCoreData/AlamofireCoreData.modulemap
+Pods/Target Support Files/AlamofireCoreData/AlamofireCoreData.xcconfig
+Pods/Target Support Files/AlamofireCoreData/Info.plist
+Pods/Target Support Files/Groot/Groot-dummy.m
+Pods/Target Support Files/Groot/Groot-prefix.pch
+Pods/Target Support Files/Groot/Groot-umbrella.h
+Pods/Target Support Files/Groot/Groot.modulemap
+Pods/Target Support Files/Groot/Groot.xcconfig
+Pods/Target Support Files/Groot/Info.plist

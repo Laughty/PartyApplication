@@ -10,11 +10,6 @@ import Foundation
 import UIKit
 import CoreData
 
-
-
-
-
-
 class PartiesListVC: UIPageViewController,UIPageViewControllerDelegate {
     
     let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext

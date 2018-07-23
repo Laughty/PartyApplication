@@ -22,12 +22,10 @@ enum Result<T> {
 }
 
 protocol AbstractServiceProtocol {
-    func executeRequest(abstractRequest: AbstractRequest, requestResponse: @escaping (Result<Any>) -> ())
     func fetchRequest<T: NSManagedObject>(with predicate: NSPredicate?) -> [T]?
 }
 
 class AbstractService: AbstractServiceProtocol {
-    
     func fetchRequest<T>(with predicate: NSPredicate?) -> [T]? where T: NSManagedObject {
         let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
@@ -35,8 +33,7 @@ class AbstractService: AbstractServiceProtocol {
         
         do {
             request.predicate = predicate
-            let requestResult = try moc.fetch(request) as? [T]
-            print(requestResult)
+            let requestResult = try moc.fetch(request) as! [T]
             return requestResult
         } catch {
             print("Couldn't find proper entity")

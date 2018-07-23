@@ -26,7 +26,7 @@ class FriendsListVC: UITableViewController, UISearchResultsUpdating {
     
     var friends: [FriendVMProtocol] = []
     var selectedFriendIndex: Int?
-    var filteredFriends:[FriendVMProtocol] = []
+    var filteredFriends: [FriendVMProtocol] = []
     let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
@@ -37,16 +37,8 @@ class FriendsListVC: UITableViewController, UISearchResultsUpdating {
         
         tableView.register(UINib(nibName: FriendCellItem.CellReusableIdentifier, bundle: nil), forCellReuseIdentifier: FriendCellItem.CellReusableIdentifier)
         
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Friends")
-        request.returnsObjectsAsFaults = false
-        do {
-            let friendObject = try moc.fetch(request) as! [Friends]
-            for friend in friendObject {
-                friends.append(FriendVM(friend: friend))
-            }
-            
-        }catch{
-            print("Failed")
+        _ = FriendsServices.shared.fetchAllFriends().map {
+            friends.append(FriendVM(friend: $0))
         }
         
         filteredFriends = friends
