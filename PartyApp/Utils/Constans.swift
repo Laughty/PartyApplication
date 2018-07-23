@@ -34,4 +34,5 @@ struct StoryboardSegues {
     static let ToProfile = "toProfileVC"
     static let ToFriendDetails = "toFriendDetailsVC"
     static let ToPartyMoreDetailsVC = "toPartyMoreDetailsVC"
+    static let ToPartyListVCFromNotification = "toPartyListVCFromNotification"
 }
