@@ -75,6 +75,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         profileButton.isEnabled=false
         
         addUserNotifications()
+        //AbstractService.shared.fetchRequest<Friends>(with: nil)
     }
     
     @objc func userDefaultsDidChange(){

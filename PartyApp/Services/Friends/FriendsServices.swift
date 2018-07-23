@@ -65,7 +65,7 @@ class FriendsService: AbstractService, FriendsServiceProtocol {
     
     
     
-    class var shared: FriendsService {
+    override class var shared: FriendsService {
         struct Static {
             static let instance = FriendsService()
         }

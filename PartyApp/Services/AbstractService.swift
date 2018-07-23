@@ -6,14 +6,13 @@
 //  Copyright © 2018 Piotr Rola. All rights reserved.
 //
 
+import Foundation
 import Alamofire
 import CoreData
 
 fileprivate extension NSManagedObject {
     class func entityName() -> String {
-        let fullClassName = NSStringFromClass(object_getClass(self))
-        let nameComponents = split(fullClassName) { $0 == "." }
-        return last(nameComponents)!
+        return self.entity().name!
     }
 }
 
@@ -25,20 +24,25 @@ enum Result<T> {
 protocol AbstractServiceProtocol {
     func executeRequest(abstractRequest: AbstractRequest, requestResponse: @escaping (Result<Any>) -> ())
     
-    func ferchRequestBy<T: NSManagedObject>(with predicate: NSPredicate?) -> T?
+    //class func fetchRequest<T: NSManagedObject>(with predicate: NSPredicate?) -> [T]?
 }
 
 class AbstractService: AbstractServiceProtocol {
     
-    func ferchRequestBy<T>(with predicate: NSPredicate?) -> T? where T : NSManagedObject {
-        let request = NSFetchRequest<T>(entityName: T.entityName())
+    class func fetchRequest<T>(with predicate: NSPredicate?) -> [T]? where T: NSManagedObject {
+        let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        if let predicate = predicate {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: T.entity().name!)
+        
+        do {
             request.predicate = predicate
-            request.returnsObjectsAsFaults = false
-            return request
+            let requestResult = try moc.fetch(request) as? [T]
+            print(requestResult)
+            return requestResult
+        } catch {
+            print("Couldn't find proper entity")
+            return nil
         }
-        
     }
     
     
@@ -53,8 +57,18 @@ class AbstractService: AbstractServiceProtocol {
             if let json = response.result.value {
                 return requestResponse(Result.success(json))
             }
-            
-            
+        }
+    }
+    
+    class var shared: AbstractService {
+        struct Static {
+            static let instance = AbstractService()
+        }
+        return Static.instance
+    }
+}
+
+
 //            Alamofire.request(BASE_URL + request.path).responseObject { (response: DataResponse<PartiesList>) in
 //                let parties = response.result.value
 //                //            print("Result of downloading PartiesList -> First party's title: \(String(describing: parties.value?.parties))")
@@ -69,9 +83,4 @@ class AbstractService: AbstractServiceProtocol {
 //                    failure(nil)
 //                }
 //            }
-            
-        }
-        
-    }
-    
-}
+

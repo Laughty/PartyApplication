@@ -72,7 +72,7 @@ class PartiesService: AbstractService, PartiesServiceProtocol {
     
 
     
-    class var shared: PartiesService {
+    override class var shared: PartiesService {
         struct Static {
             static let instance = PartiesService()
         }
