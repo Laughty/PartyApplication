@@ -60,6 +60,10 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        partyButton.layer.cornerRadius = 10
+        friendsButton.layer.cornerRadius = 10
+        profileButton.layer.cornerRadius = 10
+        
         //loadingView.frame = self.view.frame
         self.navigationItem.title = NSLocalizedString("WelcomeVCTitle", comment: "")
         
