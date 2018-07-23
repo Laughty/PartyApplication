@@ -10,14 +10,8 @@ import Foundation
 import UIKit
 import CoreData
 
-// Implement as page based view controller
 
-/*
- TODO:
- implementation
- - View Controller showing list of parties
- 
- */
+
 var currentParty:PartyVMProtocol!
 
 
@@ -30,7 +24,7 @@ class PartiesListVC: UIPageViewController,UIPageViewControllerDelegate {
     
     var parties: [PartyVMProtocol] = []
     var orderedViewControllers: [UIViewController] = []
-    
+    var willtransitTo: PartyVMProtocol?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,7 +36,6 @@ class PartiesListVC: UIPageViewController,UIPageViewControllerDelegate {
             let partyObjects = try moc.fetch(request) as! [Parties]
             for party in partyObjects {
                 parties.append(PartyVM(party: party))
-                //print(party)
             }
         } catch{
             print("Failed")
@@ -77,6 +70,7 @@ class PartiesListVC: UIPageViewController,UIPageViewControllerDelegate {
             let noPartiesVC = UIStoryboard(name: StoryboardIds.main.rawValue, bundle: nil).instantiateViewController(withIdentifier: PartiesVCIds.noParties.rawValue)
             orderedViewControllers.append(noPartiesVC)
         } else {
+            
             currentParty = parties[0]
             for party in parties {
                 orderedViewControllers.append(initPartyVC(withParty: party))
@@ -97,6 +91,23 @@ class PartiesListVC: UIPageViewController,UIPageViewControllerDelegate {
         
     }
 
+    
+    func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+        if let viewController = pendingViewControllers.first as? PartyDetailsVC {
+            self.willtransitTo = viewController.party!
+        }
+        
+    }
+    
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if completed{
+            currentParty = willtransitTo
+        }
+    }
+
+
+    
     
     
     
@@ -136,11 +147,6 @@ extension PartiesListVC: UIPageViewControllerDataSource {
         let nextIndex = viewControllerIndex + 1
         let orderedViewControllersCount = orderedViewControllers.count
         
-        
-        currentParty = parties[viewControllerIndex]
-        
-        // User is on the last view controller and swiped right to loop to
-        // the first view controller.
         guard orderedViewControllersCount != nextIndex else {
             return orderedViewControllers.first
         }
@@ -153,6 +159,7 @@ extension PartiesListVC: UIPageViewControllerDataSource {
     }
     
     
+ 
     
-    
+   
 }

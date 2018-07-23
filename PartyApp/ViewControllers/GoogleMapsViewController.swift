@@ -13,7 +13,6 @@ import Alamofire
 import CoreData
 
 class GoogleMapsViewController: UIViewController, GMSMapViewDelegate, CLLocationManagerDelegate {
- //   @IBOutlet var googleMaps: GMSMapView!
     
     @IBOutlet var googleMaps: GMSMapView!
     
@@ -35,23 +34,29 @@ class GoogleMapsViewController: UIViewController, GMSMapViewDelegate, CLLocation
         super.viewWillAppear(animated)
         
         self.googleMaps.clear()
-        let locationCopy = locationStart.coordinate
-        //self.locationStop = CLLocation(latitude: currentParty.latitude, longitude: currentParty.longitude)
-        if selectedParty != nil {
-            locationStart = CLLocation(latitude: selectedParty!.latitude, longitude: selectedParty!.longitude)
-        } else if locationManager.location != nil {
-            locationStart = locationManager.location!
-        }
-        self.googleMaps.camera = GMSCameraPosition(target: locationStart.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+        self.loadCameraLocation()
+        self.loadMapConfiguration()
+        createMarkersFrom(parties)
+        
+    }
+    
+    func loadMapConfiguration(){
         self.googleMaps?.isMyLocationEnabled = true
         self.googleMaps.settings.myLocationButton = true
         self.googleMaps.settings.compassButton = true
         self.googleMaps.settings.zoomGestures = true
-
-        //createMarker(title:currentParty.title , location: locationStop)
-        //drawPatch(startLocation: self.locationStart, stopLocation: self.locationStop)
-        createMarkersFrom(parties)
     }
+    
+    func loadCameraLocation(){
+        let locationCopy = locationStart.coordinate
+        if currentParty != nil {
+            locationStart = CLLocation(latitude: currentParty!.latitude, longitude: currentParty!.longitude)
+        } else if locationManager.location != nil {
+            locationStart = locationManager.location!
+        }
+        self.googleMaps.camera = GMSCameraPosition(target: locationStart.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+    }
+    
     
     // MARK: Setup the View Controller
     func fetchPartiesData() {
@@ -84,7 +89,6 @@ class GoogleMapsViewController: UIViewController, GMSMapViewDelegate, CLLocation
         if CLLocationManager.authorizationStatus() == .authorizedAlways {
             
         } else {
-            //            centerMapOnLocation(location: CLLocation(latitude: parties.first!.location[0], longitude: parties.first!.location[1]))
             locationManager.requestAlwaysAuthorization()
         }
     }
