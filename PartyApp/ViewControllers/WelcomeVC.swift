@@ -235,7 +235,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     }
     func videoMakerPartyShaker(){
         
-        let videoURL = Bundle.main.url(forResource: "blurred_lights", withExtension: "mp4")!
+        let videoURL = Bundle.main.url(forResource: "onboard", withExtension: "mp4")!
         
         player = AVPlayer(url: videoURL)
         player?.actionAtItemEnd = .none
