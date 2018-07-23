@@ -46,7 +46,7 @@ class PartyVM: PartyVMProtocol {
     init(party: Parties){
         self.image = UIImage(named: party.image!)!
         self.title = party.title ?? ""
-        self.description = party.description ?? ""
+        self.description = party.desc ?? ""
         self.latitude = party.latitude ?? 0
         self.longitude = party.longitude ?? 0
         self.time = party.time! as Date

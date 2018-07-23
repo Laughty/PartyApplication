@@ -85,12 +85,12 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     @IBAction func toPartyListButtonTapped(_ sender: UIButton) {
         
         //REDO
-        self.performSegue(withIdentifier: StoryboardSegues.ToPartyList, sender: self) //TODLETE
+        self.performSegue(withIdentifier: StoryboardSegues.ToPartyList, sender: self)
         
     }
     
     @objc func goToPartyFromNotification() {
-        performSegue(withIdentifier: StoryboardSegues.ToPartyList, sender: nil)
+        performSegue(withIdentifier: StoryboardSegues.ToPartyListVCFromNotification, sender: nil)
     }
     
     
@@ -109,12 +109,9 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         //performSegue(withIdentifier: StoryboardSegues.ToPartyList, sender: self) //WHAT
     }
     
-    
     @IBAction func toFriendListButtonTapped(_ sender: UIButton) {
-        
         //REDO
         self.performSegue(withIdentifier: StoryboardSegues.ToFriendsList, sender: self)
-        
     }
     
     
@@ -198,7 +195,9 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case StoryboardSegues.ToPartyList:
+        //case StoryboardSegues.ToPartyList:
+            
+        case StoryboardSegues.ToPartyListVCFromNotification:
             // fetch Vistula Party
             let moc = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Parties")

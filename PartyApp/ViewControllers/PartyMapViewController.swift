@@ -20,6 +20,11 @@ class PartyMapViewController: UIViewController  {
     
     var selectedParty: PartyVMProtocol?
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.navigationItem.title=NSLocalizedString("PartyMapVCTitle", comment: "")
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
