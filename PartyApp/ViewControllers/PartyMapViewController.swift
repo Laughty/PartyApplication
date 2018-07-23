@@ -16,7 +16,9 @@ class PartyMapViewController: UIViewController  {
     var parties: [PartyVMProtocol] = []
     @IBOutlet weak var mapView: MKMapView!
     let locationManager = CLLocationManager()
-    let regionRadius: CLLocationDistance = 5000
+    let regionRadius: CLLocationDistance = 6000
+    let startLat = 52.229983
+    let startLong = 21.00193
     
     var selectedParty: PartyVMProtocol?
     
@@ -28,11 +30,11 @@ class PartyMapViewController: UIViewController  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = NSLocalizedString("PartyMapVCTitle", comment: "")
         
         locationManager.delegate = self
         loadPartiesPoint()
         checkLocationAuthorizationStatus()
+        mapView.setRegion(MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(startLat, startLong), regionRadius, regionRadius), animated: true)
         
         mapView.showsUserLocation=true
         
@@ -137,7 +139,7 @@ extension PartyMapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
         //mapView.setCenter(userLocation.coordinate, animated: true)
-        mapView.setRegion(MKCoordinateRegionMakeWithDistance(userLocation.coordinate, regionRadius, regionRadius), animated: true)
+        mapView.setCenter(userLocation.coordinate, animated: true)
     }
     
 }
