@@ -6,8 +6,16 @@
 //  Copyright © 2018 Piotr Rola. All rights reserved.
 //
 
-import Foundation
 import Alamofire
+import CoreData
+
+fileprivate extension NSManagedObject {
+    class func entityName() -> String {
+        let fullClassName = NSStringFromClass(object_getClass(self))
+        let nameComponents = split(fullClassName) { $0 == "." }
+        return last(nameComponents)!
+    }
+}
 
 enum Result<T> {
     case success(T)
@@ -16,9 +24,23 @@ enum Result<T> {
 
 protocol AbstractServiceProtocol {
     func executeRequest(abstractRequest: AbstractRequest, requestResponse: @escaping (Result<Any>) -> ())
+    
+    func ferchRequestBy<T: NSManagedObject>(with predicate: NSPredicate?) -> T?
 }
 
 class AbstractService: AbstractServiceProtocol {
+    
+    func ferchRequestBy<T>(with predicate: NSPredicate?) -> T? where T : NSManagedObject {
+        let request = NSFetchRequest<T>(entityName: T.entityName())
+        
+        if let predicate = predicate {
+            request.predicate = predicate
+            request.returnsObjectsAsFaults = false
+            return request
+        }
+        
+    }
+    
     
     func executeRequest(abstractRequest: AbstractRequest, requestResponse: @escaping (Result<Any>) -> ()) {
         let url = BASE_URL + abstractRequest.path

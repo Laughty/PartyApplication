@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import UIKit
 
 class FriendCellItem: UITableViewCell {
     

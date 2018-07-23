@@ -7,6 +7,7 @@ target 'PartyApp' do
 
   # Pods for PartyApp
 	pod 'AlamofireObjectMapper'
+	pod 'AlamofireCoreData'
 	pod 'GoogleMaps'  
 	pod 'GooglePlaces'
 target 'PartyAppTests' do
