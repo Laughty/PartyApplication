@@ -53,9 +53,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="partyMain1" translatesAutoresizingMaskIntoConstraints="NO" id="dtC-DP-Zh1">
-                                <rect key="frame" x="0.0" y="64" width="375" height="452"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jom-oZ-tiq">
                                 <rect key="frame" x="16" y="492" width="343" height="159"/>
                                 <subviews>
@@ -118,9 +115,6 @@
                         <constraints>
                             <constraint firstItem="Jom-oZ-tiq" firstAttribute="leading" secondItem="ovT-os-iXU" secondAttribute="leading" constant="16" id="8fr-jm-CFV"/>
                             <constraint firstItem="ovT-os-iXU" firstAttribute="bottom" secondItem="Jom-oZ-tiq" secondAttribute="bottom" constant="16" id="9mK-yv-WOg"/>
-                            <constraint firstItem="dtC-DP-Zh1" firstAttribute="top" secondItem="ovT-os-iXU" secondAttribute="top" id="G1s-1D-DoO"/>
-                            <constraint firstItem="dtC-DP-Zh1" firstAttribute="leading" secondItem="ovT-os-iXU" secondAttribute="leading" id="HJe-ot-v9z"/>
-                            <constraint firstItem="ovT-os-iXU" firstAttribute="trailing" secondItem="dtC-DP-Zh1" secondAttribute="trailing" id="cax-Zb-nGX"/>
                             <constraint firstItem="ovT-os-iXU" firstAttribute="trailing" secondItem="Jom-oZ-tiq" secondAttribute="trailing" constant="16" id="jCz-R2-8qR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ovT-os-iXU"/>
@@ -654,9 +648,6 @@
             <point key="canvasLocation" x="4926" y="224"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="partyMain1" width="680" height="452"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="se3-EA-twh"/>
         <segue reference="t9c-Kq-Iqi"/>
