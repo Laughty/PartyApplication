@@ -35,8 +35,7 @@ class GoogleMapsViewController: UIViewController, GMSMapViewDelegate, CLLocation
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-    self.tabBarController?.navigationItem.title=NSLocalizedString("GoogleMapsVCTitle", comment: "")
-        
+        self.tabBarController?.navigationItem.title=NSLocalizedString("GoogleMapsVCTitle", comment: "")
         self.googleMaps.clear()
         self.loadCameraLocation()
         self.loadMapConfiguration()
@@ -53,8 +52,8 @@ class GoogleMapsViewController: UIViewController, GMSMapViewDelegate, CLLocation
     
     func loadCameraLocation(){
         let locationCopy = locationStart.coordinate
-        if currentParty != nil {
-            locationStart = CLLocation(latitude: currentParty!.latitude, longitude: currentParty!.longitude)
+        if selectedParty != nil {
+            locationStart = CLLocation(latitude: selectedParty!.latitude, longitude: selectedParty!.longitude)
         } else if locationManager.location != nil {
             locationStart = locationManager.location!
         }

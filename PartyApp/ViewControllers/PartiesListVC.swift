@@ -12,7 +12,6 @@ import CoreData
 
 
 
-var currentParty:PartyVMProtocol!
 
 
 
@@ -47,7 +46,6 @@ class PartiesListVC: UIPageViewController,UIPageViewControllerDelegate {
     }
     
     private func configurePageViewController(){
-        
         prepareViewControllers()
         dataSource = self
         if let initialVC = orderedViewControllers.first {
@@ -70,8 +68,8 @@ class PartiesListVC: UIPageViewController,UIPageViewControllerDelegate {
             let noPartiesVC = UIStoryboard(name: StoryboardIds.main.rawValue, bundle: nil).instantiateViewController(withIdentifier: PartiesVCIds.noParties.rawValue)
             orderedViewControllers.append(noPartiesVC)
         } else {
-            
-            currentParty = parties[0]
+            let googleMapController = tabBarController?.viewControllers![2] as! GoogleMapsViewController
+            googleMapController.selectedParty = parties.first
             for party in parties {
                 orderedViewControllers.append(initPartyVC(withParty: party))
             }
@@ -102,12 +100,14 @@ class PartiesListVC: UIPageViewController,UIPageViewControllerDelegate {
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed{
-            currentParty = willtransitTo
+            let googleMapController = tabBarController?.viewControllers![2] as! GoogleMapsViewController
+            googleMapController.selectedParty = willtransitTo
+            
         }
     }
 
-
     
+  
     
     
     
