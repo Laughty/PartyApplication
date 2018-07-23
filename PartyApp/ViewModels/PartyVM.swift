@@ -28,25 +28,14 @@ class PartyVM: PartyVMProtocol {
     var title: String
     var image: UIImage
     var description: String
-//    var location: [Double]
     var latitude: Double
     var longitude: Double
     var time: Date
     
-    init(party: Party){
-        self.image = UIImage(named: party.image)!
-        self.title = party.title
-        self.description = party.description
-//        self.location = party.location
-        self.latitude = party.latitude
-        self.longitude = party.longitude
-        self.time = party.time
-    }
-    
     init(party: Parties){
         self.image = UIImage(named: party.image!)!
-        self.title = party.title ?? ""
-        self.description = party.desc ?? ""
+        self.title = party.title!
+        self.description = party.desc!
         self.latitude = party.latitude
         self.longitude = party.longitude
         self.time = party.time! as Date

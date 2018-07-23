@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         GMSServices.provideAPIKey(googleApiKey)
         GMSPlacesClient.provideAPIKey(googleApiKey)
-        
+        configureGroot()
         let center = UNUserNotificationCenter.current()
         center.delegate = notificationDelegate
         
@@ -102,6 +102,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    func configureGroot(){
+        
+        ValueTransformer.setValueTransformer(withName: "StringToInteger", transform:toInt32 )
+        ValueTransformer.setValueTransformer(withName: "StringToDouble", transform:toDouble )
+        ValueTransformer.setValueTransformer(withName: "StringToDate", transform:toDate )
+        ValueTransformer.setValueTransformer(withName: "LocationToLatitude", transform:toLatitude )
+        ValueTransformer.setValueTransformer(withName: "LocationToLongitude", transform:toLongitude )
+        
+    }
 
 }
 
@@ -136,7 +146,6 @@ class UYLNotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
         }
         completionHandler()
     }
-    
     
     
 }

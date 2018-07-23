@@ -38,27 +38,18 @@ class FriendVM: FriendVMProtocol {
     var phone: String
     var email: String
     
-    init(friend: Friend) {
-        self.id = friend.id
-        self.name = friend.name
-        self.surname = friend.surname
-        self.description = friend.description
-        self.likes = friend.likes
-        self.image = UIImage(named: friend.image)!
-        self.phone = friend.phone
-        self.email = friend.email
-    }
-
     init(friend: Friends) {
         self.id = String(friend.id)
-        self.name = friend.name ?? ""
-        self.surname = friend.surname ?? ""
-        self.description = friend.desc ?? ""
+        self.name = friend.name!
+        self.surname = friend.surname!
+        self.description = friend.desc!
         self.likes = Int(friend.likes)
         self.image = UIImage(named: friend.image!)!
-        self.phone = friend.phone ?? ""
-        self.email = friend.email ?? ""
+        self.phone = friend.phone!
+        self.email = friend.email!
     }
+
+    
     
     
 }

@@ -7,20 +7,20 @@
 //
 
 import Foundation
-import ObjectMapper
+import AlamofireCoreData
+struct InitialData : Wrapper {
 
-struct InitialData : Mappable {
     
-    var friends: [Friend] = []
-    var parties: [Party] = []
     
-    init?(map: Map) {
+    var friends: Many<Friends>!
+    var parties: Many<Parties>!
+    
+    
+    mutating func map(_ map: Map) {
         
+        self.friends <- map["friends"]
+        self.parties <- map["parties"]
     }
-    
-    mutating func mapping(map: Map) {
-        friends <- map["friends"]
-        parties <- map["parties"]
-    }
+    init () {}
     
 }
