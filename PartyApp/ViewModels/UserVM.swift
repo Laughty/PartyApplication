@@ -26,25 +26,17 @@ protocol UserVMProtocol {
 }
 
 class UserVM: UserVMProtocol {
-    var id: String
-    var name: String
-    var surname: String
-    var image: UIImage
-    var description: String
-    var phone: String
-    var email: String
-    var friendsIds: [String]
-    var favoritePartiesIds: [String]
+    var id: String = ""
+    var name: String = ""
+    var surname: String = ""
+    var image: UIImage = UIImage()
+    var description: String = ""
+    var phone: String = ""
+    var email: String = ""
+    var friendsIds: [String] = []
+    var favoritePartiesIds: [String] = []
     
-    init(user: User) {
-        self.id = String(user.id)
-        self.name = user.name
-        self.surname = user.surname
-        self.description = user.description
-        self.image = UIImage(named: user.photo)!
-        self.phone = user.phone
-        self.email = user.email
-        self.friendsIds = user.friendsIds
-        self.favoritePartiesIds = user.favoritePartiesIds
-    }
+    
+    
+    
 }
