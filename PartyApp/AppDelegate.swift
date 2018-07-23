@@ -24,6 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey(googleApiKey)
         GMSPlacesClient.provideAPIKey(googleApiKey)
         
+        ValueTransformer.setValueTransformer(withName: "StringToInteger", transform:toInt32 )
+        ValueTransformer.setValueTransformer(withName: "StringToDouble", transform:toDouble )
+        ValueTransformer.setValueTransformer(withName: "StringToDate", transform:toDate )
+        ValueTransformer.setValueTransformer(withName: "LocationToLatitude", transform:toLatitude )
+        ValueTransformer.setValueTransformer(withName: "LocationToLongitude", transform:toLongitude )
+
         let center = UNUserNotificationCenter.current()
         center.delegate = notificationDelegate
         
