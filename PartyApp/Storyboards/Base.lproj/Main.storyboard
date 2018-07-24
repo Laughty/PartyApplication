@@ -53,6 +53,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PartyTime" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jk3-JG-5bz">
+                                <rect key="frame" x="16" y="208" width="343" height="79"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="65"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="-5" height="-1"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jom-oZ-tiq">
                                 <rect key="frame" x="16" y="549" width="343" height="102"/>
                                 <subviews>
@@ -106,17 +114,22 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Jom-oZ-tiq" firstAttribute="top" secondItem="jk3-JG-5bz" secondAttribute="bottom" constant="262" id="6F1-az-ouu"/>
                             <constraint firstItem="Jom-oZ-tiq" firstAttribute="leading" secondItem="ovT-os-iXU" secondAttribute="leading" constant="16" id="8fr-jm-CFV"/>
                             <constraint firstItem="ovT-os-iXU" firstAttribute="bottom" secondItem="Jom-oZ-tiq" secondAttribute="bottom" constant="16" id="9mK-yv-WOg"/>
+                            <constraint firstItem="ovT-os-iXU" firstAttribute="trailing" secondItem="jk3-JG-5bz" secondAttribute="trailing" constant="16" id="Fwc-Kq-bhh"/>
                             <constraint firstItem="ovT-os-iXU" firstAttribute="trailing" secondItem="Jom-oZ-tiq" secondAttribute="trailing" constant="16" id="jCz-R2-8qR"/>
+                            <constraint firstItem="jk3-JG-5bz" firstAttribute="leading" secondItem="ovT-os-iXU" secondAttribute="leading" constant="16" id="sNY-89-XCl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ovT-os-iXU"/>
                     </view>
                     <navigationItem key="navigationItem" id="O25-et-aPO"/>
                     <connections>
+                        <outlet property="buttonsStackView" destination="Jom-oZ-tiq" id="dtd-Tc-vFA"/>
                         <outlet property="friendsButton" destination="p7e-ce-frn" id="8Jr-HS-bYm"/>
                         <outlet property="partyButton" destination="erm-KD-Wk3" id="wcv-c7-nLK"/>
                         <outlet property="profileButton" destination="Q8L-Hf-gQr" id="75A-QZ-avc"/>
+                        <outlet property="titleLabel" destination="jk3-JG-5bz" id="SzV-eA-0xv"/>
                         <segue destination="4ql-nY-vUn" kind="show" identifier="toFriendsListVC" id="YEo-Hg-3FZ"/>
                         <segue destination="Rdq-D9-7bz" kind="show" identifier="toPartyListVC" id="8Sr-j9-V03"/>
                         <segue destination="Rdq-D9-7bz" kind="show" identifier="toPartyListVCFromNotification" id="t9c-Kq-Iqi"/>
@@ -531,7 +544,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x8A-vB-Rll">
-                                <rect key="frame" x="16" y="80" width="343" height="473"/>
+                                <rect key="frame" x="16" y="36" width="343" height="517"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vpe-32-ShH">
                                 <rect key="frame" x="16" y="569" width="343" height="82"/>
@@ -700,7 +713,7 @@
         <image name="worldwide" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="se3-EA-twh"/>
+        <segue reference="u3u-cE-liM"/>
         <segue reference="t9c-Kq-Iqi"/>
     </inferredMetricsTieBreakers>
 </document>

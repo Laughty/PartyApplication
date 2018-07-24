@@ -14,18 +14,15 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" alpha="0.29999999999999999" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Awesome Party Comapany App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hy-HD-cC9">
-                                <rect key="frame" x="37.666666666666657" y="637" width="300" height="41"/>
-                                <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PartyApp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hdb-Sr-c9O">
-                                <rect key="frame" x="119.33333333333331" y="390.33333333333331" width="137" height="42"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="first" translatesAutoresizingMaskIntoConstraints="NO" id="Onj-un-5ns">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PartyApp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hdb-Sr-c9O">
+                                <rect key="frame" x="16" y="736" width="343" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -33,9 +30,13 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Hdb-Sr-c9O" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Jww-DZ-CfG"/>
-                            <constraint firstItem="1Hy-HD-cC9" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dHD-De-XR6"/>
-                            <constraint firstItem="Hdb-Sr-c9O" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="peg-px-6ka"/>
+                            <constraint firstAttribute="bottom" secondItem="Onj-un-5ns" secondAttribute="bottom" id="GVG-84-uk1"/>
+                            <constraint firstItem="Onj-un-5ns" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Qaz-xR-tbs"/>
+                            <constraint firstAttribute="trailing" secondItem="Onj-un-5ns" secondAttribute="trailing" id="Wra-WT-m6b"/>
+                            <constraint firstItem="Onj-un-5ns" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Z9T-RA-918"/>
+                            <constraint firstItem="Hdb-Sr-c9O" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="br6-yQ-f0R"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hdb-Sr-c9O" secondAttribute="trailing" constant="16" id="iY1-5J-sqd"/>
+                            <constraint firstItem="Hdb-Sr-c9O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="oiX-NP-QWr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -45,4 +46,7 @@
             <point key="canvasLocation" x="52" y="374.6305418719212"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="first" width="960" height="540"/>
+    </resources>
 </document>

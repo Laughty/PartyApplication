@@ -40,11 +40,13 @@ enum FetchStatus {
 
 class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var welcomeImage: UIImageView!
+
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var partyButton: UIButton!
     @IBOutlet weak var friendsButton: UIButton!
     @IBOutlet weak var profileButton: UIButton!
+    @IBOutlet weak var buttonsStackView: UIStackView!
     
     var partiesDataStatus: FetchStatus = .notStarted
     
@@ -70,6 +72,11 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         
         //loadingView.frame = self.view.frame
         self.navigationItem.title = NSLocalizedString("WelcomeVCTitle", comment: "")
+//        navigationController?.setNavigationBarHidden(true, animated: true)
+//        navigationController?.setNavigationBarHidden(false, animated: true)
+//        partyButton.isHidden=true
+//        friendsButton.isHidden=true
+//        profileButton.isHidden=true
         
         NotificationCenter.default.addObserver(self, selector: #selector(userDefaultsDidChange),
                                                name: UserDefaults.didChangeNotification, object: nil)
@@ -89,10 +96,37 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         addUserNotifications()
         
         videoMakerPartyShaker()
+        
+        navigationController?.setNavigationBarHidden(true, animated: true)
+//        let blur = UIVisualEffectView(effect: UIBlurEffect(style:
+//            UIBlurEffectStyle.dark))
+//        blur.frame = testButton.bounds
+//        blur.isUserInteractionEnabled = false //This allows touches to forward to the button.
+//        testButton.insertSubview(blur, at: -1)
+        
+        titleLabel.alpha=0.0
+        titleLabel.layer.shadowOpacity=0.5
+        
+        
+                        UIView.animate(withDuration: 1, delay: 1, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .allowAnimatedContent, animations: {
+                            self.buttonsStackView.center = CGPoint(x: self.buttonsStackView.center.x, y: self.buttonsStackView.center.y-300)
+                            self.titleLabel.alpha=0.8
+
+                        }, completion: { _ in
+                            UIView.animate(withDuration: 1, animations: {
+                                         self.buttonsStackView.center = CGPoint(x: self.buttonsStackView.center.x, y: self.buttonsStackView.center.y)
+                                //self.titleLabel.alpha=0.75
+                            })
+
+                        })
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         player?.play()
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        
+        
     }
     
     @objc func userDefaultsDidChange(){
@@ -111,6 +145,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         
         self.performSegue(withIdentifier: StoryboardSegues.ToPartyList, sender: self)
         
+        
     }
     
     @objc func goToPartyFromNotification() {
@@ -121,6 +156,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         NotificationCenter.default.removeObserver(self, name: .didReceivedPartiesData, object: nil)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     @objc func fetchDataStatusUpdate(_ notification:Notification) {
