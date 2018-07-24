@@ -48,6 +48,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var buttonsStackView: UIStackView!
     
+    @IBOutlet weak var firstImageView: UIImageView!
     @IBOutlet weak var playerView: UIView!
     var partiesDataStatus: FetchStatus = .notStarted
     
@@ -67,6 +68,10 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        firstImageView.frame=view.frame
+        playerView.frame=view.frame
+        
         partyButton.layer.cornerRadius = 10
         friendsButton.layer.cornerRadius = 10
         profileButton.layer.cornerRadius = 10

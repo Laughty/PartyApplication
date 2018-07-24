@@ -134,6 +134,7 @@
                     <navigationItem key="navigationItem" id="O25-et-aPO"/>
                     <connections>
                         <outlet property="buttonsStackView" destination="Jom-oZ-tiq" id="dtd-Tc-vFA"/>
+                        <outlet property="firstImageView" destination="g61-Bl-xSa" id="Wfj-tH-CWh"/>
                         <outlet property="friendsButton" destination="p7e-ce-frn" id="8Jr-HS-bYm"/>
                         <outlet property="partyButton" destination="erm-KD-Wk3" id="wcv-c7-nLK"/>
                         <outlet property="playerView" destination="mE8-ai-iwM" id="qrE-sJ-Uk4"/>
