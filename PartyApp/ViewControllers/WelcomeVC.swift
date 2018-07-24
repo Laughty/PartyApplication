@@ -83,6 +83,8 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(goToPartyFromNotification),
                                                name: .goToGoogleMaps, object: nil)
         
+        NotificationCenter.default.addObserver(self,selector: #selector(playVideo), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+        
         InitService.shared.getInitData(ConfigurationSrings.apiURL.rawValue)
         
         partyButton.setTitle(NSLocalizedString("toparty", comment: ""), for: .normal)
@@ -303,6 +305,9 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     }
     @objc func loopVideo() {
         player?.seek(to: kCMTimeZero)
+        player?.play()
+    }
+    @objc func playVideo() {
         player?.play()
     }
 }
