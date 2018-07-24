@@ -48,6 +48,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var buttonsStackView: UIStackView!
     
+    @IBOutlet weak var playerView: UIView!
     var partiesDataStatus: FetchStatus = .notStarted
     
     let center = UNUserNotificationCenter.current()
@@ -287,14 +288,16 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         player?.actionAtItemEnd = .none
         player?.isMuted = true
         
+        
+        
         let playerLayer = AVPlayerLayer(player: player)
         playerLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         playerLayer.zPosition = -1
         
         playerLayer.frame = view.frame
         
-        view.layer.addSublayer(playerLayer)
-        
+        //view.layer.addSublayer(playerLayer)
+        playerView.layer.addSublayer(playerLayer)
         player?.play()
         
         //loop video
@@ -308,6 +311,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         player?.play()
     }
     @objc func playVideo() {
+        player?.seek(to: kCMTimeZero)
         player?.play()
     }
 }
