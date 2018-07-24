@@ -52,6 +52,10 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     let userDefaults = UserDefaults.standard
     
     var player: AVPlayer?
+    let videoURL = Bundle.main.url(forResource: "onboard", withExtension: "mp4")!
+    let videoURL_R = Bundle.main.url(forResource: "onboardR", withExtension: "mp4")!
+    var reverse = false;
+    
     
     //var parties: [PartyVMProtocol] = []
     //var friends: [FriendVMProtocol] = []
@@ -235,7 +239,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     }
     func videoMakerPartyShaker(){
         
-        let videoURL = Bundle.main.url(forResource: "onboard", withExtension: "mp4")!
+        //let videoURL = Bundle.main.url(forResource: "onboard", withExtension: "mp4")!
         
         player = AVPlayer(url: videoURL)
         player?.actionAtItemEnd = .none
@@ -258,8 +262,19 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
                                                          object: nil)
     }
     @objc func loopVideo() {
-        player?.seek(to: kCMTimeZero)
-        player?.play()
+        //player?.seek(to: kCMTimeZero)
+        //player?.rate = -1
+        //player?.setRate(-1, time: invalid, atHostTime: <#T##CMTime#>)
+        if(reverse){
+            player?.replaceCurrentItem(with: AVPlayerItem(url: videoURL))
+            player?.play()
+            reverse=false
+        }
+        else{
+            player?.replaceCurrentItem(with: AVPlayerItem(url: videoURL_R))
+            player?.play()
+            reverse=true
+        }
     }
 }
 
