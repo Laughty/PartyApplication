@@ -136,7 +136,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="zgQ-Q4-4Jj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Google Maps" id="Yad-xe-B4J"/>
+                    <tabBarItem key="tabBarItem" title="Google Maps" image="worldwide" id="Yad-xe-B4J"/>
                     <connections>
                         <outlet property="googleMaps" destination="CyF-EL-KPl" id="tV6-6C-Cs7"/>
                         <segue destination="880-TV-sWu" kind="show" identifier="toPartyMoreDetailsVC" id="se3-EA-twh"/>
@@ -150,7 +150,7 @@
         <scene sceneID="cJ3-yq-m0u">
             <objects>
                 <pageViewController storyboardIdentifier="PartiesListVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="O2d-jL-aKr" customClass="PartiesListVC" customModule="PartyApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Parties List" badgeValue="1" id="EC9-rq-6Ta"/>
+                    <tabBarItem key="tabBarItem" title="Parties List" image="beerIcon" badgeValue="1" id="EC9-rq-6Ta"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DSc-Tb-VcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -460,7 +460,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xmq-1Q-bwm"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Parties On Map" id="lQa-iJ-UGk"/>
+                    <tabBarItem key="tabBarItem" title="Parties On Map" image="mapIcon" id="lQa-iJ-UGk"/>
                     <connections>
                         <outlet property="mapView" destination="3ss-OI-KKn" id="pcR-Ag-iO8"/>
                         <segue destination="U7m-77-JfN" kind="presentation" identifier="toPartyMoreDetailsVC" id="AJX-k1-3kN"/>
@@ -496,7 +496,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x8A-vB-Rll">
-                                <rect key="frame" x="16" y="36" width="343" height="517"/>
+                                <rect key="frame" x="16" y="80" width="343" height="473"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vpe-32-ShH">
                                 <rect key="frame" x="16" y="569" width="343" height="82"/>
@@ -659,8 +659,13 @@
             <point key="canvasLocation" x="4926" y="224"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="beerIcon" width="24" height="24"/>
+        <image name="mapIcon" width="24" height="24"/>
+        <image name="worldwide" width="24" height="24"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="u3u-cE-liM"/>
+        <segue reference="se3-EA-twh"/>
         <segue reference="t9c-Kq-Iqi"/>
     </inferredMetricsTieBreakers>
 </document>
