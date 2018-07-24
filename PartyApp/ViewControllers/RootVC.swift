@@ -41,12 +41,16 @@ class RootVC: UIViewController {
     
     /// Simulates an API handshake success and transitions to MapViewController
     func showSplashViewController() {
-        showSplashViewControllerNoPing()
+        //MARK: NoSplash
         
         
-        _ = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { (timer) in
+        
+        //showSplashViewControllerNoPing()
+        
+        
+        //_ = Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false) { (timer) in
             self.showMenuNavigationViewController()
-        }
+        //}
         
 
     }
