@@ -88,10 +88,6 @@ class PartyMapViewController: UIViewController  {
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
-    
-
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let _ = segue.identifier, selectedParty != nil {
             let destinationVC = segue.destination as! UINavigationController
@@ -100,10 +96,7 @@ class PartyMapViewController: UIViewController  {
             partyMoreVC.party = selectedParty!
             partyMoreVC.isPresentedModally = true
         }
-    
     }
-    
-
 }
 
 extension PartyMapViewController: MKMapViewDelegate {

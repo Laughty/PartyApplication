@@ -91,6 +91,10 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
         videoMakerPartyShaker()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        player?.play()
+    }
+    
     @objc func userDefaultsDidChange(){
         if(userDefaults.bool(forKey: "IsDataInitialized")){
             //loadingView.hide()
