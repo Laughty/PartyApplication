@@ -27,12 +27,12 @@ protocol UserVMProtocol {
 
 class UserVM: UserVMProtocol {
     var id: String = ""
-    var name: String = ""
-    var surname: String = ""
+    var name: String = "John"
+    var surname: String = "Doe"
     var image: UIImage = UIImage()
-    var description: String = ""
-    var phone: String = ""
-    var email: String = ""
+    var description: String = "Mocky guy."
+    var phone: String = "123456789"
+    var email: String = "j.doe@mail.com"
     var friendsIds: [String] = []
     var favoritePartiesIds: [String] = []
     

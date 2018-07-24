@@ -18,6 +18,7 @@ class UserInfoVC: UIViewController {
     
     var user: UserVMProtocol?
     
+    @IBOutlet weak var backgroundLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
@@ -29,11 +30,16 @@ class UserInfoVC: UIViewController {
         
         self.navigationItem.title = NSLocalizedString("UserInfoVCTitle", comment: "")
         
-        imageView.image = user?.image
-        nameLabel.text = "\(user?.name ?? "") \(user?.surname ?? "")"
-        phoneLabel.text = user?.phone
-        emailLabel.text = user?.email
-        descriptionLabel.text = user?.description
+        imageView.image = #imageLiteral(resourceName: "hackerman")
+//        nameLabel.text = "\(user?.name ?? "") \(user?.surname ?? "")"
+//        phoneLabel.text = user?.phone
+//        emailLabel.text = user?.email
+//        descriptionLabel.text = user?.description
+        
+        backgroundLabel.layer.shadowColor = UIColor.lightGray.cgColor
+        backgroundLabel.layer.shadowRadius = 3.0
+        backgroundLabel.layer.shadowOpacity = 1.0
+        backgroundLabel.layer.shadowOffset = CGSize(width: 4, height: 4)
     }
     
 }

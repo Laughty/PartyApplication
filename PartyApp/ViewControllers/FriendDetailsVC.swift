@@ -24,6 +24,7 @@ class FriendDetailsVC: UIViewController {
     @IBOutlet weak var friendEmail: UILabel!
     @IBOutlet weak var friendDescription: UILabel!
     @IBOutlet weak var friendLikes: UILabel!
+    @IBOutlet weak var friendBackground: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,14 @@ class FriendDetailsVC: UIViewController {
         friendLikes.text = "Likes: \(likesText)"
         friendTelephone.text = friend?.phone
         friendEmail.text = friend?.email
+        
+        friendBackground.layer.shadowColor = UIColor.lightGray.cgColor
+        friendBackground.layer.shadowRadius = 3.0
+        friendBackground.layer.shadowOpacity = 1.0
+        friendBackground.layer.shadowOffset = CGSize(width: 4, height: 4)
+//        friendBackground.layer.borderColor = UIColor.lightGray.cgColor
+//        friendBackground.layer.borderWidth = 1.0;
+        
     }
     
     
