@@ -17,6 +17,7 @@ class PartyMoreDetailsVC: UIViewController {
     @IBOutlet weak var partyTime: UILabel!
     @IBOutlet weak var partyLocation: UILabel!
     @IBOutlet weak var partyDescription: UILabel!
+    @IBOutlet weak var backgroundLabel: UILabel!
     
     var isPresentedModally = false
     
@@ -24,8 +25,13 @@ class PartyMoreDetailsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.navigationItem.title = NSLocalizedString("PartyMoreDetailsVCTitle", comment: "")
+        
+        backgroundLabel.layer.shadowColor = UIColor.lightGray.cgColor
+        backgroundLabel.layer.shadowRadius = 3.0
+        backgroundLabel.layer.shadowOpacity = 1.0
+        backgroundLabel.layer.shadowOffset = CGSize(width: 4, height: 4)
         
         if let party = party {
             partyImage.image = party.image
