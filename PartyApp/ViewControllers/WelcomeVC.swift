@@ -52,6 +52,10 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     let userDefaults = UserDefaults.standard
     
     var player: AVPlayer?
+    let videoURL = Bundle.main.url(forResource: "onboard", withExtension: "mp4")!
+    //let videoURL_R = Bundle.main.url(forResource: "onboardR", withExtension: "mp4")!
+    var reverse = false;
+    
     
     //var parties: [PartyVMProtocol] = []
     //var friends: [FriendVMProtocol] = []
@@ -235,7 +239,7 @@ class WelcomeVC: DefaultViewController, UITextFieldDelegate {
     }
     func videoMakerPartyShaker(){
         
-        let videoURL = Bundle.main.url(forResource: "onboard", withExtension: "mp4")!
+        //let videoURL = Bundle.main.url(forResource: "onboard", withExtension: "mp4")!
         
         player = AVPlayer(url: videoURL)
         player?.actionAtItemEnd = .none
