@@ -54,15 +54,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jom-oZ-tiq">
-                                <rect key="frame" x="16" y="492" width="343" height="159"/>
+                                <rect key="frame" x="16" y="549" width="343" height="102"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erm-KD-Wk3">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="53"/>
-                                        <fontDescription key="fontDescription" name="AlNile" family="Al Nile" pointSize="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erm-KD-Wk3" customClass="MDCButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Party List">
-                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
+                                        <state key="normal" title="Party List"/>
                                         <state key="disabled">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -70,13 +68,11 @@
                                             <action selector="toPartyListButtonTapped:" destination="Qb7-C7-0n5" eventType="touchUpInside" id="yA0-N5-iAf"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7e-ce-frn">
-                                        <rect key="frame" x="0.0" y="53" width="343" height="53"/>
-                                        <fontDescription key="fontDescription" name="AlNile" family="Al Nile" pointSize="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p7e-ce-frn" customClass="MDCButton">
+                                        <rect key="frame" x="0.0" y="34" width="343" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Friends List">
-                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
+                                        <state key="normal" title="Friends List"/>
                                         <state key="disabled">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -84,13 +80,10 @@
                                             <action selector="toFriendListButtonTapped:" destination="Qb7-C7-0n5" eventType="touchUpInside" id="nuw-EH-XaQ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8L-Hf-gQr">
-                                        <rect key="frame" x="0.0" y="106" width="343" height="53"/>
-                                        <fontDescription key="fontDescription" name="AlNile" family="Al Nile" pointSize="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8L-Hf-gQr" customClass="MDCButton">
+                                        <rect key="frame" x="0.0" y="68" width="343" height="34"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="MyProfile">
-                                            <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
+                                        <state key="normal" title="MyProfile"/>
                                         <state key="disabled">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -143,7 +136,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="zgQ-Q4-4Jj"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Google Maps" id="Yad-xe-B4J"/>
+                    <tabBarItem key="tabBarItem" title="Google Maps" image="worldwide" id="Yad-xe-B4J"/>
                     <connections>
                         <outlet property="googleMaps" destination="CyF-EL-KPl" id="tV6-6C-Cs7"/>
                         <segue destination="880-TV-sWu" kind="show" identifier="toPartyMoreDetailsVC" id="se3-EA-twh"/>
@@ -157,7 +150,7 @@
         <scene sceneID="cJ3-yq-m0u">
             <objects>
                 <pageViewController storyboardIdentifier="PartiesListVC" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="O2d-jL-aKr" customClass="PartiesListVC" customModule="PartyApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Parties List" badgeValue="1" id="EC9-rq-6Ta"/>
+                    <tabBarItem key="tabBarItem" title="Parties List" image="beerIcon" badgeValue="1" id="EC9-rq-6Ta"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DSc-Tb-VcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -502,7 +495,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xmq-1Q-bwm"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Parties On Map" id="lQa-iJ-UGk"/>
+                    <tabBarItem key="tabBarItem" title="Parties On Map" image="mapIcon" id="lQa-iJ-UGk"/>
                     <connections>
                         <outlet property="mapView" destination="3ss-OI-KKn" id="pcR-Ag-iO8"/>
                         <segue destination="U7m-77-JfN" kind="presentation" identifier="toPartyMoreDetailsVC" id="AJX-k1-3kN"/>
@@ -611,13 +604,26 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bls-9F-UPz">
                                 <rect key="frame" x="16" y="36" width="343" height="436"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1E-4W-CpV">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1E-4W-CpV" customClass="MDCButton">
                                 <rect key="frame" x="16" y="621" width="343" height="30"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Cdv-cJ-lmw"/>
+                                    <constraint firstAttribute="height" constant="30" id="Cdv-cJ-lmw">
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius ">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </constraint>
                                 </constraints>
                                 <state key="normal" title="Details"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number">
+                                        <string key="keyPath">        layer.cornerRadius
+</string>
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <segue destination="880-TV-sWu" kind="show" identifier="toPartyMoreDetailsVC" id="u3u-cE-liM"/>
                                 </connections>
@@ -643,6 +649,11 @@
                             <constraint firstItem="hCr-7v-kWR" firstAttribute="trailing" secondItem="bls-9F-UPz" secondAttribute="trailing" constant="16" id="uPH-6x-qqR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hCr-7v-kWR"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="image" destination="bls-9F-UPz" id="CYt-TM-bVr"/>
@@ -651,7 +662,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="67x-Yr-3X7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3230" y="224"/>
+            <point key="canvasLocation" x="3229.5999999999999" y="223.53823088455775"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="aJs-po-6lR">
@@ -683,6 +694,11 @@
             <point key="canvasLocation" x="4926" y="224"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="beerIcon" width="24" height="24"/>
+        <image name="mapIcon" width="24" height="24"/>
+        <image name="worldwide" width="24" height="24"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="se3-EA-twh"/>
         <segue reference="t9c-Kq-Iqi"/>

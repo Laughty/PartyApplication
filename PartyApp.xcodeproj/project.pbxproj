@@ -10,6 +10,7 @@
 		05BD803CB173D3A9EA50DC05 /* Pods_PartyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F37D5FFA016BD74A8B9E9353 /* Pods_PartyApp.framework */; };
 		73DE1793112D9526D35D9644 /* Pods_PartyAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF2F62DFA6419F4D809BD2 /* Pods_PartyAppUITests.framework */; };
 		7F0ADE3720F78A5600DC4EFC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F0ADE3620F78A5500DC4EFC /* Alamofire.framework */; };
+		7F4694E621070DC70040DD55 /* onboard.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7F4694E521070DC70040DD55 /* onboard.mp4 */; };
 		7F46E7AB2101FDF90049D3A0 /* PartyDetailsUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46E7AA2101FDF90049D3A0 /* PartyDetailsUITest.swift */; };
 		7F46E7AD2101FE1F0049D3A0 /* PartyDetailsFromMapUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46E7AC2101FE1F0049D3A0 /* PartyDetailsFromMapUITest.swift */; };
 		7F46E7AF2101FE3A0049D3A0 /* FriendDetailsUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F46E7AE2101FE3A0049D3A0 /* FriendDetailsUITest.swift */; };
@@ -17,7 +18,6 @@
 		7F5291A720FE00C300807AB8 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5291A620FE00C300807AB8 /* GoogleMapsViewController.swift */; };
 		7F90BD182105DF4D00B4B228 /* InitialData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F90BD172105DF4D00B4B228 /* InitialData.swift */; };
 		7F90BD1A2105EBFE00B4B228 /* GrootTransformations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F90BD192105EBFE00B4B228 /* GrootTransformations.swift */; };
-		7FA4B5B52106107F0057EEB8 /* onboard.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7FA4B5B42106107F0057EEB8 /* onboard.mp4 */; };
 		7FCB3CDD2100C964004D0B74 /* InitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB3CD82100B7FF004D0B74 /* InitService.swift */; };
 		7FDD261520F8BDFE00DC88FA /* Date+ToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD261420F8BDFE00DC88FA /* Date+ToString.swift */; };
 		7FE3F5A920F7454000806FAC /* PartyMoreDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3F5A820F7454000806FAC /* PartyMoreDetailsVC.swift */; };
@@ -91,6 +91,7 @@
 		3539B635EA872F67944ED200 /* Pods-PartyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartyApp/Pods-PartyApp.release.xcconfig"; sourceTree = "<group>"; };
 		48284D0F4D288F069C7C96AF /* Pods-PartyAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartyAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PartyAppUITests/Pods-PartyAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7F0ADE3620F78A5500DC4EFC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		7F4694E521070DC70040DD55 /* onboard.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = onboard.mp4; sourceTree = "<group>"; };
 		7F46E7AA2101FDF90049D3A0 /* PartyDetailsUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyDetailsUITest.swift; sourceTree = "<group>"; };
 		7F46E7AC2101FE1F0049D3A0 /* PartyDetailsFromMapUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyDetailsFromMapUITest.swift; sourceTree = "<group>"; };
 		7F46E7AE2101FE3A0049D3A0 /* FriendDetailsUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailsUITest.swift; sourceTree = "<group>"; };
@@ -98,7 +99,6 @@
 		7F5291A620FE00C300807AB8 /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
 		7F90BD172105DF4D00B4B228 /* InitialData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialData.swift; sourceTree = "<group>"; };
 		7F90BD192105EBFE00B4B228 /* GrootTransformations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrootTransformations.swift; sourceTree = "<group>"; };
-		7FA4B5B42106107F0057EEB8 /* onboard.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = onboard.mp4; sourceTree = "<group>"; };
 		7FCB3CD82100B7FF004D0B74 /* InitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitService.swift; sourceTree = "<group>"; };
 		7FDD261420F8BDFE00DC88FA /* Date+ToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ToString.swift"; sourceTree = "<group>"; };
 		7FE3F5A820F7454000806FAC /* PartyMoreDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyMoreDetailsVC.swift; sourceTree = "<group>"; };
@@ -407,7 +407,7 @@
 				7FDD261420F8BDFE00DC88FA /* Date+ToString.swift */,
 				7FEF08392105C6E300046F96 /* gmaps_style.json */,
 				7F90BD192105EBFE00B4B228 /* GrootTransformations.swift */,
-				7FA4B5B42106107F0057EEB8 /* onboard.mp4 */,
+				7F4694E521070DC70040DD55 /* onboard.mp4 */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -533,6 +533,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F4694E621070DC70040DD55 /* onboard.mp4 in Resources */,
 				B5ADDA272102709A00E74059 /* GMSCustomMarkerWindow.xib in Resources */,
 				AF32DAC6210088CD00B1EF53 /* Localizable.strings in Resources */,
 				AF32DAAE20FFEAEA00B1EF53 /* Assets.xcassets in Resources */,
@@ -544,7 +545,6 @@
 				AF32DACC210088FF00B1EF53 /* Localizable.strings in Resources */,
 				AF65DB1A20F8AB2000525D24 /* LoadingView.xib in Resources */,
 				AFD6C11D20F3CCCC006856EA /* FriendCellItem.xib in Resources */,
-				7FA4B5B52106107F0057EEB8 /* onboard.mp4 in Resources */,
 				AF32DAD2210095E800B1EF53 /* beer.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,6 +577,9 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireCoreData/AlamofireCoreData.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Groot/Groot.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -585,6 +588,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireCoreData.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Groot.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
