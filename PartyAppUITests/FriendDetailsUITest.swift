@@ -29,6 +29,17 @@ class FriendDetailsUITest: XCTestCase {
     }
     
     func testExample() {
+        
+        sleep(6)
+        
+        let app = XCUIApplication()
+        sleep(8)
+        app.buttons["Friends List"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["Interested in drinking alcohol"]/*[[".cells.staticTexts[\"Interested in drinking alcohol\"]",".staticTexts[\"Interested in drinking alcohol\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.navigationBars["Friend details"].buttons["Friends list"].tap()
+        app.navigationBars["Friends list"].buttons["Welcome"].tap()
+        
+        
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         

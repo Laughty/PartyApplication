@@ -30,10 +30,14 @@ class PartyDetailsUITest: XCTestCase {
     
     func testExample() {
         
-        sleep(2)
+        sleep(6)
         let app = XCUIApplication()
+        sleep(8)
         app.buttons["Party List"].tap()
-        app.buttons["Details"].tap()
+        app.buttons["..."].tap()
+        app.navigationBars["Party details (more)"].buttons["Party Details"].tap()
+        app.navigationBars["Party Details"].buttons["Welcome"].tap()
+        
 
         
         // Use XCTAssert and related functions to verify your tests produce the correct results.

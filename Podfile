@@ -10,11 +10,15 @@ target 'PartyApp' do
 	pod 'AlamofireCoreData'
 	pod 'GoogleMaps'  
 	pod 'GooglePlaces'
-	pod 'AlamofireCoreData'
 	pod 'MaterialComponents/Buttons'
 target 'PartyAppTests' do
     inherit! :search_paths
     # Pods for testing
+	pod 'AlamofireObjectMapper'
+	pod 'AlamofireCoreData'
+	pod 'GoogleMaps'  
+	pod 'GooglePlaces'
+	pod 'MaterialComponents/Buttons'
   end
 
   target 'PartyAppUITests' do

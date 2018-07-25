@@ -19,6 +19,7 @@
 		7F90BD182105DF4D00B4B228 /* InitialData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F90BD172105DF4D00B4B228 /* InitialData.swift */; };
 		7F90BD1A2105EBFE00B4B228 /* GrootTransformations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F90BD192105EBFE00B4B228 /* GrootTransformations.swift */; };
 		7FCB3CDD2100C964004D0B74 /* InitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCB3CD82100B7FF004D0B74 /* InitService.swift */; };
+		7FD4244D210867BB00E66396 /* FriendsServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD4244C210867BB00E66396 /* FriendsServices.swift */; };
 		7FDD261520F8BDFE00DC88FA /* Date+ToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDD261420F8BDFE00DC88FA /* Date+ToString.swift */; };
 		7FE3F5A920F7454000806FAC /* PartyMoreDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE3F5A820F7454000806FAC /* PartyMoreDetailsVC.swift */; };
 		7FEF083A2105C6E300046F96 /* gmaps_style.json in Resources */ = {isa = PBXBuildFile; fileRef = 7FEF08392105C6E300046F96 /* gmaps_style.json */; };
@@ -101,6 +102,7 @@
 		7F90BD172105DF4D00B4B228 /* InitialData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialData.swift; sourceTree = "<group>"; };
 		7F90BD192105EBFE00B4B228 /* GrootTransformations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrootTransformations.swift; sourceTree = "<group>"; };
 		7FCB3CD82100B7FF004D0B74 /* InitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitService.swift; sourceTree = "<group>"; };
+		7FD4244C210867BB00E66396 /* FriendsServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsServices.swift; sourceTree = "<group>"; };
 		7FDD261420F8BDFE00DC88FA /* Date+ToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ToString.swift"; sourceTree = "<group>"; };
 		7FE3F5A820F7454000806FAC /* PartyMoreDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyMoreDetailsVC.swift; sourceTree = "<group>"; };
 		7FEF08392105C6E300046F96 /* gmaps_style.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = gmaps_style.json; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 			children = (
 				AFD6C0D320F3C7A5006856EA /* PartyAppTests.swift */,
 				AFD6C0D520F3C7A5006856EA /* Info.plist */,
+				7FD4244C210867BB00E66396 /* FriendsServices.swift */,
 			);
 			path = PartyAppTests;
 			sourceTree = "<group>";
@@ -444,6 +447,8 @@
 				AFD6C0CB20F3C7A5006856EA /* Sources */,
 				AFD6C0CC20F3C7A5006856EA /* Frameworks */,
 				AFD6C0CD20F3C7A5006856EA /* Resources */,
+				662E7498123FEC13085D758C /* [CP] Embed Pods Frameworks */,
+				81589A073CD04D1D5C44516B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -494,7 +499,7 @@
 								enabled = 1;
 							};
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -584,6 +589,38 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		662E7498123FEC13085D758C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PartyAppTests/Pods-PartyAppTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireCoreData/AlamofireCoreData.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Groot/Groot.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireCoreData.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Groot.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PartyAppTests/Pods-PartyAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6ED8E95F3AB2F19DED12E064 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -636,6 +673,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		81589A073CD04D1D5C44516B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PartyAppTests/Pods-PartyAppTests-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PartyAppTests/Pods-PartyAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		AE1A53BCA3F4DE0004E8B273 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -738,6 +795,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFD6C0D420F3C7A5006856EA /* PartyAppTests.swift in Sources */,
+				7FD4244D210867BB00E66396 /* FriendsServices.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -938,9 +996,8 @@
 			baseConfigurationReference = 4BE24C06480A4082936687B5 /* Pods-PartyApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = PartyApp/PartyApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 37JNZ5Q9NW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -951,7 +1008,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = just.fun.partyApp;
+				PRODUCT_BUNDLE_IDENTIFIER = just.fun.partyAppa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -963,9 +1020,8 @@
 			baseConfigurationReference = 260DC7CAE8A0B87C4B3FFBCB /* Pods-PartyApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = PartyApp/PartyApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 37JNZ5Q9NW;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -976,7 +1032,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = just.fun.partyApp;
+				PRODUCT_BUNDLE_IDENTIFIER = just.fun.partyAppa;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

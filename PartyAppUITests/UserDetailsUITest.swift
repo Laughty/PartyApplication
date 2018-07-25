@@ -31,7 +31,9 @@ class UserDetailsUITest: XCTestCase {
     
     func testExample() {
         sleep(6)
-        XCUIApplication().buttons["Profile"].tap()
+        let app = XCUIApplication()
+        sleep(8)
+        app.buttons["Profile"].tap()
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
