@@ -1,4 +1,5 @@
-### Generics & Protocol oriented programming ### 
+### Generics & Protocol oriented programming
+
 The corresponding code can be found in **generics_and_protocols** branch. 
 
 ## Welcome to GitHub Pages
