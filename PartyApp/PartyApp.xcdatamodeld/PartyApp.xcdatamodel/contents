@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17E199" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Friends" representedClassName=".Friends" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="JSONKeyPath" value="description"/>
+            </userInfo>
+        </attribute>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="JSONKeyPath" value="email"/>
+            </userInfo>
+        </attribute>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES">
+            <userInfo>
+                <entry key="JSONKeyPath" value="id"/>
+                <entry key="JSONTransformerName" value="StringToInteger"/>
+            </userInfo>
+        </attribute>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="JSONKeyPath" value="photo"/>
+            </userInfo>
+        </attribute>
+        <attribute name="likes" optional="YES" attributeType="Integer 32" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES">
+            <userInfo>
+                <entry key="JSONKeyPath" value="likes"/>
+            </userInfo>
+        </attribute>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="JSONKeyPath" value="name"/>
+            </userInfo>
+        </attribute>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="JSONKeyPath" value="phone"/>
+            </userInfo>
+        </attribute>
+        <attribute name="surname" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="JSONKeyPath" value="surname"/>
+            </userInfo>
+        </attribute>
+        <userInfo>
+            <entry key="JSONKeyPath" value="image"/>
+        </userInfo>
+    </entity>
+    <entity name="Parties" representedClassName=".Parties" syncable="YES">
+        <attribute name="desc" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="JSONKeyPath" value="description"/>
+            </userInfo>
+        </attribute>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="JSONKeyPath" value="image"/>
+            </userInfo>
+        </attribute>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES">
+            <userInfo>
+                <entry key="JSONKeyPath" value="location"/>
+                <entry key="JSONTransformerName" value="LocationToLatitude"/>
+            </userInfo>
+        </attribute>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES">
+            <userInfo>
+                <entry key="JSONKeyPath" value="location"/>
+                <entry key="JSONTransformerName" value="LocationToLongitude"/>
+            </userInfo>
+        </attribute>
+        <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES">
+            <userInfo>
+                <entry key="JSONKeyPath" value="time"/>
+                <entry key="JSONTransformerName" value="StringToDate"/>
+            </userInfo>
+        </attribute>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="JSONKeyPath" value="title"/>
+            </userInfo>
+        </attribute>
+        <userInfo>
+            <entry key="JSONKeyPath" value="location"/>
+            <entry key="JSONTransformerName" value="LocationToLongitude"/>
+        </userInfo>
+    </entity>
+    <elements>
+        <element name="Friends" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="Parties" positionX="-54" positionY="54" width="128" height="135"/>
+    </elements>
+</model>

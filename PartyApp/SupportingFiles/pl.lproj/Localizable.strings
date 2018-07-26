@@ -1,0 +1,14 @@
+// Welcome Screen
+"toparty" = "Imprezy";
+"tofriends" = "Przyjaciele";
+"toprofile" = "Profil";
+"notificationTitle" = "Piwerko";
+"FriendsListVCTitle" = "Przyjaciele";
+"PartiesListVCTitle" = "Imprezy";
+"PartyMapVCTitle" = "Punkty";
+"PartyDetailsVCTitle" = "O bibie";
+"FriendDetailsVCTitle" = "Ziomeczek";
+"UserInfoVCTitle" = "To ty (chyba)";
+"PartyMoreDetailsVCTitle" = "Więcej o bibie";
+"WelcomeVCTitle" = "Siemasz";
+"GoogleMapsVCTitle" = "GPunkty";

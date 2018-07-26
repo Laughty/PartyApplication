@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GMSCustomMarkerWindow" customModule="PartyApp" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="vm4-w7-G0Y" id="hS3-nA-gJL"/>
+                <outlet property="imageView" destination="gvr-og-Ryx" id="jYQ-hf-ojf"/>
+                <outlet property="infoButton" destination="6Lg-3a-Vnv" id="Rpn-cI-Pzj"/>
+                <outlet property="titleLabel" destination="hSo-ag-1so" id="g0O-4W-deK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="vm4-w7-G0Y">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="catParty1" translatesAutoresizingMaskIntoConstraints="NO" id="gvr-og-Ryx">
+                    <rect key="frame" x="1" y="1" width="46" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="46" id="30C-24-wAR"/>
+                        <constraint firstAttribute="height" constant="48" id="xnK-71-5Fj" userLabel="height = 46"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Lg-3a-Vnv">
+                    <rect key="frame" x="174" y="24" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="7Qx-kV-Io1"/>
+                        <constraint firstAttribute="width" constant="24" id="uvJ-cW-baP"/>
+                    </constraints>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSo-ag-1so">
+                    <rect key="frame" x="49" y="5" width="124" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="Seu-Qq-oBR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="gvr-og-Ryx" firstAttribute="leading" secondItem="epC-aj-5qA" secondAttribute="leading" constant="1" id="1UA-Dg-VHm"/>
+                <constraint firstItem="hSo-ag-1so" firstAttribute="top" secondItem="epC-aj-5qA" secondAttribute="top" constant="5" id="8gT-ja-gMx"/>
+                <constraint firstItem="epC-aj-5qA" firstAttribute="bottom" secondItem="gvr-og-Ryx" secondAttribute="bottom" constant="1" id="DBr-bc-rdD"/>
+                <constraint firstItem="epC-aj-5qA" firstAttribute="trailing" secondItem="6Lg-3a-Vnv" secondAttribute="trailing" constant="2" id="HP8-SR-ChT"/>
+                <constraint firstItem="hSo-ag-1so" firstAttribute="leading" secondItem="gvr-og-Ryx" secondAttribute="trailing" constant="2" id="M0j-Ci-5Lv"/>
+                <constraint firstItem="epC-aj-5qA" firstAttribute="trailing" secondItem="hSo-ag-1so" secondAttribute="trailing" constant="27" id="MtL-WF-Ign"/>
+                <constraint firstItem="6Lg-3a-Vnv" firstAttribute="top" secondItem="hSo-ag-1so" secondAttribute="bottom" constant="2" id="OHW-7p-q56"/>
+                <constraint firstItem="gvr-og-Ryx" firstAttribute="top" secondItem="epC-aj-5qA" secondAttribute="top" constant="1" id="wCt-uU-FA9"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="epC-aj-5qA"/>
+            <point key="canvasLocation" x="304" y="-497"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="catParty1" width="249" height="178"/>
+    </resources>
+</document>
